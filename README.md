@@ -1,6 +1,6 @@
 # neue internet
 
-> a blog
+> a blog | HNS: [https://blog.neuenet/](https://blog.neuenet/) | DNS: [https://blog.neuenet.com](https://blog.neuenet.com)
 
 
 
