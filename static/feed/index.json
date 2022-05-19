@@ -1,0 +1,57 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "neue internet",
+    "home_page_url": "https://blog.neuenet/",
+    "feed_url": "https://blog.neuenet/feed/index.json",
+    "description": "A blog about the DNS, Handshake, and the internet at large.",
+    "author": {
+        "name": "Paul Anthony Webb",
+        "url": "https://paulwebb/"
+    },
+    "items": [
+        {
+            "id": "https://blog.neuenet/post/vision",
+            "url": "https://blog.neuenet/post/vision",
+            "title": "The purpose of Neuenet and where we're going",
+            "summary": "Our long-term vision of the future",
+            "date_modified": "2022-05-09T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
+            "id": "https://blog.neuenet/post/numerical-tlds-dont-work",
+            "url": "https://blog.neuenet/post/numerical-tlds-dont-work",
+            "title": "They look cool but, numerical TLDs don't work",
+            "summary": "You're gonna need another use case",
+            "date_modified": "2022-05-08T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
+            "id": "https://blog.neuenet/post/generating-900-sites-part-one",
+            "url": "https://blog.neuenet/post/generating-900-sites-part-one",
+            "title": "Generating a site for each of our 900+ domains, part ⅓",
+            "summary": "Imagine doing this manually…",
+            "date_modified": "2022-05-06T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
+            "id": "https://blog.neuenet/post/how-to-list-tlds-like-iana",
+            "url": "https://blog.neuenet/post/how-to-list-tlds-like-iana",
+            "title": "How to list your Handshake TLDs like the IANA",
+            "summary": "Roll up your sleeves, it's cron time!",
+            "date_modified": "2022-05-02T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        }
+    ]
+}

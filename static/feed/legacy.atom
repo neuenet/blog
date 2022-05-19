@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.neuenet.com/</id>
+    <title>neue internet</title>
+    <updated>2022-05-18T06:21:29.979Z</updated>
+    <generator>The 'Net</generator>
+    <author>
+        <name>Paul Anthony Webb</name>
+        <uri>https://webb.page/</uri>
+    </author>
+    <link rel="alternate" href="https://blog.neuenet.com/"/>
+    <link rel="self" href="https://blog.neuenet.com/feed/legacy.atom"/>
+    <subtitle>A blog about the DNS, Handshake, and the internet at large.</subtitle>
+    <icon>https://blog.neuenet.com/favicon.svg</icon>
+    <rights>All Rights Reserved, Neuenet</rights>
+    <entry>
+        <title type="html"><![CDATA[The purpose of Neuenet and where we're going]]></title>
+        <id>https://blog.neuenet.com/post/vision</id>
+        <link href="https://blog.neuenet.com/post/vision"/>
+        <updated>2022-05-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Our long-term vision of the future]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[They look cool but, numerical TLDs don't work]]></title>
+        <id>https://blog.neuenet.com/post/numerical-tlds-dont-work</id>
+        <link href="https://blog.neuenet.com/post/numerical-tlds-dont-work"/>
+        <updated>2022-05-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[You're gonna need another use case]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Generating a site for each of our 900+ domains, part ⅓]]></title>
+        <id>https://blog.neuenet.com/post/generating-900-sites-part-one</id>
+        <link href="https://blog.neuenet.com/post/generating-900-sites-part-one"/>
+        <updated>2022-05-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Imagine doing this manually…]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to list your Handshake TLDs like the IANA]]></title>
+        <id>https://blog.neuenet.com/post/how-to-list-tlds-like-iana</id>
+        <link href="https://blog.neuenet.com/post/how-to-list-tlds-like-iana"/>
+        <updated>2022-05-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Roll up your sleeves, it's cron time!]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
+</feed>

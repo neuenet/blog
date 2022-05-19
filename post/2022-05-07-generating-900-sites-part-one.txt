@@ -1,0 +1,60 @@
+---
+title: Generating a site for each of our 900+ domains, part ⅓
+date:  2022-05-07
+tags:  guide
+tldr:  Imagine doing this manually…
+---
+
+It's not uncommon to see Handshake portfolios with hundreds of TLDs. The secondary market is thriving, and that's how we've been able to augment ours with some **fantastic** names. Unfortunately, what _is_ (currently) uncommon are websites utilizing Handshake...and **securely** (with DANE and DNSSEC). To be fair, documentation is semi‑scarce and the builders are busy building. To say we are early is still an understatement.
+
+Anyhoo, pondering the inbalance of registered names versus live sites **and _also_** wishing every one of our TLDs had a website led us to figure out a way to quickly generate appealing websites to prospective visitors. After all, typing one of our TLDs into your (Handshake‑resolving) browser and seeing:
+
+```
+502 Bad Gateway
+
+xn--cr8h:80 no such host
+————————————————————————————————————
+letsdane/v0.6.1 - fingertip (v0.0.3)
+```
+
+...is kinda wack. It'd be better if you saw something like:
+
+![](/media/post/2022/generating-900-sites-02.png "screenshot of https://👽/, in Safari browser")
+
+The repo for the tool we created is [here](https://github.com/neuenet/splash "link to the Github repo for our splash page creator"), in case you want to just skip ahead. Read on for in-depth/behind-the-scenes info.
+
+---
+
+![](/media/post/2022/generating-900-sites-08.png "screenshot of our portfolio, in Apple Numbers, typeset in Berkeley Mono")
+
+As you can see from the screenshot, we have several ways of categorizing our portfolio but the tool only cares about three fields. Currently, the tool assumes:
+
+1. You use spreadsheet software
+2. Your spreadsheet has columns with the headings "ascii," "emoji," and "unicode"
+    - "emoji" should be a boolean value and the tool only checks for `TRUE`
+    - "ascii" is a synonym for punycode, which is the decoded form of unicode characters
+3. You can export your spreadsheet to CSV format
+4. The filename of your export is "catalogue.csv"
+
+The command `npm run convert` generates a JSON file from your CSV file for parsing by another command, `npm run build`. The resulting output creates a folder and an HTML file for every TLD in your portfolio. You should probably update [the template](https://github.com/neuenet/splash/blob/primary/template.hbs "link to the Handlebars template used to generate HTML files") used to generate the HTML files to suit your personal tastes though.
+
+Here's what your build folder looks like when the script finishes:
+
+```txt
+build
+├─ 0451
+│  └─ index.html
+├─ 07d0eb
+│  └─ index.html
+├─ 0x01
+│  └─ index.html
+├─ 0xa0
+│  └─ index.html
+├─ 2077
+│  └─ index.html
+└─ …
+```
+
+On our webserver, we literally dumped the contents of `build` into a folder in the `/var/www/` directory. This was the easiest and least time-consuming part of this process. We still had to update records on the Handshake blockchain and create certificates...which resulted in another tool being created.
+
+In the next post of this series, we're gonna generate certificates for the sites on our webserver and the Handshake blockchain.

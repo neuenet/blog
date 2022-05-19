@@ -1,0 +1,184 @@
+---
+title: The purpose of Neuenet and where we're going
+date:  2022-05-10
+tags:  newsroom, roadmap
+tldr:  Our long-term vision of the future
+---
+
+It was a cold and bright winter day in New England on December 25th, 2001; Christmas morning. Frustrated with family, I ran to the second floor and sat on the chest that held towels at the top of the stairs with my Gameboy Advance in hand. For the umpteenth time, I rethought my strategy and re‑arranged my Chip Folder for better Battle Chip combos — the final boss was tough. And then, something miraculous happened.
+
+I had just saved the Internet.
+
+---
+
+In the years following my elation over defeating the main plotline boss of Megaman Battle Network, nearly everything about the series has permeated my life. When I need assistance entering an optimal flow state for coding, I have a playlist of tracks from the OSTs that make me think of being online. My username, NetOperator Wibby, is derived from the series (Net Operators are basically anyone online but to be specific, people who have NetNavis and bust viruses).
+
+Lastly, like Deus Ex, [MMBN1 predicted the future](https://www.reddit.com/r/BattleNetwork/comments/5gaha0/comment/daqyo7t/ "link to /u/enceladus47's comment on /r/BattleNetwork"):
+
+- Sentient virtual assistants
+- Self‑driving cars
+- Smart homes
+- Digital classrooms
+- Internet currency
+- Online freelancing
+- Personalized pages you can access with friends' permission
+- Dark web
+
+(To be clear, literature has made similar predictions since the dawn of science fiction but **I** never saw a collection of theorized technologies in one place before MMBN...mind you, this was the year after Y2K.)
+
+[![](/media/post/2022/vision-01.png "MegaMan.EXE in the Cyberworld, MMBN1")](https://lparchive.org/Mega-Man-Battle-Network/Update%2005/ "Mega Man Battle Network Let's Play by Epee Em")
+
+Perhaps the most interesting thing about the world of MMBN, to me, was that **the entire Internet was in 3D**. _Practically speaking_, that seems highly inefficient. From what I knew about MMOs at the time, taking whatever is required for those to work and applying it to a persistent online experience that **everyone** in the world can access and create a homepage on was mind‑boggling. I spent my high‑school years pondering an optimal path to enable such a dope experience to exist, while also keeping compatibility with the current 2D experience.
+
+The funny thing about progress/upgrades is that people will think you're attacking their way of life and thus them, personally.
+
+This system would need to be opt‑in, have a few levels of enhancement, and be respective of the computing resources on whatever device is used to access it. The system would also need to be respectful of the end‑user and not make too many assumptions. In short, accessibility is paramount to the system's success. Yes, I was thinking about things like this when I was 15.
+
+Around the same time, I wondered what the name of this new Internet would be. What about the URL? So, I [asked Jeeves](https://en.wikipedia.org/wiki/Ask.com "Wikipedia article about Ask Jeeves") a series of questions about creating a domain that didn't yet exist until I realized what I _really_ wanted to ask was, "how do I make a new TLD?" I was presented with ICANN's website that detailed the process of paying them $185,000 with the application for the TLD you wanted to create. The domain name I settled upon was probably `network.space` but `.space` didn't exist yet (I also wanted `.galaxy`, `.universe`, &c)! To a high‑school kid, $185,000 might as well been $1,000,000 and, it seemed like that was just the cost of doing business in the "grown‑up world."
+
+It was then that I decided my future career would be doing _something_ with computers so I could earn enough money to buy a TLD...
+
+Unfortunately, a failed college run, recession detour, and several years working for doomed startups brought me no closer to affording a TLD from ICANN. But, in late 2019 I discovered Handshake and its existence put several things into perspective. Here's a timeline of projects I've created leading up to that point (with varying levels of completeness):
+
+- hikari OS
+  - responsive operating system GUI built with web technologies
+- Aries browser
+  - web browser built in node‑webkit, and then Electron
+- VendoMarket
+  - self‑hosted eCommerce platform
+- BeachfrontDigital
+  - domain portfolio management tool
+- Chew
+  - analytics platform for your server application, to do away with client‑side scripts
+- codebase
+  - git SCM platform
+- socii
+  - subscription‑supported social network with focus on small communities
+
+And, a list of projects I never initiated but have done immense research on (and therefore intend to execute):
+
+- MMORPG
+  - reading about netcode makes my head hurt 🥴
+- email client and platform
+  - JMAP should be the norm, what's wrong with you people?!
+- computing hardware
+  - many form factors, all working together...and open‑source 🫣
+- video‑sharing site
+  - for one to survive these days, you need a gimmick and _another product that actually makes money_ because this will **not**
+- search engine
+  - competing with Google is fool‑hardy, I've got a better way to attack this 😎
+- TDML
+  - three‑dimensional markup language...gotta make it easy for people to scaffold their 3D homepage
+- NFT platform and marketplace
+  - you can do more with your collected art than stare at them on your phone 👀
+
+The perspective shift was realizing I could 1) have increased brand recognition for several of these projects, 2) have better‑looking domains, and 3) implement features unique to the flexibility of owning a TLD.
+
+Take hikari OS for instance, comparing the Handshake name to its ICANN equivalent:
+
+- `os.hikari/` > `hikar.io/s`
+- `docs.hikari/` > `hikar.io/docs`
+- `login.hikari/` > `hikar.io/login`
+- `tunes.hikari/` > `hikar.io/tunes`
+
+Use case? Login once and access your data via specific domains. So, at home you'd use hikari for regular computing tasks. While you're out, stream your own music library on the go. Continue writing your novel during public transit. It's your [personal OS](https://blog.webb.page/2019-12-02-a-personal-api.txt "blog post I wrote about my 'personal API' concept"), do what you want.
+
+Let's look at socii, the social network:
+
+- `api.socii/` > `api.socii.network`
+- `app.socii/` > `socii.network`
+- `netopwibby.socii/` > `socii.network/netopwibby`
+
+socii means "social" in Latin so the domain `socii.network` was actually a brilliant find. Still, by owning the TLD I can do things current social networks cannot, like giving every paying customer their own domain. Maybe I could even make DMs work like email (or simply, **use** email): `me@netopwibby.socii`.
+
+A common thread amongst these projects is a wish for viable alternatives to what's currently available in the market. "Be the change you wish to see" and all that.
+
+---
+
+Quick rant:
+
+![](/media/post/2022/vision-02.png "current state of the internet")
+
+How ironic is it that what we call the "free market" is propped up by perverse incentives that are costing us a **lot**? Finding a service that isn't primarily/majority ad‑supported is as rare as finding a ["dumb" TV](https://pxlnv.com/linklog/dumb-tv-buying/ "It Is Ridiculously Difficult to Buy a ‘Dumb’ TV"). The "data economy" only exists because of this. Investors (and thus, funded companies) are motivated by outsized returns and what's a proven way to ensure that? **Advertising.** It's a vicious cycle and the only winning move is not to play.
+
+But then, how does one get funding for a project? VCs only talk to other VCs so good luck networking into those circles without a warm intro. Even **if** you manage to connect with one, are they altruistic enough to care about funding something that isn't ad‑supported? _Probably not_.
+
+/rant
+
+---
+
+Handshake is a soft‑fork of the DNS with a focus on security via DANE/DNSSEC (versus certificate authorities blessing you with their certs) that also provides a novel way of democratizing issuance of TLDs. But why should **you** care?
+
+- if you're a casual web user: more sites to browse that have cool domain names
+- if you're a business: opportunity to secure _your own TLD_ in 10 days (or less) versus 10 _years_
+- if you're a creator: empowers you with greater choice for domains that truly suit you and your projects
+- if you're a community: create your own home on the web for you and your tribe
+- if you're a legacy domainer: you know better than most that names are immensely valuable and, you can augment your portfolio before competitors catch wind of Handshake
+- if you're an entrepreneur: you've already begun salivating at the thought of seemingly endless business opportunities
+
+Let's take a look at the current way to go about getting a TLD with ICANN versus with Handshake:
+
+|              | ICANN                    | Handshake                      |
+| ------------ | ------------------------ | ------------------------------ |
+| **Initial cost** | $`185,000` application fee | Pay what you want, it's a [Vickrey auction](https://en.wikipedia.org/wiki/Vickrey_auction "Wikipedia article about Vickrey auctions"). |
+| **Refund when losing auction?** | Hah, nope! ICANN needs it, for reasons. 🧐 | Yes, minus the mining fee (less than pennies). |
+| **Renewal&nbsp;cost** | $`25,000` annually         | < `2` cents bi‑annually |
+| **Timeframe**    | Wait for the next gTLD round, plus 5 years...so, a decade? | 10 days from idea to auction close, or immediately via secondary market. |
+
+Here are some Handshake TLDs from our portfolio and the cost to acquire them:
+
+| Name       | Second-Highest Bid | USD Equivalent<br/>(at time of auction) |
+| ---------- | ------------------ | -------------- |
+| `editor/`  | `2021` HNS         | $`165.99`      |
+| `editors/` | `3000` HNS         | $`682.84`      |
+| `hikari/`  | `100` HNS          | $`11.20`       |
+| `lunch/`   | `1511` HNS         | $`453.87`      |
+| `neuenet/` | `8` HNS            | $`1.46`        |
+| `socii/`   | `0.4` HNS          | $`0.05`        |
+| `👽/` | `1` HNS | $`0.19` | <!--/ emoji is not fixed width so why bother matching formatting /-->
+
+Fun fact: I opened the auction for `neuenet/` but either fell asleep or forgot to bid right before auction close (HNS is required to open auctions so I typically spent the smallest amount allowed on Namebase, 0.4 HNS, to initiate them and then follow up with a true bid). Luckily I was able to snag it on the secondary market for cheap. `editors/` on the other hand, was a pricier secondary market buy but well worth it. For `socii/` I was both the highest and second-highest bid...five cents is basically free.
+
+As you can imagine, discovering within Handshake, a way to achieve a long postponed dream felt nothing short of miraculous.
+
+You may be thinking, "Okay, but hasn't this been tried before? What makes Handshake so different?"
+
+What I've gathered is, while alt‑roots have come and gone over time, Handshake came along at a **great** time; with a bunch of [investment](https://handshake.org/grant-sponsors/ "list of Handshake sponsors") and an [incentivized rollout](https://medium.com/coinmonks/understanding-the-handshake-airdrop-and-reserved-names-428d9e90b560 "Medium article about the Handshake Airdrop") to get developers interested in building upon it...and it's working.
+
+We've got ICANN‑accredited registrars like Porkbun, Encirca, and Namecheap selling Handshake domains. Namecheap even [owns a handful](https://www.namecheap.com/domains/handshake-domains/ "Namecheap's list of Handshake TLDs they own") of Handshake TLDs! The parent company of Porkbun, Top Level Design, operates `.gay` and `.wiki` on the ICANN side and [claimed those names](https://twitter.com/DotTheShake/status/1521992691172716547 "tweet from The Shake about Top Level Design claiming their Handshake names") on Handshake. On top of that, we've got **plenty** of Handshake resolvers for your OS/platform of choice: macOS, Linux, Windows, iOS, Android, whatever. If that's not support, I don't know what is.
+
+Neuenet's purpose, in the short‑term, is to empower creatives. How do we do that? With tools and services. Here's a high‑level roadmap of what's coming next:
+
+- launch our registrar, beachfront/
+  - website builder
+  - email service
+  - eCommerce platform
+  - analytics platform
+  - integrations with services creatives already use, like Gumroad, &c
+- launch Neuenet
+  - continue acquiring incredible TLDs
+  - tutorials and inspiration via the blog
+  - partner with creative communities and schools
+- launch hosted registry and registrar services
+- release open‑source versions of our registry and registrar software
+
+Our purpose, long‑term, is to bring about that neat 3D Internet depicted in the Megaman Battle Network series. Here's how I think we can get there:
+
+- build the infrastucture; Neuenet and beachfront/
+- build the social network; socii
+- build the markup language for easy 3D homepage authoring
+- build and connect the 3D layer atop socii
+
+Open‑sourcing Neuenet and beachfront/ will empower creators to build incredible experiences for their communities. socii's focus is communities and providing comprehensive tools to handle trolls. socii will also have great data portability, no dark patterns, and work well with open protocols (dark patterns are unnecessary when your users are actually customers).
+
+The Internet is not "one size fits all" but it has devolved into "winner takes all." I don't think the winners should be silo'd conglomerates pushing homogenity and what I call Fisher‑Price design; super rounded corners, loads of whitespace, sans‑serif'd up the wazoo, &c. We want to see [Fruity Pebbles](https://twitter.com/MatthewZipkin/status/1506325299084025857 "picture of Fruity Pebbles cereal, in reference to a quote from my HandyCon 2022 presentation"); Color! Customization! Truly inventive web design! Hell, even _basic_ web design typeset in Times New Roman or Comic Sans. Remember Geocities? Remember MySpace profiles? **Remember when you were excited to "go online"?**
+
+Neuenet:
+
+- exists to assist in the return to form
+- is the change I wish to see in the world
+- is the culmination of my life's work
+
+Let's save the Internet, for real this time.
+
+[![](/media/post/2022/vision-03.png "MegaMan.EXE in the Cyberworld, MMBN2")](https://lparchive.org/Mega-Man-Battle-Network-2/Update%2002/ "Mega Man Battle Network 2 Let's Play by MissEchelon")

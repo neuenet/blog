@@ -1,0 +1,21 @@
+<header class="header">
+  <u-grid columns="12">
+    <u-cell span="12">
+      <h1 class="header__billboard">neue internet</h1>
+      <p class="header__tagline inner-wrap">a blog about Handshake and the&nbsp;dWeb</p>
+    </u-cell>
+  </u-grid>
+</header>
+
+<section class="app-wrapper">
+  <u-grid class="posts inner-wrap" columns="8">
+    {{#each posts}}
+      <u-cell class="post" span="4">
+        <a href="./post/{{this.slug}}">
+          <h2 class="post__title">{{this.title}}</h2>
+          <p class="post__tldr">{{this.tldr}}</p>
+        </a>
+      </u-cell>
+    {{/each}}
+  </u-grid>
+</section>

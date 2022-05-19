@@ -1,0 +1,81 @@
+---
+title: How to list your Handshake TLDs like the IANA
+date:  2022-05-03
+tags:  guide
+tldr:  Roll up your sleeves, it's cron time!
+---
+
+The [IANA](https://www.iana.org/domains "link to IANA's Domain Name Services page") (Internet Assigned Numbers Authority) operates and maintains a number of key aspects of the DNS, including the root zone, and the `.int` and `.arpa` domains.
+
+In addition to that, they maintain [a list](https://data.iana.org/TLD/tlds-alpha-by-domain.txt "the DNS TLD list, organized alphabetically") of all the current TLDs available on the DNS. Having such a list handy is useful for anyone who wishes to build tools for the internet, and low-friction data availability is the best way to empower builders.
+
+With that in mind, we wanted to emulate this good practice with a list of Handshake TLDs we manage at Neuenet.
+
+Let's take a look at the script that automatically creates our list every night:
+
+```sh
+#!/bin/zsh
+
+DIRECTORY=/var/custom-certs/tld/
+OUTPUT=/var/www/data/tlds-alpha-by-domain.txt
+
+print -l ${DIRECTORY}*(/:u:t) > ${OUTPUT}
+{ printf "# Version $(date +%Y.%m.%d), Last Updated $(date -u)\n"; cat ${OUTPUT}; } > tmp.txt
+mv tmp.txt ${OUTPUT}
+
+# allow the world to view file
+chmod -R 744 ${OUTPUT}
+```
+
+At a high-level, we use zsh scripting to look inside a directory on our server and print the name of every subdirectory to a text file.
+
+In the `/tld` directory, there are subdirectories for every one of our 900+ TLDs and within _those_ there are `.crt` and `.key` files. **Yes, we made websites for every TLD** (writeup and tool for doing this yourself, coming soon). Anyhoo, no need for a database because we have the information we need in the filesystem!
+
+To standardize things, every TLD directory is in ASCII/punycode and set to full uppercase as it's getting added to a temporary file. For a little extra flavor, the file is prepended with the current date in [ChronVer](https://chronver.org "link to ChronVer's homepage")/[ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 "link to Wikipedia article about ISO 8601") format, along with UTC (Coordinated Universal Time).
+
+Finally, the temporary file is moved to its final resting place and proper permissions are set so you, dear reader, can freely view [this link](https://data.neuenet/tlds-alpha-by-domain.txt "link to the list of Neuenet's Handshake TLDs") (representative output, below).
+
+```txt
+# Version 2022.05.04, Last Updated Wed May  4 07:00:02 UTC 2022
+0451
+07D0EB
+0X01
+0XA0
+2077
+247366
+24HRS
+2OO
+50P
+5OO
+ABILAO
+ACAPELLA
+ACAPPELLA
+ACCENTUATES
+ADAMJENSEN
+ADBLOCKERS
+ADULTS
+ADZA
+AFROBEAT
+…you get the idea
+```
+
+We tell `cron` to run this script every night at midnight. If a new folder of certs is added it'll get picked up by the script, and that's one less thing we have to worry about!
+
+---
+
+To do all this yourself, you'll need to install zsh (and optionally, [Oh My Zsh](https://ohmyz.sh "link to Oh My Zsh homepage")). Also, update `DIRECTORY` and `OUTPUT` to match the values you want.
+
+[This tutorial](https://ostechnix.com/a-beginners-guide-to-cron-jobs "link to cron job tutorial") is helpful for getting started with `cron` in general, but here's the commands you need to know right now:
+
+- `crontab -l` lists the current user's cron jobs
+- `crontab -e` allows you to edit the current user's cron jobs
+
+Once you're in edit mode:
+
+```sh
+0 0 * * * ./process_extensions.sh
+```
+
+Replace `./process_extensions.sh` with the path and filename of your script. For our example, we are logged in as `root` and the `process_extensions.sh` script is at the base of our user folder.
+
+You can view our list of Handshake TLDs at [https://data.neuenet/tlds-alpha-by-domain.txt](https://data.neuenet/tlds-alpha-by-domain.txt "link to the list of Neuenet's Handshake TLDs").

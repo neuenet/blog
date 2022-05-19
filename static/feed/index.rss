@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>neue internet</title>
+        <link>https://blog.neuenet/</link>
+        <description>A blog about the DNS, Handshake, and the internet at large.</description>
+        <lastBuildDate>Wed, 18 May 2022 06:21:29 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>The 'Net</generator>
+        <language>en</language>
+        <copyright>All Rights Reserved, Neuenet</copyright>
+        <atom:link href="https://blog.neuenet/feed/index.rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[The purpose of Neuenet and where we're going]]></title>
+            <link>https://blog.neuenet/post/vision</link>
+            <guid>https://blog.neuenet/post/vision</guid>
+            <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Our long-term vision of the future]]></description>
+        </item>
+        <item>
+            <title><![CDATA[They look cool but, numerical TLDs don't work]]></title>
+            <link>https://blog.neuenet/post/numerical-tlds-dont-work</link>
+            <guid>https://blog.neuenet/post/numerical-tlds-dont-work</guid>
+            <pubDate>Sun, 08 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[You're gonna need another use case]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Generating a site for each of our 900+ domains, part ⅓]]></title>
+            <link>https://blog.neuenet/post/generating-900-sites-part-one</link>
+            <guid>https://blog.neuenet/post/generating-900-sites-part-one</guid>
+            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Imagine doing this manually…]]></description>
+        </item>
+        <item>
+            <title><![CDATA[How to list your Handshake TLDs like the IANA]]></title>
+            <link>https://blog.neuenet/post/how-to-list-tlds-like-iana</link>
+            <guid>https://blog.neuenet/post/how-to-list-tlds-like-iana</guid>
+            <pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Roll up your sleeves, it's cron time!]]></description>
+        </item>
+    </channel>
+</rss>

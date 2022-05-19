@@ -1,0 +1,17 @@
+/* TEAM */
+
+Paul Anthony Webb - Architech
+
+
+
+/* THANKS */
+
+Ideas Never Cease — https://inc.sh
+Viewers like you
+
+
+
+/* SITE */
+
+Standards: CSS3, HTML5, JavaScript
+Components: Deno, Sass, TypeScript

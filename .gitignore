@@ -1,0 +1,11 @@
+# OS garbage
+.DS_Store
+Thumbs.db
+
+# Files
+*map.json
+dart
+sass.snapshot
+
+# Folders
+static/type
