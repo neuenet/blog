@@ -32,12 +32,9 @@ import {
   showPost
 } from "./src/route/index.ts";
 
+const dartSass = await useDartSass();
 const posts: PostMetadata[] = [];
 const tags: LooseObject = {};
-let dartSass;
-
-if (!Deno.args.includes("--production"))
-  dartSass = await useDartSass();
 
 const feedOptions = {
   author: {
@@ -81,12 +78,11 @@ const neueFeed = new Feed(order(merge(feedOptions, {
 
 
 /// generate CSS
-/// note: compilation fails server-side, so this is only done locally
 
-dartSass && await dartSass.compileFromFileToFile("src/sass/uchu/uchu-grid.scss", "static/style.css", { style: "compressed" });
-dartSass && await dartSass.compileFromFileToFile("src/sass/pages/home.scss", "static/home.css", { style: "compressed" });
-dartSass && await dartSass.compileFromFileToFile("src/sass/pages/not-found.scss", "static/not-found.css", { style: "compressed" });
-dartSass && await dartSass.compileFromFileToFile("src/sass/pages/post.scss", "static/post.css", { style: "compressed" });
+await dartSass.compileFromFileToFile("src/sass/uchu/uchu-grid.scss", "static/style.css", { style: "compressed" });
+await dartSass.compileFromFileToFile("src/sass/pages/home.scss", "static/home.css", { style: "compressed" });
+await dartSass.compileFromFileToFile("src/sass/pages/not-found.scss", "static/not-found.css", { style: "compressed" });
+await dartSass.compileFromFileToFile("src/sass/pages/post.scss", "static/post.css", { style: "compressed" });
 
 /// setup post map
 
