@@ -30,3 +30,11 @@ Using `10000/` as an example, let's say it's a community of just 10,000 people. 
 `0451` is the code for the first security door you access in Deus Ex: Human Revolution. `2077` is in the title for Cyberpunk 2077, `247366` is "every day plus leap year" (also, someone else snagged `247365`). Time will tell if there's a market for these but if nothing else, Eidos Montreal and CD Projekt Red are welcome to claim the names inspired by their games.
 
 Feel free to contact us!
+
+---
+
+## 2022.06.13 update
+
+The owner of `247/`, [@Chaindomains3](https://twitter.com/Chaindomains3 "@Chaindomains3 on Twitter"), contacted me to inquire about existing domains sold on his TLD. Are those domains doomed? _Not quite_.
+
+Using `casino.247/` as an example, it currently only resolves in Firefox. Safari will refuse to resolve and Chromium assumes you want to search (as in, it doesn't recognize it as a valid URL either). Firefox tends to eventually follow in the footsteps of the other two major browsers so who knows how long resolution will persist.
