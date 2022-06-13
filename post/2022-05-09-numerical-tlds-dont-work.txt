@@ -38,3 +38,5 @@ Feel free to contact us!
 The owner of `247/`, [@Chaindomains3](https://twitter.com/Chaindomains3 "@Chaindomains3 on Twitter"), contacted me to inquire about existing domains sold on his TLD. Are those domains doomed? _Not quite_.
 
 Using `casino.247/` as an example, it currently only resolves in Firefox. Safari will refuse to resolve and Chromium assumes you want to search (as in, it doesn't recognize it as a valid URL either). Firefox tends to eventually follow in the footsteps of the other two major browsers so who knows how long resolution will persist.
+
+See [this StackExchange answer](https://superuser.com/a/674432 "Overview for RFC 3986") and [associated RFC](https://www.rfc-editor.org/rfc/rfc3986 "RFC for generic URIs").
