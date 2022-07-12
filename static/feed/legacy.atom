@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.neuenet.com/</id>
     <title>neue internet</title>
-    <updated>2022-06-13T23:58:04.272Z</updated>
+    <updated>2022-07-12T21:42:51.486Z</updated>
     <generator>The 'Net</generator>
     <author>
         <name>Paul Anthony Webb</name>
@@ -13,6 +13,17 @@
     <subtitle>A blog about the DNS, Handshake, and the internet at large.</subtitle>
     <icon>https://blog.neuenet.com/favicon.svg</icon>
     <rights>All Rights Reserved, Neuenet</rights>
+    <entry>
+        <title type="html"><![CDATA[Why get a Handshake TLD?]]></title>
+        <id>https://blog.neuenet.com/post/why-get-a-tld</id>
+        <link href="https://blog.neuenet.com/post/why-get-a-tld"/>
+        <updated>2022-07-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[What would you even use it for?]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The purpose of Neuenet and where we're going]]></title>
         <id>https://blog.neuenet.com/post/vision</id>

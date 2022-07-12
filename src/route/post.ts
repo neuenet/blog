@@ -3,8 +3,16 @@
 
 /// util
 
-import { frontmatter, HighlightJS, html, searchObject, tokens, Yandlebars } from "../../deps.ts";
-import type { HandlerFunc, LooseObject } from "../../deps.ts";
+import {
+  frontmatter,
+  HighlightJS,
+  html,
+  searchObject,
+  tokens,
+  Yandlebars,
+  type HandlerFunc,
+  type LooseObject
+} from "/dep.ts";
 
 /// constant
 

@@ -1,7 +1,13 @@
 
 
 
-import { baseDirectory } from "../../deps.ts";
+/// util
+
+import { baseDirectory } from "/dep.ts";
+
+
+
+/// export
 
 export const handlebarsConfig = {
   baseDir: `${baseDirectory}/src/view`,

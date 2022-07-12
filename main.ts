@@ -15,15 +15,12 @@ import {
   merge,
   order,
   serve,
-  useDartSass
-} from "./deps.ts";
-
-import type {
-  HandlerFunc,
-  LooseObject,
-  MiddlewareFunc,
-  PostMetadata
-} from "./deps.ts";
+  useDartSass,
+  type HandlerFunc,
+  type LooseObject,
+  type MiddlewareFunc,
+  type PostMetadata
+} from "/dep.ts";
 
 import {
   showComingSoon,
@@ -177,8 +174,8 @@ const app = new Application();
 
 app
   .get("/", showHome)
-  .get("/post/:slug", showPost)
   .get("/coming-soon", showComingSoon)
+  .get("/post/:slug", showPost)
   .static("/", "./static")
   .start({ port: 8000 });
 

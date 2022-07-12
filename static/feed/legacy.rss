@@ -4,12 +4,19 @@
         <title>neue internet</title>
         <link>https://blog.neuenet.com/</link>
         <description>A blog about the DNS, Handshake, and the internet at large.</description>
-        <lastBuildDate>Mon, 13 Jun 2022 23:58:04 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Jul 2022 21:42:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The 'Net</generator>
         <language>en</language>
         <copyright>All Rights Reserved, Neuenet</copyright>
         <atom:link href="https://blog.neuenet.com/feed/legacy.rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Why get a Handshake TLD?]]></title>
+            <link>https://blog.neuenet.com/post/why-get-a-tld</link>
+            <guid>https://blog.neuenet.com/post/why-get-a-tld</guid>
+            <pubDate>Tue, 12 Jul 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[What would you even use it for?]]></description>
+        </item>
         <item>
             <title><![CDATA[The purpose of Neuenet and where we're going]]></title>
             <link>https://blog.neuenet.com/post/vision</link>

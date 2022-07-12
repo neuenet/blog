@@ -3,7 +3,7 @@
 Thumbs.db
 
 # Files
-*map.json
+*.map.json
 dart
 sass.snapshot
 

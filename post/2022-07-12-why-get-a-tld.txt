@@ -1,0 +1,160 @@
+---
+title: Why get a Handshake TLD?
+date:  2022-07-12
+tags:  opinion
+tldr:  What would you even use it for?
+---
+
+Like many Directors of Handshake, I immediately saw the promise of a secure and trustless naming system that democratized issuance of TLDs (top‑level domains), while being interoperable with the existing DNS (Domain Name System). Then again, [I've been looking](/post/vision "The purpose of Neuenet and where we're going") for something like Handshake for the better part of a **decade**. As an early adopter and self‑proclaimed _architech_, I can see where the Handshake ecosystem is heading and how to best take advantage of the unique possibilities this nascent protocol enables.
+
+Most of the use cases I'll present here revolve around community (handshakes require people, after all), but Handshake is also suitable for personal use. While there are many competing standards and frameworks on the topic of identity, Handshake is uniquely positioned (lowest level of the stack) to be a solid foundation for every group working on this complex paradigm; interoperability fast‑tracks adoption. Now, let's dig into these use cases!
+
+## Network States
+
+Inspired by the emergence of DAOs (decentralized autonomous organizations) and the incredible crowdfunding they've been able to generate, I began to wonder how an entire country could form from one. Would it be digital‑only? Would passports be NFTs? How much identifiable data should be in such a passport, and what if it needs updating? How would healthcare work and look like? Perhaps most importantly, _what would you call it?_ Maybe...**Di**gital **Na**tion **Fo**r **Al**l? Or, Dinafoal/DINAFOAL?
+
+### `dinafoal/` domain ideas
+
+- **dao.dinafoal** — Information on upcoming votes, historical records of past meetings, and proposals for the nation are found here.
+- **email.dinafoal** — Every citizen gets free email and online storage, paid for by their tax dollars. Fees for extra storage could be billed separately.
+- **gdp.dinafoal** — Automated public dashboard displaying the financial health of the nation, broken down by DAOs and industry.
+- **passport.dinafoal** — A portal to manage your 1/1 NFT proving your citizenship.
+- **utility.dinafoal** — What if you had people fighting for you to get the best pricing for utilities like electricity, water, and internet access, no matter where you are in the world? I suppose all that could be managed here.
+
+Balaji Srinivasan wrote a book, [The Network State](https://1729.com "Read 'The Network State' online"), that delves into what would be required to bootstrap one. As I read through it, the examples here will get refined (most likely in a standalone case study).
+
+## Cities
+
+Much smaller in scope than a network state but just as complex, forward‑thinking cities would benefit from owning and operating their own TLD. For cities that lack adequate federal aid when disasters occur — looking at you, New Orleans (Louisiana) and Flint (Michigan) — a Handshake name can be a great way to ensure a city can better fend for themselves. Imagine not having to beg your government's dual parties to stop squabbling so your people can survive (that's a much bigger issue for another post, I digress).
+
+The city controls the pricing for domain registration, with priority given to residents first…or, make registration available to residents **only**! But, keep in mind that the vibe of your city resonates with people all over the world; those people would love to support, financially.
+
+Imagine that for businesses:
+
+- Local non-profits could get their domain renewal fee waived
+- Small businesses could pay $50/year
+- Corporations (banks, department stores, cinemas, &c) pay much more…your choice!
+
+For the city at large you could have the best roads, nary a pothole in sight! In fact, y'all could invest in newer technologies like [self‑repairing roads](https://neeva.com/search?q=self-repairing+roads "Neeva search for 'self‑repairing roads'") everywhere. Maybe this is something Elon Musk will do for his [proposed city](http://web.archive.org/web/20210303110717/https://twitter.com/elonmusk/status/1366859619461570561 "archived tweet of Elon Musk where he mentions creating the city of Starbase, Texas.") of Starbase in Texas? Coincidentally, a few weeks before he talked about it, I saw a Handshake auction for "starbase" and sniped it in the final moments. My apologies to whomever opened the auction, I love anything pertaining to space.
+
+Anyhoo, when I saw Elon's tweets I quickly made a site proposing many of the same points I'm making here. You can check it out at [welcome.starbase](https://welcome.starbase/ "Starbase, City of the Future") (Handshake resolver required).
+
+### `starbase/` domain ideas
+
+- **city.starbase** — Public calendar of community events, informaton on ordinances, how to obtain permits, &c.
+- **email.starbase** — Every citizen gets free email and online storage, paid for by their tax dollars. Fees for extra storage could be billed separately.
+- **gdp.starbase** — Automated public dashboard displaying the financial health of the city, broken down by districts and industry.
+- **isp.starbase** — Citizens could vote on which ISP (internet service provider) wins this digital real estate; criteria like best minimum speeds are factored into their decision. This rewards healthy competition and punishes complacency.
+- **mayor.starbase** — Updates from the mayor. Like the Presidential Twitter account, this domain is fixed but would be operated by the office of whomever the current mayor is.
+- **tesla.starbase** — Dealerships in your city? They'd benefit from hyper‑local advertising, starting with their domain name.
+- **utility.starbase** — Like the network state example, this is where citizens would pay for and manage their utilities.
+
+As Handshake matures, I foresee several modern cities trialling this concept. [Nole Oppermann](https://twitter.com/nole__tx/status/1527714547842396160) owns the [`tx/`](https://heytx.io) TLD and has galvanized the blockchain community in Texas to get behind it as the digital identity of the state.
+
+## Institutions
+
+A common threat vector for financial institutions are fictitious domain names that seem legit; anyone can register a `.com` and use your site's assets to create a site for phishing your employees **and** customers. To combat this, corporations invest **millions of dollars** in fraud detection, training their employees (repeatedly), and paying security firms to preempt or contain incidents. Another thing they could do is ~~spend a cool million over 5 years for ICANN to setup a TLD for them~~ acquire their name on Handshake, a secure naming layer on top of the DNS, for _considerably_ less money (this includes renewal, which is currently just two cents every two years…versus $20k/year with ICANN).
+
+Imagine you're the CTO of a fast‑growing fintech startup, Everbank, and it builds products for everything related to money — crypto, payments, stocks, you name it. Having a subdomain for each product is decent enough but, you feel your products are tentpole offerings that deserve prominence.
+
+### `everbank/` domain ideas
+
+- **api.everbank** — Your company is beloved by developers due to its thoughtful API and excellent documentation. Now these devs get to use your pretty new endpoint.
+- **corp.everbank** — Your enterprise customers have specialized needs like SAML SSO and bulk licensing, their portal is here.
+- **exchange.everbank** — It's like the stock market, but for cryptocurrency. You could also convert between them, for a fee.
+- **smb.everbank** — Small business resources and testimonials from happy customers could live here. You could highlight business leaders using your products as well.
+- **payments.everbank** — Millions of companies use your payments infrastructure and their developers flock to Hacker News to rave about it.
+
+## Platforms
+
+Outside of general registries and registrars, I think platforms are going to be excellent drivers of Handshake ingenuity. Platforms are private registries/registrars; no one can issue SLDs on their TLD but them. For that reason, you're going to see platforms do things like make usernames be domains. This simple change is bound to unlock further ideas beyond our current comprehension.
+
+Most of us use a single identity for each service we access online, and that creates problems when services get hacked and data leaks. Hackers use stolen data and cross‑reference it with public data to guess which other services you may have signed up for. With Handshake, identity can be scoped to each service — i.e., you login with a different domain name for each service. My blogging account (`wordsmith.blogarama`), metaverse account (`yungsun.netcity`), and social network account (`netopwibby.socii`) are all different. Or, I could opt for the same SLD for each TLD.
+
+### `blogarama/` domain ideas
+
+- **magazine.blogarama** — Provide a service where writers can order physical compilations of their library, made with sustainable/recycled materials.
+- **my.blogarama** — Entrypoint to the platform, and where you get your writing done.
+- **read.blogarama** — Encourage discovery, make visits to this domain redirect to a random blog on the platform.
+- **recap.blogarama** — Vanity metrics about the platform, for the community. Number of words written, subscribers, &c.
+- **vip.blogarama** — For influencers or media organizations who want a fully managed publishing platform, this is for them.
+
+### `netcity/` domain ideas
+
+- **avatar.netcity** — Your first stop before the metaverse…customize your digital visual identity, create presets for your base model, and more. Create, sell, trade, and buy cosmetics through here as well.
+- **blueprint.netcity** — A fully interactive environment where you can build whatever structures you want. Import 3D models or use pre‑built ones. When you're done, publish to the metaverse and earn residual income from active participants enjoying your experiences.
+- **portal.netcity** — The global lobby where you meet up with friends. This is filled with digital cafes, parks, and walking areas to give you something to do while deciding which metaverse experience y'all want to embark on.
+- **\<experience\>.netcity** — Jump into a game of Fortnite, an Aston Martin dealership, a museum, a venue, or a custom experience your friend built. Some may be free‑to‑play while others may require a fee.
+
+### `socii/` domain ideas
+
+- **api.socii** — Customers should be empowered to use their data however they want, programmatically and otherwise.
+- **app.socii** — The primary domain of the social network. Pretty much everything happens here.
+- **market.socii** — A marketplace for profile themes, sticker packs, and so on.
+- **\<username\>.socii** — You'll be able to get your own domain, perfect for sharing your profile with others. You may even be able to send DMs via `me@<username>.socii`, who knows? 👀
+
+## Small Businesses
+
+Nearly every example until now has been online‑based, first and foremost. What if you have a brick‑and‑mortar establishment? Or a food truck? The path to TLD acquisition shouldn't be price‑gated so that only Fortune 500 companies can afford the money (and the susbsequent time and energy) to pursue. I'm sure your ravenous fans would agree, especially those that break from these massive conglomerates to enjoy a meal from you. Get you a TLD!
+
+### `flourchild/` domain ideas
+
+- **menu.flourchild** — Could be a PDF, a simple list, or a fully interactive experience. Add anecdotes about menu item inspiration, family quotes, and so on.
+- **order.flourchild** — Maybe you outsource this to a food delivery platform, use their APIs and host their integration here, or get your tech guy to build a custom ordering service.
+- **raffle.flourchild** — Every week a random past customer wins a free food item, discount, swag, whatever you want to raffle.
+- **vip.flourchild** — Your customer loyalty program is managed here. Add a leaderboard for friendly competition, send VIPs invites to secret popup parties, &c.
+
+Musicians, clothing brands, and basically any creative could use aspects of these ideas as well. Cultivate a tight‑knit community of enthusiasts and amazing things happen. I'd love to see a musician make every album an audio/visual experience a domain on their own TLD. Music takes you on a journey, why not have a destination to live in (if only for a little while)?
+
+## Cryptocurrencies
+
+You're most likely not a stranger to the concept of cryptocurrencies if you're reading this post. It's also not a stretch to say that nearly every cryptocoin project could afford to be tidier; blog posts aren't updated, linked resources eventually 404, and information is often duplicated. Perhaps ironically, these cutting‑edge projects eschew the trappings of "Web2," yet continue to rely on the DNS that supports it. Obviously, you're gonna need a presence there as a portal to the Neue Internet but **c'mon**, jump in with two feet! Put your money where your mouth is and get yourself a decentralized TLD!
+
+It's not difficult to support both the DNS and HNS; this very blog is doing just that! [`https://blog.neuenet.com`](https://blog.neuenet.com "this blog, on the DNS") and [`https://blog.neuenet`](https://blog.neuenet "this blog, on Handshake") show the same content (personally, the latter looks cooler).
+
+### `zenny/` domain ideas
+
+- **api.zenny** — Empower the technical folks in your community to build even more tools for the community.
+- **apps.zenny** — Apps for every platform your community develops for can be found here. Vet them, of course, and require hashes.
+- **code.zenny** — Redirect to Github or self‑host your code? Hmm…
+- **community.zenny** — Discord is all the rage for cryptocurrency projects, and the scams are prevalent. Ditch that threat vector and run your own forum. Manage the DAO here.
+- **dex.zenny** — Got coin? You need a decentralized exchange.
+- **registry.zenny** — This is where members of your community buy domains for their wallet addresses. Might as well run a marketplace here as well.
+- **stats.zenny** — A public dashboard that shows mining pool allocations, staking rewards, ticker price with currency conversion, &c. Dogfood your API to catch edge‑case issues.
+- **whitepaper.zenny** — Every coin's got a technical paper to defend its existence.
+
+## Personal
+
+Why should businesses have all the fun? Handshake is for **you**, too! In fact, personal usage of Handshake fits perfectly with the ["personal API/OS" concept](https://blog.webb.page/2019-12-02-a-personal-api.txt "A personal API") I envisioned…a few weeks before I discovered Handshake? Whoah, first time making that connection. Anyhoo, here's some things I'm thinking of doing with my personal Handshake name (this is also my alias pretty much everywhere online).
+
+### `netopwibby/` domain ideas
+
+- **api.netopwibby** — The brain powering the entire TLD.
+- **blog.netopwibby** — My personal blog is currently at `blog.webb.page` with no Handshake equivalent (I'll let someone else register `webbpage/`).
+- **bbs.netopwibby** — Got a question or want to chat? Do so here! Maybe this could be a site with links to my various online social accounts to start.
+- **dashboard.netopwibby** — Easily create new domains, manage existing domains, and edit sites via a WYSIWYG interface. I'm technical but I thoroughly enjoy a beautiful UI.
+- **games.netopwibby** — My Fortnite Tracker stats will be copied over here, along with clips from my in‑game adventures. Various montage YouTube channels have featured my clips, y'all should see them in their original quality.
+- **homepage.netopwibby** — This is a MMBN (Megaman Battle Network) reference. In that game, everyone's homepage is a 3D space. **I** want a 3D space…I currently do not know how to build 3D spaces, and I want to showcase my dope NFT collection (don't worry, no apes).
+- **me.netopwibby** — This will be a public dashboard, showing modular versions of almost every domain under this TLD. It may also show my latest tweets, latest songs I've scrobbled, and so on.
+- **music.netopwibby** — I'm gonna share my playlists and find a way to list my music library in a way that's not ultra manual; I love buying music.
+- **photos.netopwibby** — My personal Instagram. I haven't posted to IG since the first day of 2018, FACEBOOK creeps me out. I snap a _lot_ of pictures though, and some of them are quite nice.
+- **resume.netopwibby** — It's annoying trying to remember where the project files for my resume are, I end up having to search my entire computer. Why not just have a responsive one, easily accessible online?
+- **search.netopwibby** — I have a search engine concept and once it's moved past that phase, you'll be able to seach my personal index.
+- **send.netopwibby** — Y'know how people have buttons on repos or blogs that say, "Buy me a coffee"? This is the same. It'll be a list of various cryptocurrency wallets you can send money to, if you feel so inclined.
+- **webring.netopwibby** — All the people I deem cool on the internet will be listed here. Or maybe you visit this page and get redirected to one of their sites.
+
+I could keep going but you get the point. These are the concepts that keep me up at night, because my mind is going "Ooh, what about this…but no, what about **THIS?!**" Handshake unlocks potential for incredible experiences because you have an excellent chance of acquiring a name that truly resonates with you.
+
+## Convinced?
+
+The speculators have already left this post to find Telegram groups to buy HNS OTC. The entrepreneuers are DM'ing people on LinkedIn and WeChat about "a once-in-a-lifetime opportunity to get involved in a project disrupting the $100 billion domain industry." The `.com`/ICANN purists are already tweeting about this "dead-in-the-water project" and buying yet another `.eth` name. That leaves you and I alone to close this out.
+
+Maybe you're too young to remember MySpace. Or maybe you're old enough to remember Usenet and CommuniTree. Whichever the case, there was a time when being online was truly exciting, dial-up and all. You felt like a part of this thrawling infinite landscape; not a pawn in a game beyond your comprehension, thanks to data brokers, SEO trash factories, wanton surveillance, &c. The internet is **never** going back to what it was, but _you can find that feeling again_.
+
+Business is gonna business and over the next few years, you'll hear about acquisitions and the resulting soaring stock prices and largely, none of that will affect you. The Handshake ecosystem will grow, tools and experiences will get better, and _maybe_ that will affect you. The thing is, you get yourself a Handshake TLD, and it's your's forever. Like, actually (just don't forget to renew, it's ~2 cents every two years). This is something you can cultivate, something you can control, something you have **full** agency over. Your own space, on the internet.
+
+All those ideas I shared for my personal Handshake name have some measure of public interaction, but you needn't do the same. You can password‑protect every domain on your TLD and just use it as your online playground. Or, a virtual remote computer you can access from anywhere in the world. Host the backend on a cheap VPS or on a free one provided by your local co‑op. Whatever you want.
+
+Handshake itself is not the salve (nor solve) for various ills of the internet. What it _is_, is a way to empower those who think like us to create better tools outside the _clearly_ lacking status quo. Handshake is for the world. For us. **For you.**
+
+🤝

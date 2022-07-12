@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/why-get-a-tld",
+            "url": "https://blog.neuenet.com/post/why-get-a-tld",
+            "title": "Why get a Handshake TLD?",
+            "summary": "What would you even use it for?",
+            "date_modified": "2022-07-12T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/vision",
             "url": "https://blog.neuenet.com/post/vision",
             "title": "The purpose of Neuenet and where we're going",

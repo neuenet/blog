@@ -3,8 +3,7 @@
 
 /// util
 
-import { Yandlebars } from "../../deps.ts";
-import type { HandlerFunc } from "../../deps.ts";
+import { Yandlebars, type HandlerFunc } from "/dep.ts";
 
 /// constant
 

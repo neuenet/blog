@@ -3,22 +3,20 @@
 
 /// native
 
-export { ensureDir, expandGlob } from "https://deno.land/std@0.137.0/fs/mod.ts";
-export { format as formatDate } from "https://deno.land/std@0.137.0/datetime/mod.ts";
-export { join } from "https://deno.land/std@0.139.0/path/mod.ts";
-export { serve } from "https://deno.land/std@0.137.0/http/server.ts";
+export { ensureDir, expandGlob } from "std/fs/mod.ts";
+export { format as formatDate } from "std/datetime/mod.ts";
+export { join } from "std/path/mod.ts";
+export { serve } from "std/http/server.ts";
 
 /// third-party
 
-export { Application, Context } from "https://deno.land/x/abc@v1.3.3/mod.ts";
-export { Feed } from "https://esm.sh/feed";
+export { Application, Context, type HandlerFunc, type MiddlewareFunc } from "https://deno.land/x/abc@v1.3.3/mod.ts";
+export { Feed } from "https://esm.sh/feed@4.2.2";
 export { parse as frontmatter } from "https://deno.land/x/frontmatter@v0.1.4/mod.ts";
 export { HighlightJS } from "https://cdn.esm.sh/v78/highlight.js@11.5.1/es2022/highlight.js";
 export { html, tokens } from "https://deno.land/x/rusty_markdown@v0.4.1/mod.ts";
 export { useDartSass } from "https://raw.githubusercontent.com/MarkTiedemann/deno-dart-sass/0.3.0/mod.ts";
 export { Yandlebars } from "https://raw.githubusercontent.com/cybertim/yandlebars/main/mod.ts";
-
-export type { HandlerFunc, MiddlewareFunc } from "https://deno.land/x/abc@v1.3.3/mod.ts";
 
 /// project
 
@@ -41,7 +39,6 @@ export function merge(source: any, target: any) {
   for (const [key, val] of Object.entries(source)) {
     if (val !== null && typeof val === "object") {
       if (target[key] === undefined) {
-        // @ts-ignore
         target[key] = new val.__proto__.constructor();
       }
 
