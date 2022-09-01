@@ -31,4 +31,5 @@ With [pm2](https://pm2.keymetrics.io/ "process manager for Node.js"):
 ```sh
 # `unstable` flag is for `npm:feed` support: https://deno.com/blog/v1.25#experimental-npm-support
 pm2 start main.ts --interpreter="deno" --interpreter-args="run --unstable --import-map=import_map.json --allow-net --allow-read --allow-run --allow-write --no-prompt" --name "blog" -- start --production
+pm2 save
 ```
