@@ -4,12 +4,19 @@
         <title>neue internet</title>
         <link>https://blog.neuenet.com/</link>
         <description>A blog about the DNS, Handshake, and the internet at large.</description>
-        <lastBuildDate>Tue, 12 Jul 2022 21:42:51 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 01 Sep 2022 23:03:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The 'Net</generator>
         <language>en</language>
         <copyright>All Rights Reserved, Neuenet</copyright>
         <atom:link href="https://blog.neuenet.com/feed/legacy.rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[StoppableDomains is a threat to all blockchains]]></title>
+            <link>https://blog.neuenet.com/post/stoppable-domains</link>
+            <guid>https://blog.neuenet.com/post/stoppable-domains</guid>
+            <pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Fallacious doublethink from UD abounds]]></description>
+        </item>
         <item>
             <title><![CDATA[Why get a Handshake TLD?]]></title>
             <link>https://blog.neuenet.com/post/why-get-a-tld</link>

@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet/post/stoppable-domains",
+            "url": "https://blog.neuenet/post/stoppable-domains",
+            "title": "StoppableDomains is a threat to all blockchains",
+            "summary": "Fallacious doublethink from UD abounds",
+            "date_modified": "2022-08-31T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
             "id": "https://blog.neuenet/post/why-get-a-tld",
             "url": "https://blog.neuenet/post/why-get-a-tld",
             "title": "Why get a Handshake TLD?",

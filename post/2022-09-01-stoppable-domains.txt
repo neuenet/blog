@@ -1,0 +1,104 @@
+---
+title: StoppableDomains is a threat to all blockchains
+date:  2022-09-01
+tags:  opinion
+tldr:  Fallacious doublethink from UD abounds
+---
+
+For the uninitiated, Unstoppable Domains is a VC-backed company creating TLDs on Ethereum. They've proven to be litigious towards competition, citing things like "first to market," "having more money," and so on. This week, the NamesCon conference is in full effect in Austin, TX and yesterday there was a spirited conversation during the "Domaining on the Blockchain" panel. Present were Chris Jeffrey (goes by "JJ", he's a prolific Handshake contributor), Chjango Unchained (executive director of the dWeb Foundation), Brad Kam (co‑founder of Unstoppable Domains), Thomas Barrett (president of Encirca), and Ray King (CEO of Porkbun).
+
+Andrew from DomainNameWire already laid out [some of the conversation](https://domainnamewire.com/2022/08/31/sparks-fly-at-blockchain-domain-panel-during-namescon/ "Sparks fly at blockchain domain panel during NamesCon") that ensued so I won't retread here. A [video](https://www.youtube.com/watch?v=HZLrqhKpy9Q "NamesCon 2022 - “Domaining on the Blockchain” - Unstoppable Handshake Fiasco") of the panel appeared on YouTube and what follows are my thoughts.
+
+---
+
+Early in the conversation Brad tried to make the case users would be "confused" by differing blockchains offering domains on the same TLDs. Tom pushed back against that, and said he believes it's totally doable to have "conflicting" TLDs operating in their own spaces.
+
+> **Brad:** The responsible thing for the industry to do is to prevent these collisions at all costs, because otherwise I do not think the industry will be able to move forward.
+>
+> **JJ:** You could have approached the `wallet/` owner and collaborated or even bought the name from him.
+>
+> **Brad:** Why…would we care?
+
+(He cared enough to send a cease‑and‑desist and then sue but let's move on)
+
+Throughout the conversation Brad kept going back to "social conventions preventing name collisions" which is…puzzling to say the least. It's interesting to see how Brad was able to claim his users (potential and otherwise) would be confused but also, they'd just know what to do. Users cannot be smart and dumb at the same time, to support whatever angle you're pushing. Here's a real‑life example:
+
+The character of Batman is owned by DC Comics. Batman exists in who knows _how many_ forms but guess what? Customers are not "confused." In the Fortnite game alone, my cosmetics locker has three different Batman variants. I can be Batman in Lego games. I can even be Batman in Roblox! My six‑year‑old could tell the difference. Let that sink in…someone who can swipe a credit card is easily confused by similar things and **needs** Unstoppable Domains' protection and oversight but someone who needs adult supervision with a _spoon_ is NOT confused?
+
+Brad made the comparison of McDonald's existing and no one else being able to register a McDonald's trademark. Similar to my Batman analogy, that is a singular entity that controls the trademark.
+
+What Brad is trying to do is convince everyone that **he and his company alone** should be able to arbitrarily and retroactively _claim ownership of any word_ they see fit. Not unlike the British colonizers that "discovered" America and promptly ran a disinformation campaign to legitimize their unethical methods. Did you know Unstoppable Domains has [trademark applications for `.bitcoin`](https://twitter.com/_chjj/status/1565158353055145985 "tweet from @_chjj")? In five countries?!
+
+Yes. **Bitcoin.** Nevermind the fact that ICANN has dismissed arbitrary trademarks for TLDs in the past and will likely continue to do so. Nevermind the irony of a company built on Ethereum is CLAIMING OWNERSHIP OVER THE ORIGINAL BLOCKCHAIN. I digress.
+
+Another thing that jumped out at me was Brad's conflation of Ethereum as not only THE blockchain but THE industry in general. He spoke in broad terms but it's pretty clear he meant the primary blockchain Unstoppable Domains operates on.
+
+There were two eye‑opening moments as the panel was nearing it's end. The first one is spawned from an audience question and second is what Brad deems important.
+
+## First eye‑opening moment
+
+> **Ryan (audience member):** Shouldn't it be the customer or the websurfer to decide which blockchain he wants to surf? I mean, that's his decision. We don't need a mommy to tell us which is the—
+>
+> **Chjango:** Yeah, but browsers are the gatekeepers still.
+>
+> **Brad:** It's up to apps, it's not really up to the end user.
+>
+> **Ryan:** Well, in Brave (browser) you can set it, right? It's in the settings. You can pick the blockchain you want.
+>
+> **Brad:** 😮
+
+## Second eye‑opening moment
+
+> **JJ:** (responding to an audience question about Proof of Stake versus Proof of Work) Proof of Stake is a huge problem. There are a lot of people who try to deceptively legitimize Proof of Stake and now I think (Proof of Work's) reached that point as a legitimate consensus mechanism and (Proof of Stake) is not.
+>
+> **Brad:** Proof of Stake is awesome.
+>
+> **JJ:** How do you do SPV? How do you do SPV on Ethereum? Can you do a light resolver? Unstoppable? In a decentralized way? Verifiable?
+>
+> **Brad:** _slowly_ Unstoppable is a customer of blockchains. Meaning that what we do is, we look at which different blockchains would provide the best experience for our users and there's two primary considerations beyond decentralization. One is cost, like how much does it cost to mint a domain name, an NFT. On Polygon it's around 3 cents. And the other is application support. And what we have found as a result of being a part of the Ethereum ecosystem is that it has been so easy to get wallets, browsers, other applications to support us, because they are already integrating Ethereum wallets, &c, or EVM‑compatible wallets—
+>
+> **JJ:** You haven't answered my question.
+>
+> **Brad:** So that's been the kind of benefit of um, being on Ethereum.
+>
+> **JJ:** You did not answer my question, how do you do lightweight resolution?
+>
+> **Chjango:** To JJ's point, you need light client resolution in order for it to scale on the browser.
+>
+> **Brad:** …I don't care about the same features they do.
+>
+> **Chjango:** _Really?!_
+>
+> **JJ:** Yeah, that means you don't care about the protocol actually _working_. If they can't do light resolution it doesn't work.
+>
+> **Brad:** This is so flattering.
+
+This exchange blew my mind, every time I listened to it (which was a few times, in order to transcribe).
+
+Brad, and by extension Unstoppable **Domains**, doesn't care about providing utility to their users. But…they're focused on providing the best user experience? What is there to experience if you just have something sitting in a wallet? It's totally possible I'm missing something but I doubt it. Someone help me make this make sense!
+
+## Closing Thoughts
+
+Unstoppable Domains wants to be THE canonical blockchain naming system and they think using their sizeable VC‑backed financial war chest is the way to do it. It's strange to think about. When asked by Jeff Neuman about what they'd do if any of the TLDs his company created on the Ethereum blockchain appears in the next ICANN round, he basically said he hopes his TLDs will be successful enough that no one would dare oppose them. If you're a domainer, you probably just laughed out loud.
+
+No matter how Brad wants to present his company, folks in ICANN's world will lump it in with Handshake, ENS, Tezos Domains, &c — blockchain‑based alt‑roots. I echo the sentiments that Chjango and JJ expressed during the panel; there's a reason why HTTP and Linux are immortal and AOL is no more. Protocols and true open‑source live on, corporations do not — especially not those of UD's ilk. Handshake is a protocol with actual usage. This "app integrations" talk is played out. "Plug and play" is super easy, building from scratch is not and yet, Handshake is chugging along nicely.
+
+Here are some choice quotes from the Handshake community:
+
+> **mnbitcoinatm/**: "naming is a social convention, and we should be in charge" (paraphrasing Brad, in case that's not obvious)
+
+> **◕‿◕/**: the quotes from the domainwire article suggest to me that UD's worldview is extremely trademark oriented, as in, they believe that trademark registration is the best model for domain ownership. they think that establishing a business is what gives rights to own/use a domain name. to me that's antithetical to the open web
+>
+> **◕‿◕/**: they're saying "we deserve to win the rights to the names we want, because we went through this social convention process that we believe is the most true, the rest of you are just attacking us unjustly"
+>
+> **◕‿◕/**: but that reveals a sort of hypocrisy in that worldview... they're saying their preferred scheme for control should win, disregarding that there are other communities with separate ideas for how it should work. but he understands that ultimately social adoption of one or the other is what will determine a winner and a loser
+
+> **mnbitcoinatm/**: My sole issue is with the litigation. It's hypocritical for UD to say "it's a social convention" or "let the market or product usefulness decide", but then kick it over to be settled in court. If HNS has no authority or usefulness (as measured by adoption), as they suggest, why would they care if this useless blockchain is doing its own thing and has a few registrars hooked in?
+
+> **◕‿◕/**: it could make some kind of sense because in theory the trademark system is based on business popularity / common knowledge of brand names. their strategy is to win the race to being the meaning of the household name 'dot wallet' and thereby have legally protected rights to defend it. they haven't achieved that yet but they do have a lot more marketing and funding than we do.
+
+---
+
+While there are competing blockchain standards, systems, and protocols, we're in this together. We've seen how the so‑called Web 2.0 shaped up and everyone in the decentralized/distributed space is tired of it. Tired enough that we're **collectively** working to make something better. Using Web 2.0 tactics like litigious intimidation in a desperate effort to squash a smaller competitor is, quite frankly, pathetic and is the antithesis to what we're working towards. We don't need that in the next stage of the internet. Those motivated by the same/similar perverse incentives of Web 2.0 will not be tolerated.
+
+Truth always comes to light. Villains (eventually) lose. Time will prove just how [stoppable](https://twitter.com/search?q=%23StoppableDomains "#StoppableDomains on Twitter") these latest bad actors are.

@@ -63,6 +63,7 @@ export const showPost: HandlerFunc = async(context) => {
 
       if (snippetLanguageArray && snippetLanguageArray[0]) {
         snippetLanguage = snippetLanguageArray[0];
+        console.log(HighlightJS);
         updatedSnippet = HighlightJS.highlight(snippet, { language: snippetLanguage }).value;
       }
 

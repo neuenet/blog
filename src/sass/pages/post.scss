@@ -84,6 +84,7 @@
 }
 
 .post__body {
+  blockquote,
   h2,
   h3,
   h4,
@@ -205,6 +206,20 @@
     @media (max-width: 600px) {
       white-space: unset;
     }
+  }
+}
+
+blockquote {
+  padding-left: calc(5px + 1rem);
+  position: relative;
+
+  &::before {
+    width: 5px; height: 100%;
+    top: 0; left: 0;
+
+    background-color: var(--inc-gray-3);
+    content: "";
+    position: absolute;
   }
 }
 
