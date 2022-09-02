@@ -179,9 +179,8 @@
 
     @media (max-width: 900px) {
       margin-left: var(--line-height);
-      padding-right: 3rem;
       padding-left: calc(5px + 1rem);
-      width: 100%;
+      width: calc(100% - var(--line-height));
 
       p {
         padding-left: 0;
