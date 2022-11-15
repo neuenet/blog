@@ -1,0 +1,90 @@
+---
+title: Setup a Handshake full node with systemd
+date:  2022-11-14
+tags:  guide
+tldr:  Low maintenance - this is the way
+---
+
+`systemd` is the system and service manager for Linux systems. It's quite capable and a great way to automate programs. In this post, we're going to learn how to get a Linux server equipped with [hsd](https://github.com/handshake-org/hsd "Github repository for hsd") (the Handshake daemon and full node), and ensure hsd runs whenever the server is rebooted.
+
+## hsd installation
+
+```sh
+# we are going to install in the /mnt folder
+cd /mnt
+
+# clone hsd and cd into the folder
+git clone --depth 1 --branch latest https://github.com/handshake-org/hsd.git && cd hsd
+
+# install production dependencies
+npm i --omit=dev
+
+# exit hsd/ directory, remain in mnt/
+cd ..
+
+# create hsd config directory and file
+mkdir .hsd && touch .hsd/hsd.conf
+
+# update contents of hsd config file
+nano .hsd/hsd.conf
+```
+
+If you have specific configuration, it's much better to put them in this file instead of passing command-line arguments. However, some parameters are only possible as command-line arguments. Review the [hsd documentation](https://hsd-dev.org/guides/config.html "hsd configuration documentation") for more.
+
+Here's the contents of my hsd configuration for [lookup.tx](http://lookup.tx "Handshake transaction explorer"), a Handshake transaction explorer:
+
+```
+api-key: <password>
+index-address: true
+index-tx: true
+log-level: warning
+```
+
+I actually had the `log-level` set to "debug" so I could monitor the sync progress, and changed it back to "warning" when initial sync completed.
+
+
+
+## systemd setup
+
+```sh
+# create and open the hsd service file
+nano /etc/systemd/system/hsd.service
+```
+
+Then, paste this:
+
+```
+[Unit]
+Description=Handshake Daemon & Full Node
+Documentation=https://hsd-dev.org/
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/mnt/hsd/bin/hsd --no-wallet --prefix /mnt/.hsd
+WorkingDirectory=/mnt/hsd/
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+If your hsd installation location isn't `/mnt` like mine, you'll need to update paths in the content above.
+
+Whenever you create or modify `systemd` services, you have to reload with `systemctl daemon-reload`. Then, enable your new service with `systemctl enable hsd.service`. Finally, to start `hsd.service`, run `systemctl start hsd`.
+
+Here are more (self-explanatory) commands you'll find useful:
+
+- `service hsd status`
+- `systemctl stop hsd`
+- `systemctl start hsd`
+- `systemctl restart hsd`
+
+---
+
+At the time of this post, a Handshake full node is ~55GB so you'll need a decent-sized server. It took my Linode server (4GB RAM, two dedicated CPUs, 80GB storage) about a day to fully sync, and it was operating at 180% CPU that entire time. Now that the sync is finished, CPU usage is less than 10%.
+
+Check out [http://lookup.tx](http://lookup.tx "Handshake transaction explorer") if you're equipped with a Handshake resolver. Most blockchain explorers are super technical so I built one that's a tad more approachable. Stay tuned for updates.
+
+![](/media/post/2022/setup-handshake-full-node-systemd-01.png "screenshot of http://lookup.tx/, in Arc browser")

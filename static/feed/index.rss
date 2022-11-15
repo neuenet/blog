@@ -4,12 +4,19 @@
         <title>neue internet</title>
         <link>https://blog.neuenet/</link>
         <description>A blog about the DNS, Handshake, and the internet at large.</description>
-        <lastBuildDate>Fri, 02 Sep 2022 02:38:29 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Nov 2022 23:42:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The 'Net</generator>
         <language>en</language>
         <copyright>All Rights Reserved, Neuenet</copyright>
         <atom:link href="https://blog.neuenet/feed/index.rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Setup a Handshake full node with systemd]]></title>
+            <link>https://blog.neuenet/post/setup-handshake-full-node-systemd</link>
+            <guid>https://blog.neuenet/post/setup-handshake-full-node-systemd</guid>
+            <pubDate>Sun, 13 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Low maintenance - this is the way]]></description>
+        </item>
         <item>
             <title><![CDATA[StoppableDomains is a threat to all blockchains]]></title>
             <link>https://blog.neuenet/post/stoppable-domains</link>

@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet/post/setup-handshake-full-node-systemd",
+            "url": "https://blog.neuenet/post/setup-handshake-full-node-systemd",
+            "title": "Setup a Handshake full node with systemd",
+            "summary": "Low maintenance - this is the way",
+            "date_modified": "2022-11-13T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
             "id": "https://blog.neuenet/post/stoppable-domains",
             "url": "https://blog.neuenet/post/stoppable-domains",
             "title": "StoppableDomains is a threat to all blockchains",
