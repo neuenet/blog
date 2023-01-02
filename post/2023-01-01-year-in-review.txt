@@ -1,0 +1,81 @@
+---
+title: 2022 Year in Review
+date:  2023-01-01
+tags:  newsroom
+tldr:  Let's recap, shall we?
+---
+
+What a year.
+
+In broader ecosystem news, we've dealt with the so-called "crypto winter," [Epik changed CEOs](https://domainnamewire.com/2022/12/30/an-epik-crash-2022-top-stories/ "DomainNameWire's coverage of Epik") amidst the catastrophe that is "Masterbucks" (their in‑house currency), and [FTX](https://restructuring.ra.kroll.com/FTX/) defrauded its customers of millions of dollars (via their in‑house currency). Moral of the story? Maybe don't do business with any company offering play money in exchange for actual value. Within the Handshake space, we've been putting the pressure on those opportunistic vultures known as Unstoppable Domains, [on Twitter](https://twitter.com/search?q=%23StoppableDomains "#StoppableDomains on Twitter"). We've also set new secondary market sales records via [Skyinclude's Flamingo auctions](https://flamingohandshake.com/auctionresults "Flamingo Handshake auction results"). Eagle‑eyed folks who have been waiting on [expired names to drop](https://x/piring "list of Handshake names about to expire") were rewarded for their patience and steady HNS stacking. Wins amongst losses.
+
+Handshake is unique in the crypto space as it straddles both the crypto and DNS worlds. Every other blockchain‑based naming system deals in "faux" names; domains without utility (outside of giving a wallet address an English name…interesting that you don't see other languages used, but I digress). [Messari](https://messari.io/asset/handshake/profile) gives an excellent overview of Handshake if you're new to it and want to dig in, as do sources like [Learn HNS](https://learnhns.com "Education diagrams and graphics about Handshake") and [The Shake](https://www.theshake.xyz "Handshake news"). Enough prologue, you're here to read about how Neuenet's year was. Let's dig in.
+
+## Launched 900+ websites on Handshake
+
+They're all lander/splash pages for each of our TLDs but so what. I had to figure out how to programmatically do this and I'm quite satisfied with the result. I even wrote a [tutorial](/post/generating-900-sites-part-one "Generating a site for each of our 900+ domains, part ⅓") _buuuuut_ it looks like I never started on the follow‑up tutorials. Whoops.
+
+## Presented a 45-minute talk at HandyCon
+
+I've never given a talk before, and I certainly did not think I'd be able to fill up 45 minutes but I managed to do both quite well for a first‑timer. This was a virtual conference, but still. The title of my talk was "Registries, Registrars, and You: How to make the most of your TLD (and other considerations)." In it, I discussed the state of Handshake as of that moment in time, the O.G. ICANN folks championing Handshake, and ecosystem robustness before delving into what inspired me to create Neuenet. I ended the talk with ideas I intend to build for beachfront/, the registrar component I'm building for Neuenet.
+
+You can [watch the talk here](https://youtu.be/ct-CZV3rtNM "My HandyCon 2022 talk on YouTube") and follow along with my slides at [data.neuenet](https://data.neuenet/ "Neuenet Data Directory on HNS") (or [data.neuenet.com](https://data.neuenet.com "Neuenet Data Directory on the DNS")). And **please**, steal the ideas I outlined. There's absolutely no reason why registrars shouldn't shake things up. I understand why the ICANN ones don't, domain pricing is a race to the bottom. Handshake doesn't have this issue.
+
+## Launched this blog
+
+I love blogs.
+
+Back when Opera ran on its own Presto engine, it was my browser of choice. It had a built‑in feed reader and I was subscribed to a **lot** of blogs. Every few months I deleted my `.opml` file and found new blogs to follow. In the decade since, most people abandoned their blogs in favor of Facebook, Twitter, Instagram, Medium, Substack, &c. Earlier in the year I had announcements to make and the idea of making a Twitter thread didn't sit well with me. What sense would it make for me, an architech, to not build my own place on the internet? None, so here we are.
+
+Not content with just launching a blog, I wanted to have it accessible from the legacy DNS _and_ HNS, complete with RSS, Atom, and JSON feeds for both. If you want to tinker with the source code of this blog, you can [checkout its repo here](https://github.com/neuenet/blog "this blog's repository").
+
+## Published "Why get a Handshake TLD?"
+
+Over the summer I noticed the Namebase and Handshake Discord servers gaining new members asking the same questions. Surface‑level questions like, "how do I get HNS," "what the heck is a Vickrey auction," and "what's the tokenomics" were quickly answered but the main high‑level question, "why should I care" resulted in several community members sharing why it matters to _them_. It's kind of a loaded question because the real answer depends on what you want from Handshake. I decided to extrapolate on the copy I wrote for [welcome.starbase](https://welcome.starbase/ "splash page for a proposed city of the future") (Handshake resolver required) and publish a short essay delving deep into use cases. Network states, cities, institutions, platforms, small businesses, and cryptocurrencies would benefit from utilizing Handshake…_especially_ cryptocurrencies, to be quite honest.
+
+_I was going to go on a tangent about the eth.link fiasco but I'll save that for another post, maybe a sequel._
+
+I saved the end of the essay to focus on **you**, dear reader. **And** that section has the most examples. I spent a lot of time writing it, [please read it](/post/why-get-a-tld "Why get a Handshake TLD?").
+
+## Published "StoppableDomains is a threat to all blockchains"
+
+In case you missed it, Unstoppable Domains is a VC‑backed company with a billion dollar valuation that bullied a minuscule registrar into submission. Not content with flexing their litigious weight with Handshake, they've decided to [trademark entire blockchains](https://twitter.com/apedotc/status/1569449678810353666 "thread from @apedotc detailing all the blockchain trademarks Unstoppable Domains applied for")! Yes, even Bitcoin (and Bitcoin Cash, Doge, &c). I've compared them to a Web2 company masquerading as a Web3 company. In the time since that post, UD created [a phony alliance](https://twitter.com/NetOpWibby/status/1588229870282104832 "thread about Unstoppable Domains' phony alliance") and [conned](https://twitter.com/ultrazach/status/1588295882629185536 "comment from @ultrazach about Unstoppable Domains advising blockchains not to speak to their community about the alliance") other blockchains into joining their cabal in an effort to rehabilitate their image.
+
+They're not liked nor respected by people in other blockchain communities, including the one they're built on; Ethereum. It's not just the Handshake community dunking on them.
+
+Thanks to [Namecheap stepping up](https://twitter.com/NamecheapCEO/status/1554458774378893312 "@NamecheapCEO enters the ring") to assist with the ongoing lawsuit UD has with the owner of `wallet/` on Handshake, we have an decent chance of winning. Make no mistake, UD **needs** to win this case because their future depends on it. After you [read the post](/post/stoppable-domains "StoppableDomains is a threat to all blockchains"), see one of UD's lackeys [realize the error](https://twitter.com/NetOpWibby/status/1602774159687237633 "receipt of @magocrypto deleting his nonsense tweet") of his ways.
+
+## Launched lookup.tx
+
+Nole Oppermann is the owner of `tx/` and a proud Texan. He held a website contest late in the year to encourage more Handshake sites. I decided to buy [`lookup.tx`](http://lookup.tx/ "lightweight Handshake transaction explorer") and try my hand at building an ultralight transaction explorer for Handshake. My focus was to make it feel approachable to less technical folks. To my pleasant surprise I won the contest, but I'm not done with the site. There's plenty enhancements I have in mind.
+
+## Presented a talk at Internet Archive
+
+One of the perks of living in Cupertino, California is being in the tech mecca of America. There was a Bay Area dWeb Builders Meetup group that's since merged with Internet Archive. The hosts of the former invited me to give people a brief overview of Handshake and how it's doing thus far. It wasn't recorded but like with my HandyCon presentation, I made the slides available on [data.neuenet](https://data.neuenet/ "Neuenet Data Directory on HNS") (or [data.neuenet.com](https://data.neuenet.com "Neuenet Data Directory on the DNS")). Later that night I had an interesting conversation with two other people that used to live in Boston but now live in CA. Small world, haha!
+
+## Behind the scenes
+
+> There are 2 hard problems in computer science: cache invalidation, naming things, and off‑by‑1 errors.<br/>— [Leon Bambrick](https://twitter.com/secretGeek/status/7269997868 "source of this quote")
+
+My off‑by‑1 errors? Severely underestimating how long _waves hand_ everything is taking and will take to launch. The reason for this is that I have no established roadmap to follow. Building not just a registry, but a registry _platform_ is non‑trivial. The end goal is open‑sourcing it so I want to make sure I do the best I can upfront, rather than ship something mediocre and attempt making it better later. While I admire the idea of "building in public," to me, it just doesn't make sense to do so for an ambitious undertaking, at least until it launches. "Too many cooks in the kitchen" and all that.
+
+Still, much progress was made! In 2021, the tech stack for Pastry (our registry platform) comprised of Node.js (TypeScript), GraphQL, RethinkDB, and Svelte. In 2022, the tech stack upgraded to Deno (TypeScript), GraphQL, EdgeDB, and SvelteKit. I'm fairly confident in saying the stack is solidified now.
+
+Just like my JavaScript to TypeScript transition, the Node.js to Deno transition improved my code and forced me to learn better methods of programming. Initially, I passed a bunch of `// @ts-ignore` comments around but as I understood Deno, those ignore lines disappeared. The RethinkDB to EdgeDB transition was the result of an issue with the database driver I was using with the former. No solution emerged from a discussion with the maintainer so I was forced to find a different database. After a few weeks I settled upon EdgeDB. In many ways, it's an upgraded version of RethinkDB (albeit with an interesting learning curve). Any database that comes with a beautiful built‑in explorer immediately has my interest. SvelteKit is a framework for building web applications atop Svelte and is an absolute joy to use.
+
+Another perk with using Deno is the ability to package your code into a single executable. Those who program in Go already know how great this is. To achieve my goal of making Pastry the easiest and best registry software, these niceties are an added bonus for DX (developer experience).
+
+Pastry is comprised of a few parts:
+
+- nameserver
+- api
+- dashboard ui
+- sdk
+
+The nameserver is pure Deno and I ported and refactored its Node.js dependencies to Deno to enable proper type‑checking. I also had to refactor the nameserver itself because it relied on the old database. The API is developed in parallel with the dashboard UI. When designing and building features for the UI, I'll often have to refactor the API a bit or add new functionality. The SDK will likely come into development once the registry is entering private beta. The beachfront/ registrar will use it to 1) demonstrate real‑world usage with the SDK in production and 2) allow me to experience the inevitable sharp edges so I can improve the SDK.
+
+---
+
+When I think about the future of Handshake, I get excited. Currently, I'm most excited to see what the Handshake community does with Pastry. When I got my first hosting account as a teen on Homestead.com, I had no idea it would lead me to this point. I just wanted a space online for myself. A space to create, ideate, and remix. Now I'm in a position to do the same for others.
+
+Here's to a productive year!
