@@ -1,0 +1,92 @@
+---
+title: Devlog №.1
+date:  2023-05-01
+tags:  newsroom
+tldr:  Press START to continue
+---
+
+This post is the first in what will become a monthly series about what we're working on at Neuenet, lessons learned, and so on. Both versions of this blog, legacy (`blog.neuenet.com`) and neue (`blog.neuenet`), are equipped with [Atom, JSON, and RSS feeds](#feed_options); staying up to date has never been easier. With that said, let's jump in…there's a LOT to go through.
+
+---
+
+## The Pivot
+
+Mere days before [Superlink](https://superlink.me "real name digital IDs as blockchain domains")'s launch, I came to the realization that what I was working on — a registry platform for Handshake TLD owners — wasn't going to be effective at bringing more eyeballs, interest, and potential profits to the ecosystem. I mean, sure, it'd make a splash but I want to make a **cannonball**-sized splash. The idea of putting a year's worth of work on the backburner rankled me but I knew it was the correct thing to do. Besides, all the work I've done thus far is great and quite useable; it'll serve as the backbone for the registrar, beachfront/. So, that's the current focus; from B2B to B2C.
+
+I have no idea when I'll launch Pastry, the registry platform, but here's a look at the bottom of the homepage (top half is in flux).
+
+![](/media/post/2023/devlog-01.png "pastry website")
+
+The sooner the registrar launches, the sooner we can get more domain registrations and **websites**. As it stands now, the Handshake ecosystem is severely lacking in ease of use in many aspects, website deployment especially. Pushing for native browser support doesn't make sense if there aren't any (non‑placeholder) websites — where's the incentive for browser vendors? "Embed an alt-root SPV resolver in our browser for 10 websites? **Nah.**"
+
+
+
+## The Registrar
+
+The pivot you just read about is actually the second one…the first pivot was after I created V1 of beachfront/. It was just the homepage and a few ancillary pages. I'm super visual so I need to see what I'm building towards. Plus, building a frontend helps me realize what I missed from my initial database schema design.
+
+![](/media/post/2023/devlog-02.png "v1 of beachfront/")
+
+Thus, work on the registrar was paused to work on registry components…which lead to me working on a platform, and blah blah, see above. As you can see, V1 of beachfront looks nice but doesn't really do enough to excite folks new to Handshake. I won't showcase what V2 looks like but here's a sneak peek.
+
+![](/media/post/2023/devlog-03.png "internet.neue")
+
+
+
+## Neue Code
+
+I am obsessed with writing Good Code™ and making the switch to TypeScript several years ago has forced me to be better. On a whim, I decided to try Deno when working on the registry and now I cannot go back to Node.js for backend work. SvelteKit, my frontend framework of choice, currently requires Node.js but Deno support is forthcoming. Another perk of Deno that I love is binary compilation. If you've ever installed a Go application like Caddy, you know how great it is. Everything I'm building will eventually be open-source and the fewer moving parts, the better.
+
+Here's the backend stack:
+- Deno (TypeScript)
+- GraphQL
+- EdgeDB
+
+Frontend stack:
+- Node.js
+- GraphQL
+- SvelteKit (TypeScript and Sass)
+
+One of the annoying/exciting things about building new things is…sometimes you gotta build it yourself.
+
+I could've went with existing nameserver software but I just didn't like any of them for various reasons. I forked the wonderful [mafintosh/dns-packet](https://github.com/mafintosh/dns-packet) module to make it Deno-native, typed, and modular. There isn't a proper README but you can use it today at [x/packet](https://deno.land/x/packet) or checkout the source at [NetOpWibby/packet](https://github.com/NetOpWibby/packet). The registry nameserver relies on this module because dogfooding is the best way to work on software. If you want the sneakiest of sneak peeks, I opened [an issue](https://github.com/edgedb/edgedb-js/issues/577) in the EdgeDB repo that's currently blocking progress on the nameserver API; I had to supply enough code for the devs to repro the issue.
+
+The GraphQL ecosystem has coelesced around a few popular packages that come with a **lot** of bloat (unnecessary dependecies). I don't like that so I've always used the initial graphql-js module with a few plugins for my projects. Forking [gql](https://github.com/deno-libs/gql/issues/14#issuecomment-1472911645) to attempt adding a feature made me realize I should just combine my specifications to make a standalone package. This is open-source at [NetOpWibby/alpha](https://github.com/NetOpWibby/alpha) and as a Deno package at [x/alpha](https://deno.land/x/alpha). The README is lackluster there as well, haha! I have other things to work on and **I** know how these work so I suppose you should consider these modules preview releases.
+
+High-level, here are the components necessary for beachfront/:
+
+### pastry server
+- nameserver + api
+
+### pastry ui
+- dashboard + api
+
+### beachfront
+- app + api
+
+Expect more modules to be created as development continues.
+
+
+
+## Funding…
+
+…is hard to come by. And here's why: education.
+
+In the past year I have pitched ~100 VCs and/or their firms, and have been rejected by them all; even the crypto‑friendly ones. Looking at the companies in their portfolios, it became apparent that the Ethereum community has done an excellent job at communicating its strengths over its legacy counterparts (the global financial system and art collecting world, to name just two). Non‑technical (normie) VCs certainly understand money and more than likely have an appreciation for art (Ethereum also benefits from the FOMO culture that runs rampant in VC circles, but that's a rant for another day). Another strength the Ethereum community has is an abundance of tooling. Developer experience is not just great, it's *flourishing*. The better Ethereum projects have fantastic art direction too. To put it bluntly, a lot of what I see is fucking awesome.
+
+Contrast Ethereum with Handshake and we're not even close.
+
+- Money is sexy. Internet infrastructure is drab, often hideous.
+- `<username>.eth` is cute. `eth.<username>` is confusing.
+- A naming system on a blockchain designed for money is fun. A blockchain naming system designed to secure the DNS is weird.
+- On Ethereum, NFTs are media. On Handshake, NFTs are TLDs.
+
+You get the point.
+
+(The weird thing is that these Ethereum projects are anchored to a legacy DNS…and everyone's okay with it…I guess `.io` and `.xyz` is all you need.)
+
+When pitching VCs as a Handshake‑focused startup, you have to 1) explain what Handshake is and 2) why they should care **and** 3) explain why they should care about your startup. It doesn't matter that Namecheap, Encirca, and Porkbun sell domains with Handshake TLDs. It doesn't matter that our community has ICANN *and* legacy domainer folks who love and believe in the vision of Handshake (and own TLDs). Our bubble is quite small…we gotta get out there! Easy to say but who's gonna pay for that? Luckily, we have a handful of community members holding meetings to address our marketing shortcomings.
+
+As for me, I'm going to launch a site at `handshakeready.org` that details what I feel is required for Handshake's success, and community progress towards several goals. Personally, I find the challenge of educating exciting. Regular reminder that **every** participant in Handshake is a director. We don't have to wait for a DAO or a large influx of cash and resources to do anything; just do it.
+
+My VC outreach ask was for a million dollars in funding so I can work on Neuenet and beachfront/ full‑time with additional top‑notch help…a drop in the bucket compared to the revenue that comes from helping transform the Internet. Regardless of my failure in that department, my newfound focus and progress thus far makes for a launch this year almost assured. You don't know what you don't know so, no promises (cross your fingers)!

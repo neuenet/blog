@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/devlog-001",
+            "url": "https://blog.neuenet.com/post/devlog-001",
+            "title": "Devlog №.1",
+            "summary": "Press START to continue",
+            "date_modified": "2023-05-01T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/year-in-review",
             "url": "https://blog.neuenet.com/post/year-in-review",
             "title": "2022 Year in Review",

@@ -10,11 +10,15 @@
   }
 
   &__tagline {
-    border-bottom: 1px solid var(--inc-gray-3);
+    border-bottom: 1px solid;
     margin-top: -3rem;
 
     @media (prefers-color-scheme: dark) {
       border-bottom-color: var(--inc-gray-8);
+    }
+
+    @media (prefers-color-scheme: light) {
+      border-bottom-color: var(--inc-gray-3);
     }
 
     @media (min-width: 601px) {
@@ -39,9 +43,7 @@ p {
   text-align: center;
 
   code {
-    background-color: var(--inc-gray-0);
-    border: 1px solid var(--inc-gray-2);
-    color: var(--inc-gray-7);
+    border: 1px solid;
     padding-right: 4px;
     padding-left: 4px;
 
@@ -49,6 +51,12 @@ p {
       background-color: var(--inc-gray-8);
       border: 1px solid var(--inc-gray-8);
       color: var(--inc-gray-2);
+    }
+
+    @media (prefers-color-scheme: light) {
+      background-color: var(--inc-gray-0);
+      border: 1px solid var(--inc-gray-2);
+      color: var(--inc-gray-7);
     }
   }
 }

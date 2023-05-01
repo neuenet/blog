@@ -2,10 +2,12 @@
 
 .header {
   &__billboard {
-    background-image: url("/media/svg/wordmark-internet.svg");
-
     @media (prefers-color-scheme: dark) {
       background-image: url("/media/svg/wordmark-internet-light.svg");
+    }
+
+    @media (prefers-color-scheme: light) {
+      background-image: url("/media/svg/wordmark-internet.svg");
     }
 
     &::after {
@@ -27,10 +29,14 @@
   }
 
   &__tagline {
-    border-bottom: 1px solid var(--inc-gray-3);
+    border-bottom: 1px solid;
 
     @media (prefers-color-scheme: dark) {
       border-bottom-color: var(--inc-gray-8);
+    }
+
+    @media (prefers-color-scheme: light) {
+      border-bottom-color: var(--inc-gray-3);
     }
 
     @media (min-width: 1501px) {
