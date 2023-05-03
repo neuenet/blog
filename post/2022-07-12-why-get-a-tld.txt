@@ -11,7 +11,7 @@ Most of the use cases I'll present here revolve around community (handshakes req
 
 ## Network States
 
-Inspired by the emergence of DAOs (decentralized autonomous organizations) and the incredible crowdfunding they've been able to generate, I began to wonder how an entire country could form from one. Would it be digital‑only? Would passports be NFTs? How much identifiable data should be in such a passport, and what if it needs updating? How would healthcare work and look like? Perhaps most importantly, _what would you call it?_ Maybe...**Di**gital **Na**tion **Fo**r **Al**l? Or, Dinafoal/DINAFOAL?
+Inspired by the emergence of DAOs (decentralized autonomous organizations) and the incredible crowdfunding they've been able to generate, I began to wonder how an entire country could form from one. Would it be digital‑only? Would passports be NFTs? How much identifiable data should be in such a passport, and what if it needs updating? How would healthcare work and look like? Perhaps most importantly, _what would you call it?_ Maybe…**Di**gital **Na**tion **Fo**r **Al**l? Or, Dinafoal/DINAFOAL?
 
 ### `dinafoal/` domain ideas
 
@@ -31,7 +31,7 @@ The city controls the pricing for domain registration, with priority given to re
 
 Imagine that for businesses:
 
-- Local non-profits could get their domain renewal fee waived
+- Local non‑profits could get their domain renewal fee waived
 - Small businesses could pay $50/year
 - Corporations (banks, department stores, cinemas, &c) pay much more…your choice!
 

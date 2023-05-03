@@ -5,7 +5,7 @@ tags:  guide
 tldr:  Imagine doing this manually…
 ---
 
-It's not uncommon to see Handshake portfolios with hundreds of TLDs. The secondary market is thriving, and that's how we've been able to augment ours with some **fantastic** names. Unfortunately, what _is_ (currently) uncommon are websites utilizing Handshake...and **securely** (with DANE and DNSSEC). To be fair, documentation is semi‑scarce and the builders are busy building. To say we are early is still an understatement.
+It's not uncommon to see Handshake portfolios with hundreds of TLDs. The secondary market is thriving, and that's how we've been able to augment ours with some **fantastic** names. Unfortunately, what _is_ (currently) uncommon are websites utilizing Handshake…and **securely** (with DANE and DNSSEC). To be fair, documentation is semi‑scarce and the builders are busy building. To say we are early is still an understatement.
 
 Anyhoo, pondering the inbalance of registered names versus live sites **and _also_** wishing every one of our TLDs had a website led us to figure out a way to quickly generate appealing websites to prospective visitors. After all, typing one of our TLDs into your (Handshake‑resolving) browser and seeing:
 
@@ -17,11 +17,11 @@ xn--cr8h:80 no such host
 letsdane/v0.6.1 - fingertip (v0.0.3)
 ```
 
-...is kinda wack. It'd be better if you saw something like:
+…is kinda wack. It'd be better if you saw something like:
 
 ![](/media/post/2022/generating-900-sites-02.png "screenshot of https://👽/, in Safari browser")
 
-The repo for the tool we created is [here](https://github.com/neuenet/splash "link to the Github repo for our splash page creator"), in case you want to just skip ahead. Read on for in-depth/behind-the-scenes info.
+The repo for the tool we created is [here](https://github.com/neuenet/splash "link to the Github repo for our splash page creator"), in case you want to just skip ahead. Read on for in‑depth/behind‑the‑scenes info.
 
 ---
 
@@ -55,6 +55,6 @@ build
 └─ …
 ```
 
-On our webserver, we literally dumped the contents of `build` into a folder in the `/var/www/` directory. This was the easiest and least time-consuming part of this process. We still had to update records on the Handshake blockchain and create certificates...which resulted in another tool being created.
+On our webserver, we literally dumped the contents of `build` into a folder in the `/var/www/` directory. This was the easiest and least time-consuming part of this process. We still had to update records on the Handshake blockchain and create certificates…which resulted in another tool being created.
 
 In the next post of this series, we're gonna generate certificates for the sites on our webserver and the Handshake blockchain.

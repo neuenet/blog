@@ -5,7 +5,7 @@ tags:  opinion
 tldr:  Fallacious doublethink from UD abounds
 ---
 
-For the uninitiated, Unstoppable Domains is a VC-backed company creating TLDs on Ethereum. They've proven to be litigious towards competition, citing things like "first to market," "having more money," and so on. This week, the NamesCon conference is in full effect in Austin, TX and yesterday there was a spirited conversation during the "Domaining on the Blockchain" panel. Present were Chris Jeffrey (goes by "JJ", he's a prolific Handshake contributor), Chjango Unchained (executive director of the dWeb Foundation), Brad Kam (co‑founder of Unstoppable Domains), Thomas Barrett (president of Encirca), and Ray King (CEO of Porkbun).
+For the uninitiated, Unstoppable Domains is a VC‑backed company creating TLDs on Ethereum. They've proven to be litigious towards competition, citing things like "first to market," "having more money," and so on. This week, the NamesCon conference is in full effect in Austin, TX and yesterday there was a spirited conversation during the "Domaining on the Blockchain" panel. Present were Chris Jeffrey (goes by "JJ", he's a prolific Handshake contributor), Chjango Unchained (executive director of the dWeb Foundation), Brad Kam (co‑founder of Unstoppable Domains), Thomas Barrett (president of Encirca), and Ray King (CEO of Porkbun).
 
 Andrew from DomainNameWire already laid out [some of the conversation](https://domainnamewire.com/2022/08/31/sparks-fly-at-blockchain-domain-panel-during-namescon/ "Sparks fly at blockchain domain panel during NamesCon") that ensued so I won't retread here. A [video](https://www.youtube.com/watch?v=HZLrqhKpy9Q "NamesCon 2022 - “Domaining on the Blockchain” - Unstoppable Handshake Fiasco") of the panel appeared on YouTube and what follows are my thoughts.
 
@@ -91,7 +91,7 @@ Here are some choice quotes from the Handshake community:
 >
 > **◕‿◕/**: they're saying "we deserve to win the rights to the names we want, because we went through this social convention process that we believe is the most true, the rest of you are just attacking us unjustly"
 >
-> **◕‿◕/**: but that reveals a sort of hypocrisy in that worldview... they're saying their preferred scheme for control should win, disregarding that there are other communities with separate ideas for how it should work. but he understands that ultimately social adoption of one or the other is what will determine a winner and a loser
+> **◕‿◕/**: but that reveals a sort of hypocrisy in that worldview… they're saying their preferred scheme for control should win, disregarding that there are other communities with separate ideas for how it should work. but he understands that ultimately social adoption of one or the other is what will determine a winner and a loser
 
 > **mnbitcoinatm/**: My sole issue is with the litigation. It's hypocritical for UD to say "it's a social convention" or "let the market or product usefulness decide", but then kick it over to be settled in court. If HNS has no authority or usefulness (as measured by adoption), as they suggest, why would they care if this useless blockchain is doing its own thing and has a few registrars hooked in?
 

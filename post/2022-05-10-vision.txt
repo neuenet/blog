@@ -24,7 +24,7 @@ Lastly, like Deus Ex, [MMBN1 predicted the future](https://www.reddit.com/r/Batt
 - Personalized pages you can access with friends' permission
 - Dark web
 
-(To be clear, literature has made similar predictions since the dawn of science fiction but **I** never saw a collection of theorized technologies in one place before MMBN...mind you, this was the year after Y2K.)
+(To be clear, literature has made similar predictions since the dawn of science fiction but **I** never saw a collection of theorized technologies in one place before MMBN…mind you, this was the year after Y2K.)
 
 [![](/media/post/2022/vision-01.png "MegaMan.EXE in the Cyberworld, MMBN1")](https://lparchive.org/Mega-Man-Battle-Network/Update%2005/ "Mega Man Battle Network Let's Play by Epee Em")
 
@@ -36,7 +36,7 @@ This system would need to be opt‑in, have a few levels of enhancement, and be 
 
 Around the same time, I wondered what the name of this new Internet would be. What about the URL? So, I [asked Jeeves](https://en.wikipedia.org/wiki/Ask.com "Wikipedia article about Ask Jeeves") a series of questions about creating a domain that didn't yet exist until I realized what I _really_ wanted to ask was, "how do I make a new TLD?" I was presented with ICANN's website that detailed the process of paying them $185,000 with the application for the TLD you wanted to create. The domain name I settled upon was probably `network.space` but `.space` didn't exist yet (I also wanted `.galaxy`, `.universe`, &c)! To a high‑school kid, $185,000 might as well been $1,000,000 and, it seemed like that was just the cost of doing business in the "grown‑up world."
 
-It was then that I decided my future career would be doing _something_ with computers so I could earn enough money to buy a TLD...
+It was then that I decided my future career would be doing _something_ with computers so I could earn enough money to buy a TLD…
 
 Unfortunately, a failed college run, recession detour, and several years working for doomed startups brought me no closer to affording a TLD from ICANN. But, in late 2019 I discovered Handshake and its existence put several things into perspective. Here's a timeline of projects I've created leading up to that point (with varying levels of completeness):
 
@@ -62,13 +62,13 @@ And, a list of projects I never initiated but have done immense research on (and
 - email client and platform
   - JMAP should be the norm, what's wrong with you people?!
 - computing hardware
-  - many form factors, all working together...and open‑source 🫣
+  - many form factors, all working together…and open‑source 🫣
 - video‑sharing site
   - for one to survive these days, you need a gimmick and _another product that actually makes money_ because this will **not**
 - search engine
   - competing with Google is fool‑hardy, I've got a better way to attack this 😎
 - TDML
-  - three‑dimensional markup language...gotta make it easy for people to scaffold their 3D homepage
+  - three‑dimensional markup language…gotta make it easy for people to scaffold their 3D homepage
 - NFT platform and marketplace
   - you can do more with your collected art than stare at them on your phone 👀
 
@@ -123,7 +123,7 @@ Let's take a look at the current way to go about getting a TLD with ICANN versus
 | **Initial cost** | $`185,000` application fee | Pay what you want, it's a [Vickrey auction](https://en.wikipedia.org/wiki/Vickrey_auction "Wikipedia article about Vickrey auctions"). |
 | **Refund when losing auction?** | Hah, nope! ICANN needs it, for reasons. 🧐 | Yes, minus the mining fee (less than pennies). |
 | **Renewal&nbsp;cost** | $`25,000` annually         | < `2` cents bi‑annually |
-| **Timeframe**    | Wait for the next gTLD round, plus 5 years...so, a decade? | 10 days from idea to auction close, or immediately via secondary market. |
+| **Timeframe**    | Wait for the next gTLD round, plus 5 years…so, a decade? | 10 days from idea to auction close, or immediately via secondary market. |
 
 Here are some Handshake TLDs from our portfolio and the cost to acquire them:
 
@@ -137,13 +137,13 @@ Here are some Handshake TLDs from our portfolio and the cost to acquire them:
 | `socii/`   | `0.4` HNS          | $`0.05`        |
 | `👽/` | `1` HNS | $`0.19` | <!--/ emoji is not fixed width so why bother matching formatting /-->
 
-Fun fact: I opened the auction for `neuenet/` but either fell asleep or forgot to bid right before auction close (HNS is required to open auctions so I typically spent the smallest amount allowed on Namebase, 0.4 HNS, to initiate them and then follow up with a true bid). Luckily I was able to snag it on the secondary market for cheap. `editors/` on the other hand, was a pricier secondary market buy but well worth it. For `socii/` I was both the highest and second-highest bid...five cents is basically free.
+Fun fact: I opened the auction for `neuenet/` but either fell asleep or forgot to bid right before auction close (HNS is required to open auctions so I typically spent the smallest amount allowed on Namebase, 0.4 HNS, to initiate them and then follow up with a true bid). Luckily I was able to snag it on the secondary market for cheap. `editors/` on the other hand, was a pricier secondary market buy but well worth it. For `socii/` I was both the highest and second-highest bid…five cents is basically free.
 
 As you can imagine, discovering within Handshake, a way to achieve a long postponed dream felt nothing short of miraculous.
 
 You may be thinking, "Okay, but hasn't this been tried before? What makes Handshake so different?"
 
-What I've gathered is, while alt‑roots have come and gone over time, Handshake came along at a **great** time; with a bunch of [investment](https://handshake.org/grant-sponsors/ "list of Handshake sponsors") and an [incentivized rollout](https://medium.com/coinmonks/understanding-the-handshake-airdrop-and-reserved-names-428d9e90b560 "Medium article about the Handshake Airdrop") to get developers interested in building upon it...and it's working.
+What I've gathered is, while alt‑roots have come and gone over time, Handshake came along at a **great** time; with a bunch of [investment](https://handshake.org/grant-sponsors/ "list of Handshake sponsors") and an [incentivized rollout](https://medium.com/coinmonks/understanding-the-handshake-airdrop-and-reserved-names-428d9e90b560 "Medium article about the Handshake Airdrop") to get developers interested in building upon it…and it's working.
 
 We've got ICANN‑accredited registrars like Porkbun, Encirca, and Namecheap selling Handshake domains. Namecheap even [owns a handful](https://www.namecheap.com/domains/handshake-domains/ "Namecheap's list of Handshake TLDs they own") of Handshake TLDs! The parent company of Porkbun, Top Level Design, operates `.gay` and `.wiki` on the ICANN side and [claimed those names](https://twitter.com/DotTheShake/status/1521992691172716547 "tweet from The Shake about Top Level Design claiming their Handshake names") on Handshake. On top of that, we've got **plenty** of Handshake resolvers for your OS/platform of choice: macOS, Linux, Windows, iOS, Android, whatever. If that's not support, I don't know what is.
 

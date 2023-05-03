@@ -7,7 +7,7 @@ tldr:  Roll up your sleeves, it's cron time!
 
 The [IANA](https://www.iana.org/domains "link to IANA's Domain Name Services page") (Internet Assigned Numbers Authority) operates and maintains a number of key aspects of the DNS, including the root zone, and the `.int` and `.arpa` domains.
 
-In addition to that, they maintain [a list](https://data.iana.org/TLD/tlds-alpha-by-domain.txt "the DNS TLD list, organized alphabetically") of all the current TLDs available on the DNS. Having such a list handy is useful for anyone who wishes to build tools for the internet, and low-friction data availability is the best way to empower builders.
+In addition to that, they maintain [a list](https://data.iana.org/TLD/tlds-alpha-by-domain.txt "the DNS TLD list, organized alphabetically") of all the current TLDs available on the DNS. Having such a list handy is useful for anyone who wishes to build tools for the internet, and low‑friction data availability is the best way to empower builders.
 
 With that in mind, we wanted to emulate this good practice with a list of Handshake TLDs we manage at Neuenet.
 
@@ -27,7 +27,7 @@ mv tmp.txt ${OUTPUT}
 chmod -R 744 ${OUTPUT}
 ```
 
-At a high-level, we use zsh scripting to look inside a directory on our server and print the name of every subdirectory to a text file.
+At a high‑level, we use zsh scripting to look inside a directory on our server and print the name of every subdirectory to a text file.
 
 In the `/tld` directory, there are subdirectories for every one of our 900+ TLDs and within _those_ there are `.crt` and `.key` files. **Yes, we made websites for every TLD** (writeup and tool for doing this yourself, coming soon). Anyhoo, no need for a database because we have the information we need in the filesystem!
 

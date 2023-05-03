@@ -5,7 +5,7 @@ tags:  fyi
 tldr:  You're gonna need another use case
 ---
 
-While creating websites and certs for all the Handshake TLDs in our portfolio, I came to an unfortunate realization...none of the numerical TLDs resolved. At least, not in the way I expected them to.
+While creating websites and certs for all the Handshake TLDs in our portfolio, I came to an unfortunate realization…none of the numerical TLDs resolved. At least, not in the way I expected them to.
 
 | URL               | Resolves     |
 | ----------------- | ------------ |
@@ -17,13 +17,13 @@ While creating websites and certs for all the Handshake TLDs in our portfolio, I
 
 TLDs with at least one ASCII character in them resolves: [07d0eb](https://07d0eb/ "link to the splash page for '07d0eb'"), [2oo](https://2oo/ "link to the splash page for '2oo'"), [5oo](https://5oo/ "link to the splash page for '5oo'"), and [50p](https://50p/ "link to the splash page for '50p'") are fine. You may be thinking, "but wait, 0x01 and 0xa0 fit that criteria!" Well, not exactly.
 
-Numbers (or, literals) that start with `0x` are hexidecimal integers. `0x01` has a decimal value of `1` while `0xa0` translates to a non-breaking space in Unicode. Basically, computers already use these symbols for more important tasks than giving us cool-looking TLDs to sell SLDs on.
+Numbers (or, literals) that start with `0x` are hexidecimal integers. `0x01` has a decimal value of `1` while `0xa0` translates to a non‑breaking space in Unicode. Basically, computers already use these symbols for more important tasks than giving us cool‑looking TLDs to sell SLDs on.
 
 From the perspective of browser/web server resolution, numerical TLDs are worthless because they're unreachable and therefore unusable.
 
-From the perspectives of identity, community, and decentralized logins...they're intriguing.
+From the perspectives of identity, community, and decentralized logins…they're intriguing.
 
-Using `10000/` as an example, let's say it's a community of just 10,000 people. Every SLD is a number ranging from 1-10,000. Maybe they have an olde web domain like `10000.club`, to facilitate events. `#.10000/` could be their NFT membership proof for exclusive or behind-the-scenes access, whatever.
+Using `10000/` as an example, let's say it's a community of just 10,000 people. Every SLD is a number ranging from 1‑10,000. Maybe they have an olde web domain like `10000.club`, to facilitate events. `#.10000/` could be their NFT membership proof for exclusive or behind‑the‑scenes access, whatever.
 
 ---
 

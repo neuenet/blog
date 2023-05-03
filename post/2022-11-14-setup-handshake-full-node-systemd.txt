@@ -29,7 +29,7 @@ mkdir .hsd && touch .hsd/hsd.conf
 nano .hsd/hsd.conf
 ```
 
-If you have specific configuration, it's much better to put them in this file instead of passing command-line arguments. However, some parameters are only possible as command-line arguments. Review the [hsd documentation](https://hsd-dev.org/guides/config.html "hsd configuration documentation") for more.
+If you have specific configuration, it's much better to put them in this file instead of passing command‑line arguments. However, some parameters are only possible as command‑line arguments. Review the [hsd documentation](https://hsd-dev.org/guides/config.html "hsd configuration documentation") for more.
 
 Here's the contents of my hsd configuration for [lookup.tx](http://lookup.tx "Handshake transaction explorer"), a Handshake transaction explorer:
 
@@ -40,7 +40,7 @@ index-tx: true
 log-level: warning
 ```
 
-I actually had the `log-level` set to "debug" so I could monitor the sync progress, and changed it back to "warning" when initial sync completed.
+I actually had the `log‑level` set to "debug" so I could monitor the sync progress, and changed it back to "warning" when initial sync completed.
 
 
 
@@ -74,7 +74,7 @@ If your hsd installation location isn't `/mnt` like mine, you'll need to update 
 
 Whenever you create or modify `systemd` services, you have to reload with `systemctl daemon-reload`. Then, enable your new service with `systemctl enable hsd.service`. Finally, to start `hsd.service`, run `systemctl start hsd`.
 
-Here are more (self-explanatory) commands you'll find useful:
+Here are more (self‑explanatory) commands you'll find useful:
 
 - `service hsd status`
 - `systemctl stop hsd`

@@ -11,13 +11,13 @@ This post is the first in what will become a monthly series about what we're wor
 
 ## The Pivot
 
-Mere days before [Superlink](https://superlink.me "real name digital IDs as blockchain domains")'s launch, I came to the realization that what I was working on — a registry platform for Handshake TLD owners — wasn't going to be effective at bringing more eyeballs, interest, and potential profits to the ecosystem. I mean, sure, it'd make a splash but I want to make a **cannonball**-sized splash. The idea of putting a year's worth of work on the backburner rankled me but I knew it was the correct thing to do. Besides, all the work I've done thus far is great and quite useable; it'll serve as the backbone for the registrar, beachfront/. So, that's the current focus; from B2B to B2C.
+Mere days before [Superlink](https://superlink.me "real name digital IDs as blockchain domains")'s launch, I came to the realization that what I was working on — a registry platform for Handshake TLD owners — wasn't going to be effective at bringing more eyeballs, interest, and potential profits to the ecosystem. I mean, sure, it'd make a splash but I want to make a **cannonball**‑sized splash. The idea of putting a year's worth of work on the backburner rankled me but I knew it was the correct thing to do. Besides, all the work I've done thus far is great and quite useable; it'll serve as the backbone for the registrar, beachfront/. So, that's the current focus; from B2B to B2C.
 
 I have no idea when I'll launch Pastry, the registry platform, but here's a look at the bottom of the homepage (top half is in flux).
 
 ![](/media/post/2023/devlog-01.png "pastry website")
 
-The sooner the registrar launches, the sooner we can get more domain registrations and **websites**. As it stands now, the Handshake ecosystem is severely lacking in ease of use in many aspects, website deployment especially. Pushing for native browser support doesn't make sense if there aren't any (non‑placeholder) websites — where's the incentive for browser vendors? "Embed an alt-root SPV resolver in our browser for 10 websites? **Nah.**"
+The sooner the registrar launches, the sooner we can get more domain registrations and **websites**. As it stands now, the Handshake ecosystem is severely lacking in ease of use in many aspects, website deployment especially. Pushing for native browser support doesn't make sense if there aren't any (non‑placeholder) websites — where's the incentive for browser vendors? "Embed an alt‑root SPV resolver in our browser for 10 websites? **Nah.**"
 
 
 
@@ -35,7 +35,7 @@ Thus, work on the registrar was paused to work on registry components…which le
 
 ## Neue Code
 
-I am obsessed with writing Good Code™ and making the switch to TypeScript several years ago has forced me to be better. On a whim, I decided to try Deno when working on the registry and now I cannot go back to Node.js for backend work. SvelteKit, my frontend framework of choice, currently requires Node.js but Deno support is forthcoming. Another perk of Deno that I love is binary compilation. If you've ever installed a Go application like Caddy, you know how great it is. Everything I'm building will eventually be open-source and the fewer moving parts, the better.
+I am obsessed with writing Good Code™ and making the switch to TypeScript several years ago has forced me to be better. On a whim, I decided to try Deno when working on the registry and now I cannot go back to Node.js for backend work. SvelteKit, my frontend framework of choice, currently requires Node.js but Deno support is forthcoming. Another perk of Deno that I love is binary compilation. If you've ever installed a Go application like Caddy, you know how great it is. Everything I'm building will eventually be open‑source and the fewer moving parts, the better.
 
 Here's the backend stack:
 - Deno (TypeScript)
@@ -49,9 +49,9 @@ Frontend stack:
 
 One of the annoying/exciting things about building new things is…sometimes you gotta build it yourself.
 
-I could've went with existing nameserver software but I just didn't like any of them for various reasons. I forked the wonderful [mafintosh/dns-packet](https://github.com/mafintosh/dns-packet) module to make it Deno-native, typed, and modular. There isn't a proper README but you can use it today at [x/packet](https://deno.land/x/packet) or checkout the source at [NetOpWibby/packet](https://github.com/NetOpWibby/packet). The registry nameserver relies on this module because dogfooding is the best way to work on software. If you want the sneakiest of sneak peeks, I opened [an issue](https://github.com/edgedb/edgedb-js/issues/577) in the EdgeDB repo that's currently blocking progress on the nameserver API; I had to supply enough code for the devs to repro the issue.
+I could've went with existing nameserver software but I just didn't like any of them for various reasons. I forked the wonderful [mafintosh/dns‑packet](https://github.com/mafintosh/dns-packet) module to make it Deno‑native, typed, and modular. There isn't a proper README but you can use it today at [x/packet](https://deno.land/x/packet) or checkout the source at [NetOpWibby/packet](https://github.com/NetOpWibby/packet). The registry nameserver relies on this module because dogfooding is the best way to work on software. If you want the sneakiest of sneak peeks, I opened [an issue](https://github.com/edgedb/edgedb-js/issues/577) in the EdgeDB repo that's currently blocking progress on the nameserver API; I had to supply enough code for the devs to repro the issue.
 
-The GraphQL ecosystem has coelesced around a few popular packages that come with a **lot** of bloat (unnecessary dependecies). I don't like that so I've always used the initial graphql-js module with a few plugins for my projects. Forking [gql](https://github.com/deno-libs/gql/issues/14#issuecomment-1472911645) to attempt adding a feature made me realize I should just combine my specifications to make a standalone package. This is open-source at [NetOpWibby/alpha](https://github.com/NetOpWibby/alpha) and as a Deno package at [x/alpha](https://deno.land/x/alpha). The README is lackluster there as well, haha! I have other things to work on and **I** know how these work so I suppose you should consider these modules preview releases.
+The GraphQL ecosystem has coelesced around a few popular packages that come with a **lot** of bloat (unnecessary dependecies). I don't like that so I've always used the initial graphql‑js module with a few plugins for my projects. Forking [gql](https://github.com/deno-libs/gql/issues/14#issuecomment-1472911645) to attempt adding a feature made me realize I should just combine my specifications to make a standalone package. This is open-source at [NetOpWibby/alpha](https://github.com/NetOpWibby/alpha) and as a Deno package at [x/alpha](https://deno.land/x/alpha). The README is lackluster there as well, haha! I have other things to work on and **I** know how these work so I suppose you should consider these modules preview releases.
 
 High-level, here are the components necessary for beachfront/:
 
