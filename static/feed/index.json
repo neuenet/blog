@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet/post/devlog-002",
+            "url": "https://blog.neuenet/post/devlog-002",
+            "title": "Devlog №.2",
+            "summary": "Know your market",
+            "date_modified": "2023-05-31T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
             "id": "https://blog.neuenet/post/devlog-001",
             "url": "https://blog.neuenet/post/devlog-001",
             "title": "Devlog №.1",

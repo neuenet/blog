@@ -1,0 +1,61 @@
+---
+title: Devlog №.2
+date:  2023-06-01
+tags:  newsroom
+tldr:  Know your market
+---
+
+Hey, another month! At the time of this post, a Handshake hard-fork discussion is taking place on Twitter Spaces. There's no opposition to keeping ICANN TLDs reserved **indefinitely**, and there's almost universal agreement that only the top 100 or so Alexa names should remain reserved. What _is_ contentious is what to do with tokens currently locked on chain. ~17 million dollars worth of HNS is just…there. Sitting. At Handshake's launch, those tokens were reserved for developers on Github who had at least 10 followers. This incentive was to encourage development but Handshake didn't launch with a lot of fanfare so most developers who qualify never learned of this and most likely have updated their PGP keys at this point.
+
+Anyhoo, there's talk about multi‑sigs, DAOs, and the like. Does claiming those tokens pass the Howey Test? Who will manage the DAO? As you can expect, conversations are heated. Hopefully, cooler heads will prevail and the community can align on what's best to revitalize and steward the blockchain.
+
+---
+
+## Office Hours
+
+Two months ago I saw a VC person on Twitter post a link to their office hours (they basically give you 30 minutes to talk about your startup and offer advice). When the meeting finally happened, the poor woman was confused as hell. I basically spent the entire call explaining how the internet works ("a hosts file is basically like a phone book for the internet"), what Handshake is ("a new phonebook with the old numbers in it"), why it exists, and why I'm building on it. Excrutiatingly painful is how I would describe the exchange. When we wrapped up she asked if I had any questions for her; I asked what she does when she decides to buy a domain…she hadn't done so in at least 12 years.
+
+This experience taught me a number of things:
+
+- Wow, I **suck** at explaining things.
+- There are people out there who don't **ever** think about domains, online identity, or _anything_ relating to it.
+- …WTF, I **suck** at explaining things.
+
+I followed up that meeting with a chat with a successful startup friend and confirmed my sneaking suspicions:
+
+- No one knows what a "Neue Internet" is.
+  - It's cute for your branding but use "Web3" instead. I know you don't like but do you want people to understand what you're building or not?
+- Don't mention blockchain unless you absolutely have to.
+  - When people buy a domain today, they don't have to know who ICANN is.
+
+
+
+## Funding?!
+
+Earlier this month I got a DM from a CFO‑level former co-worker about potential angel investment. I enjoyed working with him in our previous roles so I think this is gonna be a good fit. He setup a meeting with someone who sold his DNS-based company to a large corporation and I'm looking forward to gaining his insight primarily, his support secondarily.
+
+To prepare for this meeting, I thought to DM an O.G. domainer active in the Handshake space to see if he had availability to dissect my work. For an hour and some change, he confirmed my assumptions, challenged others, and let me know where I was lacking or just plain wrong. It's feels great when other people are excited about what you're building. While beachfront/ is flashy and gorgeous, I'm excited to get back to working on pastry after it launches; big brain ideas came out of that meeting (and, future investment meetings).
+
+
+
+## Refactor Complete
+
+I spent most of last month refactoring beachfront/'s API to replace RethinkDB code with EdgeDB. I also took the time to examine the way I original API worked and definitely swore at past me a few times. The code is nearly error‑free (LOL), save for some slightly annoying [issue](https://github.com/denoland/deno/issues/14797#issuecomment-1567647930)s beyond my control. There's also a third‑party module I'm using that'll be forked so I can eliminate a `// @ts-ignore` comment; that'll happen before the next devlog.
+
+
+
+## Oh look, it's 🏖️
+
+A bit of history about this emoji. [I bid](https://niami/domain/xn--km8h "🏖️ on Niami") a mere 10 HNS on it back in January 2021 and must've fallen asleep because I lost the auction. It was sold for 11k HNS later that year and has been out of reach…until now.
+
+The previous owner of this emoji sent a DM offering a trade for a glyph emoji I put on Shakestation ([HNS](https://shakestation/ "ShakeStation on Handshake") / [DNS](https://shakestation.io/ "ShakeStation on DNS")). I jumped at the chance and two days later we had our trades completed.
+
+> **SIDEBAR:** If anyone wants to build an L2 atop Handshake to make TLD swaps near-instant, it'd be greatly appreciated by the community. Sounds like a worthy bounty to get paid for via a multi‑sig resulting from the onchain fund clawback. Just sayin'. 👀
+
+I haven't yet figured out what to do with this new emoji but a quick idea would be a short URL generator for beachfront/ customers. Something like `https://buy.🏖️/eat.lunch/` for marketplace listings? `https://netopwibby.🏖️/` to see my portfolio? Some NFT project reminiscient of GTA: Vice City? Idk, will probably teach myself 3D modelling to prototype some things.
+
+
+
+## What's Next?
+
+Last month's devlog spent a significant chunk talking about education; with the API refactor complete, I feel like I can relax and spend a week or two creating content and designing a site for just that. It feels like the "productive era" that folks wanted for the past two summers is finally upon us. Eskimo and Nathan Woodburn keep cranking things out, Rithvik's been prolific in releasing things too. I hope my Handshake resource site can bridge the gap and encourage folks to see Handshake as a viable platform worth their time and expertise to build on.
