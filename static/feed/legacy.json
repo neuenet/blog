@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/devlog-003",
+            "url": "https://blog.neuenet.com/post/devlog-003",
+            "title": "Devlog №.3",
+            "summary": "Small wins",
+            "date_modified": "2023-07-01T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/devlog-002",
             "url": "https://blog.neuenet.com/post/devlog-002",
             "title": "Devlog №.2",

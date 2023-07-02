@@ -21,6 +21,9 @@ export async function showHome() {
       posts: JSON.parse(await Deno.readTextFile("post.map.json"))
     }),
     description: "A blog about the DNS, Handshake, and the internet at large.",
-    head: `<link rel="stylesheet" href="/home.css"/>`
+    head: `
+      <link rel="stylesheet" href="/home.css"/>
+      <title>the internet, by Neuenet/ &middot; a blog</title>
+    `
   });
 }

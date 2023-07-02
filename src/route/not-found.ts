@@ -23,6 +23,9 @@ export const showNotFound: HandlerFunc = async(context) => {
       content: `<code>${pathname}</code>`
     }),
     description: "A blog about the DNS, Handshake, and the internet at large.",
-    head: `<link rel="stylesheet" href="/not-found.css"/>`
+    head: `
+      <link rel="stylesheet" href="/not-found.css"/>
+      <title>the internet, by Neuenet/ &middot; a blog</title>
+    `
   });
 };

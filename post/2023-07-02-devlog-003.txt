@@ -1,0 +1,53 @@
+---
+title: Devlog №.3
+date:  2023-07-02
+tags:  newsroom
+tldr:  Small wins
+---
+
+In greater Handshake‑land, soft‑fork conversations and polls are still taking place and the community is coalescing around consensus. There's renewed focus on increasing diversity within our mining pools — quite a capital‑intensive undertaking, but not insurmountable. We'll figure it out. Lastly, the long‑standing court case for <code>wallet/</code> gained a small [victory](https://domainnamewire.com/2023/06/26/court-handshake-wallet-owner-can-intervene-in-unstoppable-domains-lawsuit "Court: Handshake .wallet owner can intervene in Unstoppable Domains lawsuit
+"); the owner of <code>wallet/</code> can intervene in the lawsuit posed by StoppableDomains that doesn't name him, but threatens his property.
+
+Code‑wise, updates were minimal this month. I designed and built the interface for a hardware product that had a tight turnaround time. Now I'm on a short vacation 😎. Regularly scheduled updates should return to previous speeds in July.
+
+---
+
+
+
+## Collaboration with [REDACTED]
+
+The beginning of June started with a couple video chats with the owner of a single‑letter TLD about our shared interests, potential synergies, and ultimate collaboration. I shared my outline for beachfront/, Neuenet, and future products in the ecosystem. Their concerns about current hosting options echo what I've heard from other owners with amazing TLDs; Namebase doesn't empower them to build great experiences, Impervious' pay‑once model isn't a sustainable business model, and cobbling together different softwares to build a registrar requires trial, error, and technical acuity.
+
+Building a registry/registrar platform would make sense but I think a better way is to launch a fantastic registry/registrar built on said platform **first**, to showcase its capabilities. If your TLD has a legendary rating on [Niami](https://www.niami.io/domains/legendary/0 "Legendary TLDs  on Niami") and you're interested in potential beta (if not alpha) access to the tech that'll power beachfront/, reach out! I'd love to hear your frustrations and learn how to make the best product for **you**.
+
+
+
+## [HandshakeReady.org](https://handshakeready.org)
+
+Last month I mentioned creating a Handshake resource site and its purpose was to "bridge the gap and encourage folks to see Handshake as a viable platform worth their time and expertise to build on." I hope I've done that with [HandshakeReady.org](https://handshakeready.org). The infosite outlines the 3 key areas Handshake needs to focus on before it's truly "ready": availability, usability, and scalability. High‑level, that means:
+
+1) We need actual websites, not just splash pages.
+2) We need to make it super easy to **do** step 1.
+3) We need to make it easier to view Handshake sites.
+
+[Eskimo](https://twitter.com/eskimo_dev "Eskimo on Twitter") pointed out in various Discord channels that Handshake doesn't need to beg browsers to integrate _us_. Browsers should instead support [DANE](https://en.wikipedia.org/wiki/DNS-based_Authentication_of_Named_Entities "Wikipedia entry for DANE"), which is part of what powers Handshake _anyway_ **and** it strengthens the rest of the internet as well. The other half is convincing VPNs/ISPs to support Handshake ([NextDNS](https://nextdns.io) is a nice VPN/firewall that supports Handshake, toggle it in settings). Should these two things happen, resolvers would only be needed in special circumstances.
+
+
+
+## Black Ambition prize
+
+Several months ago, [Jamar](https://twitter.com/Jamma_Jamar "Jamar on Twitter") and I applied for Pharrell's [Black Ambition prize](https://www.blackambitionprize.com) and we finally got a response…we didn't make it to the next round **but** we did get a significant amount of money in DigitalOcean and AWS credits. Sorry Linode, but it's time to move over my Handshake full node and existing 900+ splash pages. Savings are savings. 🤷🏾‍♂️
+
+
+
+## Alternate funding path
+
+I've never been lucky enough to have things handed to me and I've always felt a great deal of satisfaction when taking matters into my own hands. A potential investor meeting keeps falling through for whatever reason so I thought hard about what I could build in my downtime to potentially generate revenue. I'd rather not pre‑announce what this product is, but it involves something I'm super passionate about and miss from the olde days of what we're now calling Web 1.0…it shouldn't take me nearly as long to build, can be infinitely improved upon with excellent features, no one else is working on this problem, and it benefits from Handshake integration. It's rare for all of these points to align.
+
+The most difficult part, as usual for me, is the visual design. I try to create something new with every site release. Websites can be works of art, after all.
+
+
+
+## What's Next?
+
+The past week or so was busy for me and this will continue when I get back from vacation. My database of choice, [EdgeDB](https://www.edgedb.com/blog/edgedb-3-0 "EdgeDB 3.0"), saw a substantial release as did my front‑end framework of choice, [Svelte](https://svelte.dev/blog/svelte-4 "Svelte 4"). Minor blockers are resolved. I should be able to finish the API for the nameserver to start testing it in production. Finally. With any luck, I'll settle upon a compelling design for this secret project I have in mind…AND LAUNCH IT. I'm yelling at me, not you, perfectionism is a harmful trait for a developer.

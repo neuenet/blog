@@ -82,6 +82,9 @@ export const showPost: HandlerFunc = async(context) => {
       tldr
     }),
     description: tldr,
-    head: `<link rel="stylesheet" href="/post.css"/>`
+    head: `
+      <link rel="stylesheet" href="/post.css"/>
+      <title>the internet, by Neuenet/ &middot; ${title}</title>
+    `
   });
 };
