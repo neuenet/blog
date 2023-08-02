@@ -1,0 +1,101 @@
+---
+title: Devlog №.4
+date:  2023-08-01
+tags:  newsroom
+tldr:  Buff it out
+---
+
+Where has the time gone?! August already, huh? No intro this time, it's been relatively quiet in the Handshake space. Hop in!
+
+---
+
+
+
+## Nameserver gets beefier
+
+Functionally, our nameserver has been solid. The GraphQL API functionality is coming along. Currently, the API supports creating `A`, `AAAA`, `CAA`, `CNAME`, `DNAME`, `DNSKEY`, `NS`, and `PTR` records. Querying DNS records via GraphQL sounds weird but here's how it looks:
+
+```
+query GetRecord($params: RecordQuery) {
+  record(params: $params) {
+    detail {
+      class
+      data {
+        ... on DataString {
+          data
+        }
+        ... on DataObject {
+          flags
+          issuerCritical
+          tag
+          value
+        }
+      }
+      name
+      ttl
+      type
+    }
+  }
+}
+```
+
+Example values you'd send with the above query:
+
+```json
+{
+  params: {
+    name: "blog.neuenet",
+    type: "AAAA"
+  }
+}
+```
+
+Even if you're familiar with GraphQL, the ellipsis in the query might look weird.
+
+Basically, `detail.data` could either be a string (applies to a handful of resource records) or an object (applies to every other resource record) so with GraphQL, we represent those possibilities with a union. `DataString` and `DataObject` make up our `Data` union.
+
+Here's an example response to the query we shared above:
+
+```json
+{
+  data: {
+    record: {
+      detail: [
+        {
+          class: "IN",
+          data: {
+            data: "2001:19f0:6001:412e:5400:03ff:fe7f:978d"
+          },
+          name: "blog.neuenet",
+          ttl: 300,
+          type: "AAAA"
+        }
+      ]
+    }
+  }
+}
+```
+
+_Ideally_, there wouldn't be a nested `data.data` param within `detail` in the response, but that's something I can abstract away with a future client library for this nameserver.
+
+### `ANY` support
+
+Well. This was a pain to understand and build but worth it. You're basically cycling through a database for **every** resource record pertaining to a specific domain name. As you can imagine, this kind of request gets expensive. No wonder most nameservers don't implement/enable this (at least not for public-facing nameservers)!
+
+![](/media/post/2023/devlog-004-a.png "dig @localhost -p 5300 blog.neuenet ANY")
+
+### Library update
+
+[`packet`](https://deno.land/x/packet) does the heavy lifting for the nameserver and needed an [update](https://github.com/NetOpWibby/packet/commit/0ebe2761a289cce7c30e3f39b2c9de576168abce). Certain resource records (`DNSKEY`, `DS`, `NSEC3`, `NULL`, `RRSIG`, and `TXT`) require keys to be buffers. Figuring out how to store buffers with the API was annoying so I decided to store those keys as strings and offload the buffer conversion to the library.
+
+Success? 🤷🏾‍♂️ Works for me!
+
+
+
+## What's Next?
+
+This morning, I had a call with someone who represents an ICANN TLD. I gotta say, it's quite refreshing to exchange ideas and insight with someone who **understands** the DNS _and_ blockchain. For the Handshake community, or those interested in it; I can tell you that we're on the right track. No other blockchain‑based naming system cares about the DNS. No other system cares about providing real‑world utility for their ~~cults~~ communities.
+
+As for beachfront/, there's only 14 more resource records to implement in the nameserver API (with CRUD operations). After that, integration with the app and a bunch of UI work. Our guiding principle is the question, "how can we improve upon the domain experience?" If you're a domain owner who is unsatisfied with how things are with Web2 registrars, let us know on Twitter [@beachfront_](https://twitter.com/@beachfront_) or [@neuenet](https://twitter.com/@neuenet)!
+
+We're building for the Internet so your input matters.

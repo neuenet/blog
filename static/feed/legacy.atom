@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.neuenet.com/</id>
     <title>neue internet</title>
-    <updated>2023-07-02T16:08:35.645Z</updated>
+    <updated>2023-08-02T01:47:36.934Z</updated>
     <generator>The 'Net</generator>
     <author>
         <name>Paul Anthony Webb</name>
@@ -14,10 +14,21 @@
     <icon>https://blog.neuenet.com/favicon.svg</icon>
     <rights>All Rights Reserved, Neuenet</rights>
     <entry>
+        <title type="html"><![CDATA[Devlog №.4]]></title>
+        <id>https://blog.neuenet.com/post/devlog-004</id>
+        <link href="https://blog.neuenet.com/post/devlog-004"/>
+        <updated>2023-08-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Buff it out]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Devlog №.3]]></title>
         <id>https://blog.neuenet.com/post/devlog-003</id>
         <link href="https://blog.neuenet.com/post/devlog-003"/>
-        <updated>2023-07-01T00:00:00.000Z</updated>
+        <updated>2023-07-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Small wins]]></summary>
         <author>
             <name>Paul Anthony Webb</name>

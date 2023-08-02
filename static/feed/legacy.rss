@@ -4,17 +4,24 @@
         <title>neue internet</title>
         <link>https://blog.neuenet.com/</link>
         <description>A blog about the DNS, Handshake, and the internet at large.</description>
-        <lastBuildDate>Sun, 02 Jul 2023 16:08:35 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 02 Aug 2023 01:47:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The 'Net</generator>
         <language>en</language>
         <copyright>All Rights Reserved, Neuenet</copyright>
         <atom:link href="https://blog.neuenet.com/feed/legacy.rss" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[Devlog №.4]]></title>
+            <link>https://blog.neuenet.com/post/devlog-004</link>
+            <guid>https://blog.neuenet.com/post/devlog-004</guid>
+            <pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Buff it out]]></description>
+        </item>
+        <item>
             <title><![CDATA[Devlog №.3]]></title>
             <link>https://blog.neuenet.com/post/devlog-003</link>
             <guid>https://blog.neuenet.com/post/devlog-003</guid>
-            <pubDate>Sat, 01 Jul 2023 00:00:00 GMT</pubDate>
+            <pubDate>Sun, 02 Jul 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Small wins]]></description>
         </item>
         <item>
