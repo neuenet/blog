@@ -1,0 +1,174 @@
+---
+title: Devlog №.5
+date:  2023-10-19
+tags:  newsroom
+tldr:  Know your products
+---
+
+Last month I was intending to write about my revamped pitch deck for beachfront/ (Neuenet's registrar in progress) and marketing Handshake. Unfortunately, I realized I let _all_ my DNSSEC keys expire. YIKES. Instead of breaking out my haphazard script to generate them all again, I decided to Do It Right&trade;. I'm 80% done…why is the remaining 20% **always** the most complicated?
+
+In broader Handshake news, Namecheap launched [HNS.id](https://hns.id) to some fanfare; it offers decentralized SLDs (second-level domains, or just "domains") via an Optimism (Ethereum L2) bridge. So, you'll need Metamask to use it. Hopefully, they'll add support for other Ethereum wallets. Oh, and StoppableDomains [dropped their lawsuit](https://domainnamewire.com/2023/09/15/unstoppable-domains-drops-lawsuit-against-handshake-wallet-owner/ "Unstoppable Domains drops lawsuit against Handshake .wallet owner") against `.wallet`! And, subsequently [let go](https://twitter.com/magodotx/status/1712859169227764057) of a number of employees. It would appear that spending a million dollars over the course of a year for at least a half‑dozen lawyers puts a damper on public sentiment, revenue, and shareholder patience. 😐
+
+Anyhoo, let's jump into this long overdue update. Lots of learnings to share!
+
+---
+
+
+
+## Selling the Invisible
+
+As mentioned in previous devlogs, (lack of) marketing is one of Handshake's challenges. Most developers are not natural marketers and I am no exception. At some point this year, I saw a recommendedation for Harry Beckwith's book "[Selling the Invisible: A Field Guide to Modern Marketing](https://kagi.com/search?q=selling+the+invisible&r=us&sh=f7NObvzaK0tgnGpA9uMFhg)." I found so many nuggets of wisdom that nearly every page (244 of 'em!) is highlighted. It was difficult _not_ to think of Handshake and our own efforts. At the same time, I decided to rework the pitch deck for beachfront/.
+
+![](/media/post/2023/devlog-005-a.png "first slide of beachfront's new pitch deck")
+
+Looks good, right? Well…it depends who you are. Millennials like myself remember "going online" and that sweet dialup sound, so the call to action in the first module is great! However, there are adults who were born well _after_ that, which means I'm gonna have to rework this again to be more inclusive. My kids, for instance, are used to everything they watch being in 4K. When viewing 720p content they cringe because they can see pixels. 😵‍💫 Basically, they've **always** been online. Through that lens, the messaging falls flat.
+
+I find the exercise of creating a pitch deck useful because it forces you to truly think about your product. Your company's reason for being. Our purpose? Succinctly (long version [here](/post/vision "The purpose of Neuenet and where we're going")):
+
+> Neuenet is building infrastructure for a post‑ICANN world.
+
+It sounds intriguing enough for people to ask follow‑up questions, without me needing to explain upfront what Handshake is.
+
+
+
+## Nameserver Production Testing
+
+For the past week, it's been operating on a live server and hasn't crashed. What a ride it was to get there!
+
+As you can imagine, the internet is a wild place. Bots, malware, and deplorables are rampant but most of us are protected/shielded by systems and software. When writing your own, these things smack you in the face. I began logging the data packets and remote IPs that were contacting my nameserver to track down exactly what it chokes on.
+
+Initially, my code looked like this:
+
+```ts
+  // …
+
+  for await(const pack of socket) {
+    const [data, remoteAddr] = pack;
+    const query = packet.decode(new Buffer(data));
+    const { questions } = query;
+
+    if (!query.questions || !query.questions.length) /// ignore random packets
+      await socket.send(packet.encode(query), remoteAddr);
+
+    const client = createClient({ database: "nameserver" }); // TODO: make .env variable
+
+    // …
+  }
+```
+
+It blocked most issues but I still had to deal with malformed packets. Turns out, even requests via `dig` were throwing errors in my nameserver's underlying `packet` library. Could be an issue with the library but for now, this works:
+
+```ts
+  // …
+
+  for await(const pack of socket) {
+    const [data, remoteAddr] = pack;
+
+    /// Skip the current pack and continue with the next iteration
+    if (data.length < 30)
+      continue; // TODO: not sure if small packets are malicious…confirm this
+
+    let query;
+
+    try {
+      /// first-pass validation
+      query = packet.decode(new Buffer(data));
+    } catch(_) {
+      /// malformed data is ignored
+      continue;
+    }
+
+    const { questions } = query;
+
+    if (!query.questions || !query.questions.length) /// ignore random packets
+      await socket.send(packet.encode(query), remoteAddr);
+
+    const client = createClient({ database: "nameserver" }); // TODO: make .env variable
+
+    // …
+  }
+```
+
+In prior testing, I found that small packets **always** induced failure. In addition, I figured putting packet decoding in a try/catch statement would finally eliminate issues…so far, so good!
+
+Here's a snapshot of the queries sent to my nameserver, sorted by count per domain:
+
+| Name                               | Type  | Class | Query Count |
+| ---------------------------------- | :---: | :---: | ----------: |
+| version.bind                       |  TXT  | CH    |          85 |
+| sl                                 |  ANY  | IN    |          71 |
+| ip.parrotdns.com                   |   A   | IN    |          12 |
+| apple.com                          |  TXT  | IN    |          11 |
+| dnsscan.shadowserver.org           |   A   | IN    |           6 |
+| testip.internet-census.org         |   A   | IN    |           5 |
+| 500px.com                          |  TXT  | IN    |           4 |
+| weather.com                        |  TXT  | IN    |           3 |
+| rr-mirror.research.nawrocki.berlin |   A   | IN    |           3 |
+| clients1.google.com                |   A   | IN    |           3 |
+| com                                |  ANY  | IN    |           3 |
+| 89b8b0b1.asertdnsresearch.com      |   A   | IN    |           2 |
+| 89b8b0b1.example.com               |   A   | IN    |           2 |
+| realtor.com                        |  TXT  | IN    |           2 |
+| hp.com                             |  TXT  | IN    |           2 |
+| google.com                         |  TXT  | IN    |           2 |
+| fiverr.com                         |  TXT  | IN    |           2 |
+| collectd.org                       |  ANY  | IN    |           2 |
+| dnsavailable.xyz                   |   A   | IN    |           2 |
+| tmz.com                            |  TXT  | IN    |           2 |
+| nordstrom.com                      |  TXT  | IN    |           1 |
+| nokia.com                          |  TXT  | IN    |           1 |
+| mz.gov.pl                          |  ANY  | IN    |           1 |
+| wired.com                          |  TXT  | IN    |           1 |
+| top-lijstjes.nl                    |  ANY  | IN    |           1 |
+| inel.gov                           |  ANY  | IN    |           1 |
+| id.server                          |  TXT  | CH    |           1 |
+| cyberresilience.io                 |   A   | IN    |           1 |
+| cisco.com                          |  TXT  | IN    |           1 |
+| bodybuilding.com                   |  TXT  | IN    |           1 |
+| aaa.stage.no.offence               |  TXT  | IN    |           1 |
+| aaa.stage.whatever                 |  TXT  | IN    |           1 |
+| a.gtld-servers.net                 |   A   | IN    |           1 |
+
+This has been an interesting way to discover new websites. I really should have a logging system in place, rather than relying on `console.log` and `journalctl -u nameserver > nameserver.logs.txt` for exporting.
+
+
+
+## Dolo
+
+The DNSSEC key generation script I mentioned at the beginning of this post is a fork of Matthew Zipkin's excellent [handout repo](https://github.com/pinheadmz/handout "combination authoritative nameserver and webserver for Handshake"). My script parsed a CSV-file to generate keys, TLD records for the blockchain, and a BIND-style zonefile for my entire TLD portfolio. I still want all that, but within a UI as well.
+
+![](/media/post/2023/devlog-005-b.png "dolo desktop application")
+
+After you input your TLD and nameserver IP address, the following files and folders are generated in your system's Documents directory (pretend your TLD is "examplename"):
+
+```
+Dolo
+└─ examplename
+   ├─ ksk
+   │  ├─ Kexamplename.+003+27500.key
+   │  └─ Kexamplename.+003+27500.private
+   ├─ tls
+   │  ├─ examplename.crt
+   │  └─ examplename.key
+   ├─ zsk
+   │  ├─ Kexamplename.+003+32951.key
+   │  └─ Kexamplename.+003+32951.private
+   ├─ output.toml
+   └─ records.toml
+```
+
+The application will then render DNS records for you to copy/paste into your Handshake wallet and wherever you host your server. That last 20% I'm working on? Signing DNS records. There are no such modules on npm so I'll have to do it myself.
+
+Oh! And even though this application is a fork of my script which was a fork of another project, I've had to rewrite everything because Tauri doesn't do NodeJS. On the plus side, Dolo's codebase doesn't have **deeply** nested dependencies like handout does.
+
+My application name comes from "[dolos](https://en.wikipedia.org/wiki/Dolos "Wikipedia article about dolos")," which are concrete structures you'll see on a coastline. Solid, secure foundation…get it? TLD security with DNSSEC? 😎 Yeah, anyway.
+
+
+
+## What's Next?
+
+My nameserver has been solid in production. I'm amazed, proud, and quite frankly, _relieved_. DNS is not sexy or cool or fun. Well, it's kinda cool but good grief! Its API has Creation and Reads working fine, I just need Updates and Deletion (CRUD, if you weren't paying attention). It also needs (more robust) validation. Documentation has been solid as well, I document as I go to help future me.
+
+My immediate priority is finishing work on Dolo to get my 900+ (placeholder) sites resolving with valid DNSSEC keys. And after that? **The fun part;** connecting the beachfront/ (registrar) API to the nameserver.
+
+Doing things properly is time-consuming, but worth it.

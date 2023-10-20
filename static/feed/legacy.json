@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/devlog-005",
+            "url": "https://blog.neuenet.com/post/devlog-005",
+            "title": "Devlog №.5",
+            "summary": "Know your products",
+            "date_modified": "2023-10-19T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/devlog-004",
             "url": "https://blog.neuenet.com/post/devlog-004",
             "title": "Devlog №.4",
