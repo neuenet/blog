@@ -4,12 +4,19 @@
         <title>neue internet</title>
         <link>https://blog.neuenet.com/</link>
         <description>A blog about the DNS, Handshake, and the internet at large.</description>
-        <lastBuildDate>Fri, 20 Oct 2023 00:09:42 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Dec 2023 21:59:45 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The 'Net</generator>
         <language>en</language>
         <copyright>All Rights Reserved, Neuenet</copyright>
         <atom:link href="https://blog.neuenet.com/feed/legacy.rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Product Launch: Dolo]]></title>
+            <link>https://blog.neuenet.com/post/product-launch-dolo</link>
+            <guid>https://blog.neuenet.com/post/product-launch-dolo</guid>
+            <pubDate>Fri, 01 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Generate certs and DNS records for your TLDs]]></description>
+        </item>
         <item>
             <title><![CDATA[Devlog №.5]]></title>
             <link>https://blog.neuenet.com/post/devlog-005</link>

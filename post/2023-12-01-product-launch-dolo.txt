@@ -1,0 +1,60 @@
+---
+title: "Product Launch: Dolo"
+date:  2023-12-01
+tags:  newsroom
+tldr:  Generate certs and DNS records for your TLDs
+---
+
+I'm interrupting our devlog series to announce that we have a new desktop app!
+
+Introducing Dolo: the Domain Ownership License Orchestrator.
+
+![](/media/post/2023/product-launch-01.png "Dolo's export screen")
+
+[Get it on Github here](https://github.com/neuenet/dolo-desktop) (standalone site coming soon)!
+
+---
+
+## Why does this exist?
+
+A major pain point for those of us super early in Handshake, is getting TLDs online. Trading them and selling to each is easy. Actually _doing something_ with them is non‑trivial. Dolo is but a tool to make things a bit easier.
+
+As I mentioned in [my last post](/post/devlog-005), I realized my certs and keys for all my Handshake sites expired. I felt the need to graduate from my hacky scripts and turn that misfortune into something productive.
+
+
+
+## What can it do?
+
+You've seen aleady seen the second tab of the app (scroll up). This is where you'll see all of your TLDs, in reverse‑chronological order. By default, your most recent TLD will have **Wallet Records** and **DNS Records** sections open, for easy copy/paste. The icon in the upper right of every input field copies the contents of that input to your system's clipboard.
+
+The first tab is where you'll input your TLD in ASCII (punycode) format, and the IPv4 address of your nameserver.
+
+![](/media/post/2023/product-launch-02.png "Dolo's import screen")
+
+Simple enough, right?
+
+The third tab is actually just a button. Click it, and a Dolo directory will appear. When the application boots, it checks your system to see if a `Dolo` folder exists in your `Documents` directory. If not, it'll get created. A config file is also created/checked when the app boots. Currently, the config file is only tracking which view you were last looking at (so it can open to that same view when you boot the app again), and the desired theme.
+
+Oh yes, we've got themes; ShakeStation and The Shake:
+
+![](/media/post/2023/product-launch-03.png "Dolo, with ShakeStation colors")
+
+![](/media/post/2023/product-launch-04.png "Dolo, with The Shake colors")
+
+Niami and Namebase don't have distinctive color schemes so a theme didn't make sense for them…but maybe a SuperLink one will? 👀
+
+
+
+## What's next?
+
+There's **SO** much more I want to add to this app. See that extra space to the right in the app? Tips and tricks can go there, especially when you're viewing RRSIG records…what the heck is even that?!
+
+![](/media/post/2023/product-launch-05.png "Dolo, with RRSIG in sight. I still don't know what it means")
+
+The app chokes on emoji (you'll have to close the app, delete the emoji folder in your local Dolo directory, and restart the app). It also doesn't know what to do with IPv6 IP addresses. Oh, and the app should support listing more than one IP/nameserver. I also need to update the README with useful information (this blog post will have to do for now), make a website, &c. The list goes on.
+
+Working on this app has been an exercise in much frustration but also love. Many thanks to Zipkin for his original code that spawned my hacky scripts, and Rithvik, Nathan, Eskimo, Scott, and Spencer for helping me push through to the finish line. Complaining on Discord about your code is occasionally useful.
+
+Lastly, work on Dolo has been supported by a micro‑grant from [OpenSystems](https://opensystems.dev). You can view my [original proposal on Github](https://github.com/opensystm/handshake-micro-grants/issues/8).
+
+Dolo is freely available for the Handshake community! Get more sites online, let's make the Web weird and interesting…y'know, like it used to be.

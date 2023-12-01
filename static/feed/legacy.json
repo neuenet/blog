@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/product-launch-dolo",
+            "url": "https://blog.neuenet.com/post/product-launch-dolo",
+            "title": "Product Launch: Dolo",
+            "summary": "Generate certs and DNS records for your TLDs",
+            "date_modified": "2023-12-01T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/devlog-005",
             "url": "https://blog.neuenet.com/post/devlog-005",
             "title": "Devlog №.5",
