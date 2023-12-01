@@ -11,7 +11,7 @@ Introducing Dolo: the Domain Ownership License Orchestrator.
 
 ![](/media/post/2023/product-launch-01.png "Dolo's export screen")
 
-[Get it on Github here](https://github.com/neuenet/dolo-desktop) (standalone site coming soon)!
+[Get it on Github here](https://github.com/neuenet/dolo-desktop/releases/tag/2023.12.01) (standalone site coming soon)!
 
 ---
 
