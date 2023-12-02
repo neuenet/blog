@@ -7,7 +7,7 @@ tldr:  Know your products
 
 Last month I was intending to write about my revamped pitch deck for beachfront/ (Neuenet's registrar in progress) and marketing Handshake. Unfortunately, I realized I let _all_ my DNSSEC keys expire. YIKES. Instead of breaking out my haphazard script to generate them all again, I decided to Do It Right&trade;. I'm 80% done…why is the remaining 20% **always** the most complicated?
 
-In broader Handshake news, Namecheap launched [HNS.id](https://hns.id) to some fanfare; it offers decentralized SLDs (second-level domains, or just "domains") via an Optimism (Ethereum L2) bridge. So, you'll need Metamask to use it. Hopefully, they'll add support for other Ethereum wallets. Oh, and StoppableDomains [dropped their lawsuit](https://domainnamewire.com/2023/09/15/unstoppable-domains-drops-lawsuit-against-handshake-wallet-owner/ "Unstoppable Domains drops lawsuit against Handshake .wallet owner") against `.wallet`! And, subsequently [let go](https://twitter.com/magodotx/status/1712859169227764057) of a number of employees. It would appear that spending a million dollars over the course of a year for at least a half‑dozen lawyers puts a damper on public sentiment, revenue, and shareholder patience. 😐
+In broader Handshake news, Namecheap launched [HNS.id](https://hns.id) to some fanfare; it offers decentralized SLDs (second‑level domains, or just "domains") via an Optimism (Ethereum L2) bridge. So, you'll need Metamask to use it. Hopefully, they'll add support for other Ethereum wallets. Oh, and StoppableDomains [dropped their lawsuit](https://domainnamewire.com/2023/09/15/unstoppable-domains-drops-lawsuit-against-handshake-wallet-owner/ "Unstoppable Domains drops lawsuit against Handshake .wallet owner") against `.wallet`! And, subsequently [let go](https://twitter.com/magodotx/status/1712859169227764057) of a number of employees. It would appear that spending a million dollars over the course of a year for at least a half‑dozen lawyers puts a damper on public sentiment, revenue, and shareholder patience. 😐
 
 Anyhoo, let's jump into this long overdue update. Lots of learnings to share!
 
@@ -71,7 +71,7 @@ It blocked most issues but I still had to deal with malformed packets. Turns out
     let query;
 
     try {
-      /// first-pass validation
+      /// first‑pass validation
       query = packet.decode(new Buffer(data));
     } catch(_) {
       /// malformed data is ignored
@@ -135,7 +135,7 @@ This has been an interesting way to discover new websites. I really should have 
 
 ## Dolo
 
-The DNSSEC key generation script I mentioned at the beginning of this post is a fork of Matthew Zipkin's excellent [handout repo](https://github.com/pinheadmz/handout "combination authoritative nameserver and webserver for Handshake"). My script parsed a CSV-file to generate keys, TLD records for the blockchain, and a BIND-style zonefile for my entire TLD portfolio. I still want all that, but within a UI as well.
+The DNSSEC key generation script I mentioned at the beginning of this post is a fork of Matthew Zipkin's excellent [handout repo](https://github.com/pinheadmz/handout "combination authoritative nameserver and webserver for Handshake"). My script parsed a CSV‑file to generate keys, TLD records for the blockchain, and a BIND‑style zonefile for my entire TLD portfolio. I still want all that, but within a UI as well.
 
 ![](/media/post/2023/devlog-005-b.png "dolo desktop application")
 
@@ -171,4 +171,4 @@ My nameserver has been solid in production. I'm amazed, proud, and quite frankly
 
 My immediate priority is finishing work on Dolo to get my 900+ (placeholder) sites resolving with valid DNSSEC keys. And after that? **The fun part;** connecting the beachfront/ (registrar) API to the nameserver.
 
-Doing things properly is time-consuming, but worth it.
+Doing things properly is time‑consuming, but worth it.

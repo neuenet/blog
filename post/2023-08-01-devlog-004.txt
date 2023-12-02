@@ -80,7 +80,7 @@ _Ideally_, there wouldn't be a nested `data.data` param within `detail` in the r
 
 ### `ANY` support
 
-Well. This was a pain to understand and build but worth it. You're basically cycling through a database for **every** resource record pertaining to a specific domain name. As you can imagine, this kind of request gets expensive. No wonder most nameservers don't implement/enable this (at least not for public-facing nameservers)!
+Well. This was a pain to understand and build but worth it. You're basically cycling through a database for **every** resource record pertaining to a specific domain name. As you can imagine, this kind of request gets expensive. No wonder most nameservers don't implement/enable this (at least not for public‑facing nameservers)!
 
 ![](/media/post/2023/devlog-004-a.png "dig @localhost -p 5300 blog.neuenet ANY")
 

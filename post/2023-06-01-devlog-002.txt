@@ -50,7 +50,7 @@ A bit of history about this emoji. [I bid](https://niami/domain/xn--km8h "🏖�
 
 The previous owner of this emoji sent a DM offering a trade for a glyph emoji I put on Shakestation ([HNS](https://shakestation/ "ShakeStation on Handshake") / [DNS](https://shakestation.io/ "ShakeStation on DNS")). I jumped at the chance and two days later we had our trades completed.
 
-> **SIDEBAR:** If anyone wants to build an L2 atop Handshake to make TLD swaps near-instant, it'd be greatly appreciated by the community. Sounds like a worthy bounty to get paid for via a multi‑sig resulting from the onchain fund clawback. Just sayin'. 👀
+> **SIDEBAR:** If anyone wants to build an L2 atop Handshake to make TLD swaps near‑instant, it'd be greatly appreciated by the community. Sounds like a worthy bounty to get paid for via a multi‑sig resulting from the onchain fund clawback. Just sayin'. 👀
 
 I haven't yet figured out what to do with this new emoji but a quick idea would be a short URL generator for beachfront/ customers. Something like `https://buy.🏖️/eat.lunch/` for marketplace listings? `https://netopwibby.🏖️/` to see my portfolio? Some NFT project reminiscient of GTA: Vice City? Idk, will probably teach myself 3D modelling to prototype some things.
 
