@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet/post/devlog-006",
+            "url": "https://blog.neuenet/post/devlog-006",
+            "title": "Devlog №.6 (Year In Review)",
+            "summary": "Gearing up for the future",
+            "date_modified": "2023-12-29T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
             "id": "https://blog.neuenet/post/product-launch-dolo",
             "url": "https://blog.neuenet/post/product-launch-dolo",
             "title": "Product Launch: Dolo",

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.neuenet.com/</id>
     <title>neue internet</title>
-    <updated>2023-12-01T21:59:45.021Z</updated>
+    <updated>2023-12-30T23:20:46.938Z</updated>
     <generator>The 'Net</generator>
     <author>
         <name>Paul Anthony Webb</name>
@@ -13,6 +13,17 @@
     <subtitle>A blog about the DNS, Handshake, and the internet at large.</subtitle>
     <icon>https://blog.neuenet.com/favicon.svg</icon>
     <rights>All Rights Reserved, Neuenet</rights>
+    <entry>
+        <title type="html"><![CDATA[Devlog №.6 (Year In Review)]]></title>
+        <id>https://blog.neuenet.com/post/devlog-006</id>
+        <link href="https://blog.neuenet.com/post/devlog-006"/>
+        <updated>2023-12-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Gearing up for the future]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Product Launch: Dolo]]></title>
         <id>https://blog.neuenet.com/post/product-launch-dolo</id>

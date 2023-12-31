@@ -1,0 +1,80 @@
+---
+title: Devlog №.6 (Year In Review)
+date:  2023-12-30
+tags:  newsroom
+tldr:  Gearing up for the future
+---
+
+It's funny…when you're living day to day, it doesn't seem like much of anything happens. Putting a marco lens on a year actually reveals a lot.
+
+In broader Handshake news, StoppableDomains dropped their lawsuit against Scott Florsck. They even went so far as to [pay](https://twitter.com/unstoppableweb/status/1699816275046711611 "UD buys .sats from @dotsats") a [community member](https://twitter.com/dotsats/status/1700064703202861223 "Why @dotsats sold to UD") for his `sats/` TLD for an unknown hefty sum. If you can't beat 'em, join 'em, right?
+
+However, Florsck isn't backing down; the next court date is scheduled for July **2025**. Are they stalling to raise another VC round to keep lawyers on retainer? Will StoppableDomains even be in business then? Only time will tell. During the summer, [my personal Twitter](https://twitter.com/NetOpWibby "15 years, gone...so long @NetOpWibby") got banned indefinitely for "platform manipulation." That was due to either being a vocal supporter of [#StoppableDomains](https://twitter.com/search?q=%23StoppableDomains) or tagging Elon whenever a bot tagged me on his "bot‑free platform" (which was a LOT)…it is what it is.
+
+A last‑minute soft‑fork went live without much issue (heated debates eventually became consensus). Why a fork? The name claim period for TLDs that were reserved for top Alexa sites is ending soon. Handshake is coming into its [fourth year](https://calendar.htools.work) and a good number of those top Alexa sites are defunct and/or don't care about Handshake. In February 2024, [those names](https://docs.google.com/spreadsheets/d/1DG0kBpLbLB2zKlJW2F7ANkk8SDbADpUa3sQuEY62_Bw/edit#gid=0) will finally become available for auction (existing ICANN TLDs remain reserved). The HNS token has been rising in price as people stack up for the bidding frenzies. We've seen astronomical bids over the past few years but I have a feeling things are gonna get even more exciting.
+
+---
+
+## Started a devlog series
+
+At the top of this year I decided to "[build in public](/post/devlog-001 "Devlog №.1")" for a few reasons:
+
+1) inform the community on what we're working on (and why things are taking so long)
+2) document the process
+3) get people from other communities interested in Handshake (synergies are strong)
+
+I'm inside my own head too much. Even though I'm a frequent note‑taker, those notes are spread across the digital and analog worlds in snippets. Long‑form blogging is a way to make the disjointed, cohesive. This devlog has also helped ensure I'm not straying too far from tentpole features and goals.
+
+
+
+## Acquired 🏖️
+
+This emoji was always "the one that got away" and I never knew who owned it, until the owner came to me for [a trade](/post/devlog-002 "Devlog №.2").
+
+My initial instinct for emoji TLDs is to do something NFT‑related but that seems rather…basic? Boring? Just…not enough. A virtual world would be nice but now I'm saying too much. I need to build a team for what I envision.
+
+
+
+## Launched HandshakeReady.org
+
+![](/media/post/2023/devlog-006-a.png "HandshakeReady.org homepage")
+
+[HandshakeReady.org](https://handshakeready.org) is resource site whose (primary) purpose is to bridge the gap and encourage folks to see Handshake as a viable platform worth their time and expertise to build on. Secondary purpose is to answer community members who cry out "wen browser?!11!" every other month. To paraphrase the site:
+
+1) We need actual websites, not just splash pages (availability).
+2) We need to make it super easy to do step 1 (usability).
+3) We need to make it easier to view Handshake sites (scalability).
+
+Everything else will fall into place. Besides, we should ask browsers to natively implement DANE instead of a Handshake light client (the light client could be a browser plugin instead).
+
+
+
+## Won DigitalOcean credits
+
+While we didn't advance in further rounds of Pharrell's [Black Ambition prize](https://www.blackambitionprize.com), Neuenet impressed the team enough to win DigitalOcean/AWS credits. A lil' bit of [social proof](/post/devlog-003 "Devlog №.3") is still winning.
+
+
+
+## Built and cancelled a nameserver
+
+Part of my inspiration for [building a nameserver](/post/devlog-005 "Devlog №.5") was to better understand the DNS. Written in Deno and integrating GraphQL, it is truly a modern nameserver. My understanding has improved enough to realize there is **much** I still do not know. Testing in production went well enough until signing keys entered the picture for DNSSEC. These are physical files that require regular rotation. I got stumped and decided to table the nameserver project for now.
+
+I look forward to getting back to it.
+
+
+
+## Launched Dolo
+
+![](/media/post/2023/devlog-006-b.png "Dolo homepage")
+
+[Dolo](/post/product-launch-dolo)'s backronym is "Domain Ownership License Orchestrator." In short, it generates certs and keys for your TLD, alongside a bind9‑style zone file. While optimized for macOS, the app is cross‑platform.
+
+![](/media/post/2023/devlog-006-c.png "Dolo homepage")
+
+
+
+## What's Next
+
+After a year of explorations, pivots, advisor calls, and more explorations, I'm more than ready to build and launch the beachfront/ registrar.
+
+The Handshake community has been in a holding pattern for a while; talking, planning, trying things out, &c. It's time to build sites and services. It's time to develop our digital real estate. It's time to help create an internet we actually _want_ to be part of.

@@ -2,6 +2,6 @@
   "imports": {
     "/": "./",
     "./": "./",
-    "std/": "https://deno.land/std@0.195.0/"
+    "std/": "https://deno.land/std@0.210.0/"
   }
 }
