@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet/post/devlog-007",
+            "url": "https://blog.neuenet/post/devlog-007",
+            "title": "Devlog №.7",
+            "summary": "What's Happening?",
+            "date_modified": "2024-01-30T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
             "id": "https://blog.neuenet/post/devlog-006",
             "url": "https://blog.neuenet/post/devlog-006",
             "title": "Devlog №.6 (Year In Review)",

@@ -1,0 +1,59 @@
+---
+title: Devlog №.7
+date:  2024-01-31
+tags:  newsroom
+tldr:  What's Happening?
+---
+
+The Happening is upon us! For the uninitiated, "[The Happening](https://calendar.htools.work/)" occurs in two days from this posting; it's when _thousands_ of TLDs that were reserved for claiming by the owners of top Alexa sites over the past four years, become available (time flies, huh?). Since the reserved list snapshot at Handshake's inception, many of these sites have ceased to exist.
+
+However, Namebase isn't allowing their customers to bid on a subset of names. From [their site](https://support.namebase.io/en/articles/8885986-trademark-restricted-names):
+
+> To honor intellectual property rights and prevent legal conflicts, Namebase restricts the sale of registered trademarks on its platform.
+
+If you want to be a **true** degenerate and bid on those names anyway, you can use [Shakestation](https://twitter.com/Shake_Station/status/1752558909334618585) or a self‑custody wallet like [Bob Wallet](https://bobwallet.io) (it takes a few days to get fully synced with the Handshake blockchain so, do this sooner than later).
+
+I expect the bidding to get **wild**. Here's a handful of excellent names becoming available: `action/`, `ask/`, `chip/`, `code/`, `core/`, `file/`, `hi/`, `mail/`, `ok/`, `public/`, `sports/`, `time/`, `tool/`, `web/`, and more! Will **I** be joining in the fun? Absolutely not, my bags cannot compete with those who have been stacking HNS for the past _year_ in anticipation. No, I'd rather buy choice TLDs from the winners with some of the revenue from beachfront/. 😜
+
+---
+
+## beachfront/
+
+The main things I'm focused on right now for beachfront/ is 1) the domain search experience and 2) the checkout process.
+
+![](/media/post/2024/devlog-007-a.png "screenshot of sing.acapella on beachfront/")
+![](/media/post/2024/devlog-007-b.png "screenshot of dope.snapback on beachfront/")
+![](/media/post/2024/devlog-007-c.png "screenshot of draw.bitmap on beachfront/")
+![](/media/post/2024/devlog-007-d.png "screenshot of be.bald on beachfront/")
+![](/media/post/2024/devlog-007-e.png "screenshot of eat.dinner on beachfront/")
+![](/media/post/2024/devlog-007-f.png "screenshot of live.beachfront on beachfront/")
+
+I've implemented dynamic pricing based on [Niami rating](https://www.niami.io/faq), SLD length (three characters or less have a premium), and other factors. For reference, standard pricing on `bald/` is $27 while standard `dinner/` pricing is $34 (the screenshots above are showing premium SLDs on those TLDs). **`beachfront/` domains will always have a premium no matter the length**, because it's also the company name.
+
+Keep in mind that this pricing is for two years of registration! beachfront/ registration operates on a biennial schedule.
+
+Handshake doesn't have a payment processor. Typically, when you're integrating one (Stripe, for example), you have to list the (ICANN) domain you intend to collect payments on. No payment provider understands Handshake so unfortunately, I won't be able to accept fiat via a Handshake URL. Bitcoin however…don't forget, [HIP‑0002](https://github.com/handshake-org/HIPs/blob/master/HIP-0002.md) exists as well (sending payments to/from a Handshake domain). The checkout process for beachfront/'s ICANN vs Handshake domains will be different so this'll take some time to get right.
+
+
+
+## HandyCon
+
+I'll be presenting at HandyCon this year. What will I talk about? Depends on how heachfront/ progresses over the next month. There will definitely be live walkthroughs of my progress thus far though, and _perhaps_ even sneak peeks at another platform…
+
+
+
+## Roadmap
+
+01. beachfront/ launch
+02. Strengthening service offerings (web hosting, HIP-0002, &c)
+03. Rolling releases of TLDs (I'm thinking 50 at a time)
+04. Hosted (and self-hosted!!) registry platform (wouldn't you like to be your own beachfront/?)
+05. Partnerships with folks who own some of **_the_ best** Handshake TLDs
+
+beachfront/ is a generational company in the making. It was born from a dream I had at age 15, made possible by the birth of Handshake four years ago. Reimagining one of the core tenets of the internet is no small feat, but I'm up for the challenge.
+
+
+
+## What's Next?
+
+BUILD BUILD BUILD (and chat with my advisors). BUILD BUILD BUILD.
