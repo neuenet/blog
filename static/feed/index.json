@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet/post/devlog-008",
+            "url": "https://blog.neuenet/post/devlog-008",
+            "title": "Devlog №.8",
+            "summary": "So close I can taste it",
+            "date_modified": "2024-02-29T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://paulwebb/"
+            }
+        },
+        {
             "id": "https://blog.neuenet/post/devlog-007",
             "url": "https://blog.neuenet/post/devlog-007",
             "title": "Devlog №.7",
