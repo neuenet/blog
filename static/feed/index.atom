@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.neuenet/</id>
     <title>neue internet</title>
-    <updated>2024-03-01T18:49:46.946Z</updated>
+    <updated>2024-03-25T04:15:59.698Z</updated>
     <generator>The 'Net</generator>
     <author>
         <name>Paul Anthony Webb</name>
@@ -13,6 +13,17 @@
     <subtitle>A blog about the DNS, Handshake, and the internet at large.</subtitle>
     <icon>https://blog.neuenet/favicon.svg</icon>
     <rights>All Rights Reserved, Neuenet</rights>
+    <entry>
+        <title type="html"><![CDATA[beachfront/ presents at HandyCon]]></title>
+        <id>https://blog.neuenet/post/handycon-presentation</id>
+        <link href="https://blog.neuenet/post/handycon-presentation"/>
+        <updated>2024-03-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In case you missed it]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://paulwebb/</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Devlog №.8]]></title>
         <id>https://blog.neuenet/post/devlog-008</id>

@@ -1,0 +1,263 @@
+---
+title: beachfront/ presents at HandyCon
+date:  2024-03-26
+tags:  beachfront
+tldr:  In case you missed it
+---
+
+My half-hour presentation at this year's Handshake conference was focused on beachfront/; progress thus far and roadmap. SkyInclude recorded the entire conference and made individual presentations available in their own videos. What follows now is the video and the transcription, edited for clarity and conciseness.
+
+---
+
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen frameborder="0" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/HCyVQV7oVMs"></iframe>
+
+
+
+## Transcript
+
+For those who don't know me, my name is Paul Webb. I've been in the Handshake space since it started.
+
+I participated in the testnet without knowing what a testnet _was_. I told my friends I got a whole bunch of cool names and when the testnet ended I was like, "Where did all my names go?!" Heh.
+
+Several years later, I am here to talk about beachfront/, my registar.
+
+![](/media/post/2024/handycon-a.png "first slide of my beachfront/ presentation")
+
+I **really** did not want to make this.
+
+I really wanted someone _else_ to make a registry, make a registar, and I would just dump my names in there. That hasn't happened so I'm forced to make this, but it's been fun along the way.
+
+I actually have a **lot** to go through and I hope I can make it fit within this half hour. Let's see...
+
+![](/media/post/2024/handycon-b.png "second slide of my beachfront/ presentation")
+
+Last year I released `handshakeready.org` to answer commonly asked questions like, "when browser," "when this," "when that," "how come we don't have...," "why aren't we on on exchanges," &c. We have several reasons why we aren't quite there yet.
+
+**Yes, we may have superior tech but if no one's using it doesn't really matter.** We need to do our part and create reasons for people to even care in the first place.
+
+I broke this down in three sections: availability, usability, and scalability.
+
+![](/media/post/2024/handycon-c.png "third slide of my beachfront/ presentation")
+
+So what does that really _mean_ exactly?
+
+![](/media/post/2024/handycon-d.png "fourth slide of my beachfront/ presentation")
+
+Websites and infrastructure kind of go hand-in-hand, and then the last part's scalability; that's more _resolution_.
+
+There's a bit of "friction" in getting to a Handshake site and I say friction loosely because it doesn't really matter in the grand scheme of things.
+
+If you are old enough to remember Limewire, it was an app where you could find whatever you wanted, it was awesome. You also found bugs and viruses but then you're just reformat the computer, reinstall Windows, and you'd be fine. We were all used to it.
+
+In order to fix Handshakes's woes, just build dope shit.
+
+![](/media/post/2024/handycon-e.png "fifth slide of my beachfront/ presentation")
+
+That's pretty much it.
+
+We as a community have not done enough of this, myself included.
+
+Yeah, I've made a couple sites here and there and I write blog posts on regular basis. but we need a lot more to get people interested.
+
+Give them a reason to download and install a resolver; have a Limewire moment, basically.
+
+So what I decided to do is create a registry for all of my names and then use some of them to create a registar, which is beachfront/.
+
+![](/media/post/2024/handycon-f.png "sixth slide of my beachfront/ presentation")
+
+More than 200 TLDs will be launching on beachfront/ when it comes out and you can see several of them here.
+
+![](/media/post/2024/handycon-g.png "seventh slide of my beachfront/ presentation")
+
+Now for the demo, let's hope this doesn't crash on me.
+
+(For the transcript reader, this [demo starts at 4:40](https://youtube.com/watch?v=HCyVQV7oVMs&t=280).)
+
+This, is beachfront/.
+
+Some of you may have seen this already, it has had a facelift to be very pretty.
+
+I'm going to go through the typical flow when you go to a registar to buy some domains.
+
+Let's try out `secret.lynk`. beachfront/ is searching the back end...oh darn, looks like it was registered.
+
+We can clear the search and look for something else...let's just search "handshake," and it will look across all of the TLDs we have in the test database right now.
+
+The search result domains have different shapes and background gradients and that is in direct correlation to their rating on Niami and as such they will have different pricing.
+
+By the way, all of these prices is for every two years. If you cut the pricing in half (annually), it's quite cheap. I am the owner of these TLDs and I don't feel the need to price gouge people.
+
+However, if you wanted to get something like `.beachfront`, you will be paying a premium because that is the name of my business. I feel like everyone should do this for their own TLDs because this will dissuade bad actors from trying to do something dumb with your namesake. A malicious domain is going to be a direct reflection of your business.
+
+For the sake of this demo, let's add a `.beachfront` domain. $100,000 yeah, that is a lot.
+
+All right, let's search for another one. I'm just going to go for what I know will work...`my.lynk` is a two-letter domain so of course this is going to be premium as well.
+
+Now let's check out our bag.
+
+This is still using Stripe's test stuff so I'm just going to put in test values right here.
+
+Let's pay this...hope it goes through for my demo, please work...
+
+Hooray, it works!
+
+So what this did on the backend was actually quite a lot.
+
+I was not aware of what goes into the whole domain registrar process of buying domains when starting this project.
+
+What we do is:
+
+- make sure that domains are available
+- add them to the database
+- create DNS records
+- create a parked webpage
+
+All this happens in the backend very quickly.
+
+If we go to `www.beachfront`, this should work...
+
+Oh yes, thank you, my demo worked.
+
+This is a parked page that every domain will have and when you click this it goes to `domains.beachfront` which doesn't exist yet but when it does it'll come back here. So yeah, that's the demo.
+
+Oh! Let me go back to here. I don't know if you can see this "Secure" button in the browser. You can see "Issued by DNSSEC."
+
+This is what Handshake is about, partly; more secure DNS and we don't have a centralized certificate authority. We gotta do it ourselves with cryptographic proofs.
+
+Every website should be secured on Handshake, I don't understand **not** adding security to your Handshake domain...aside from it being kind of hard or there's a _little_ more effort required. If we make more tools, make it easier, then it's not really much of a problem.
+
+_That_ is the demo.
+
+(For the transcript reader, there were a lot of "umms" and "erms" but I will **not** include those. Oh, and the demo's over)
+
+![](/media/post/2024/handycon-h.png "eighth slide of my beachfront/ presentation")
+
+If you're watching this live you can see this nice QR code. It will work on your computer or your phone if you have a resolver. If you go to `handycon.beachfront`, you will see a survey where you can help us figure out which 50 TLDs to launch with.
+
+We don't want to just launch beachfront/ and have 200+ TLDs to choose from, that's a bit much, a lot of analysis paralysis.
+
+We are going to have a rolling release schedule of 50 or so TLDs, a few times a year. It might take two whole years (or like a year and a half) for them all to come out just as we improve our backend processes and whatnot.
+
+Let's see what's next...ah, road map!
+
+![](/media/post/2024/handycon-i.png "ninth slide of my beachfront/ presentation")
+
+After beachfront/ is launched we will work on HIP-0002, which is just a very easy way to map your wallet aliases to a Handshake domain; your Bitcoin, Handshake, Tezos, Cardano, Ethereum, &c.
+
+Instead of having `netopwibby.tezos`, I can have `netopwibby.wallet` when that (legal case) gets figured out.
+
+Add HIP-0002 to that and then I can put all of these crypto wallet addresses behind `netopwibby.wallet` or any other Handshake domain and it'll just work perfectly. Hopefully by that point we will have more services using HIP-0002.
+
+Then after that, there's going to be work on a Handshake to Web2 email bridge.
+
+I have something in mind that's potential possible and that's an unknown unknown. Work is going to be done on that to ensure we can have more utility for our Handshake domains.
+
+Then after _that_, beachfront/ will be open source.
+
+![](/media/post/2024/handycon-j.png "tenth slide of my beachfront/ presentation")
+
+Pastry is actually the platform I was working on before beachfront/. I was looking at a lot of what was going on at the time and saw people stake their domains and immediately feel regret.
+
+That is not what I wanted to do for my TLDs. Some of the complaints I've seen/heard in my DMs and elsewhere were like, "for some reason they (Namebase) won't add DNSSEC to my TLDs," "I can't have certs," &c. I thought, "why don't I just try my hand at building a platform for this use case?"
+
+As you can see by these very nice graphics, I went in doing a lot of development but then realized what I was building was not what Handshake really needs. Handshake needs a Limewire moment, it needs a Kazaa moment. It needs something that will entice people who don't care about having secure DNS, they don't care about even domains really, they just see **something**; a new experience. And they're going to think, "How do I get into that?," and that's what I hope beachfront/ will be.
+
+If you want to make your own beachfront/ you will either be able to use the open source version of beachfront/ or (if you don't want to touch _anything_ technical you just want to click buttons and dropdowns in a UI) you can use the Pastry platform.
+
+**beachfront/ is a generational company.**
+
+In the Web3 space, there's a **lot** of companies who spring up out of nowhere doing amazing things and then they sell to some big corporation.
+
+I have **zero interest** in that.
+
+If you've been in the Handshake community for a long time, you know that I've been thinking about domains since I was 15.
+
+I asked Jeeves (Google didn't exist yet) "how do I get my own dotcom?"
+
+$185k might as well be a million dollars to me, I don't know money! I'm just going to go to college, find a way to get some office job, save up my pennies, and then I'll buy `.space`.
+
+Radix got there ahead of me and **every** startup I've ever worked for failed, so I didn't win the startup lottery unfortunately.
+
+When Handshake launched, all those ideas I had in the back of my mind came to the forefront and I was like, "Oh word? Okay, cool."
+
+![](/media/post/2024/handycon-k.png "eleventh slide of my beachfront/ presentation")
+
+This generational company is going to springboard a whole bunch of stuff I have on the horizon.
+
+I already talked about Pastry.
+
+The other two? Not going to get to them yet, but it's very exciting stuff.
+
+I've always had ideas on how to re-envision the internet, reimagine things the way I feel they should be done.
+
+It's amazing what's possible when you see core infrastructure that democratizes something like the issuance of TLDs. It's mindblowing. I never thought something like this would be possible. Handshake is pretty sick.
+
+In closing, I guess what I want to express to the Handshake community: do something with your top-level domains **please**, or even your second-level domains that you've bought from someone who staked their TLDs because we've seen a **lot of** domains being sold...
+
+Then what?
+
+Any sites being made with them? Any certs being made for those sites?
+
+Anyone using these domains? Or have they been just sitting in wallets or accounts the last couple years?
+
+That answer is, no.
+
+People have been buying a bunch of stuff and everyone's like "Oh yay, big numbers, wooo, that's crazy, oh my gosh," but no one's using this shit...so it's kind of moot when people say things like, "When browser?," "Aww dude, our tech is like, the best."
+
+Who cares?
+
+We need to build dope shit.
+
+We have lots of domain sales, not a lot of domain _usage_.
+
+We need to get on that and I hope that beachfront/ will entice people to at least try things for themselves or just do _something_.
+
+I wanted better for my TLDs, and believe me, I looked into _everything_ that was offered.
+
+It would be great to get a little pocket change here and there but I wanted more and unfortunately, there wasn't anything else available. So, I have to build it. Lucky for you, I've been struggling with all this stuff so that you don't have to.
+
+That is all I have before I start rambling some more, because I **will** do that.
+
+
+
+## Q&A
+
+**Chris Neal: Great demo. Kudos the progress. Do you mind sharing a few thoughts on the domain management experience for users/customers?**
+
+Thoughts on the domain management experience...so beachfront/ actually existed back in like, I want to say 2016/
+
+I used `beachfront.digital` and that was actually a domain portfolio management tool.
+
+I had hundreds of domains across five different registars.
+
+Hover, Gandhi, iwantmyname, and some other ones I don't even remember at this point. It was just too much and I would forget domains.
+
+I literally thought of a great domain and thought, "Oh shoot, I should see if it's registered."
+
+It was registered and I spent 10 minutes being pissed off.
+
+I'm like, "What the hell, who registered this?" and when I ran a WHOIS search I saw my name.
+
+Having too many domains across so many different spaces made me think, "There's gotta be a way to manage this stuff." That's not an answer to your question but it's something I thought about a lot.
+
+**Vetta Ridgeway: Are there tutorials for how to use these domains and get them up and running?**
+
+Yeah, Rithvik and Nathan Woodburn have written tutorials on how to use Handshake domains and how to set them up.
+
+**Alex Neto: Looking for beta testers?**
+
+Not quite yet, but I definitely will. Definitely will need beta testers.
+
+I'm trying to figure out when that'll be...probably in May. I think that is an aggressive window. The part of my demo where I bought the domain and then DNS was set up in the background, that DNS stuff was put that into operation this morning.
+
+I am still actively building for sure.
+
+---
+
+There you have it!
+
+beachfront/ was created to help drive adoption and usage of Handshake domains. It'll launch this year with 50 TLDs to start, with more to be added as the platform matures.
+
+Since HandyCon '24 concluded, I've had calls with advisors and people building dope shit.
+
+Let's keep it going!

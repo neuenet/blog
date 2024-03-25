@@ -4,12 +4,19 @@
         <title>neue internet</title>
         <link>https://blog.neuenet/</link>
         <description>A blog about the DNS, Handshake, and the internet at large.</description>
-        <lastBuildDate>Fri, 01 Mar 2024 18:49:46 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Mar 2024 04:15:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The 'Net</generator>
         <language>en</language>
         <copyright>All Rights Reserved, Neuenet</copyright>
         <atom:link href="https://blog.neuenet/feed/index.rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[beachfront/ presents at HandyCon]]></title>
+            <link>https://blog.neuenet/post/handycon-presentation</link>
+            <guid>https://blog.neuenet/post/handycon-presentation</guid>
+            <pubDate>Mon, 25 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[In case you missed it]]></description>
+        </item>
         <item>
             <title><![CDATA[Devlog №.8]]></title>
             <link>https://blog.neuenet/post/devlog-008</link>

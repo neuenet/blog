@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/handycon-presentation",
+            "url": "https://blog.neuenet.com/post/handycon-presentation",
+            "title": "beachfront/ presents at HandyCon",
+            "summary": "In case you missed it",
+            "date_modified": "2024-03-26T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/devlog-008",
             "url": "https://blog.neuenet.com/post/devlog-008",
             "title": "Devlog №.8",

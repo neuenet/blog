@@ -97,6 +97,7 @@
   h4,
   h5,
   h6,
+  iframe,
   ol,
   p,
   pre code,
@@ -107,6 +108,12 @@
     a {
       line-height: inherit;
     }
+  }
+
+  iframe {
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin-bottom: var(--line-height);
   }
 
   pre + p,
