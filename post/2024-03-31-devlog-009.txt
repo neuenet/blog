@@ -1,0 +1,49 @@
+---
+title: Devlog №.9
+date:  2024-03-31
+tags:  newsroom
+tldr:  Handy dandy recap
+---
+
+HandyCon '24 was excellent. The vibes were immaculate, with lots of positivity and mirth in the livestream comments. It really felt as though the community grew up; nay, _glowed up_. Always great to make new connections with folks too. Now, what else happened this month?
+
+---
+
+
+
+## beachfront/ presents
+
+Did you miss my presentation at HandyCon? Have no fear, the [transcript is here](/post/handycon-presentation "beachfront/ presents at HandyCon") (video, too)! While there was a lot of support and active chatter during it, that didn't quite translate into people filling out my survey. No matter, the people who did will be the first ones to join the beta for beachfront/.
+
+
+
+## PowerDNS
+
+At the end of [the last devlog](/post/devlog-008 "devlog number 8") I mentioned delving into "unknown unknowns," which is the DNS. No matter how much you **think** you know, there's _yet another_ thorny side. I actually completed something I needed to make my HandyCon presentation look good, hours prior; creating a parked website for domains when purchase is successful.
+
+At a high-level, we:
+
+- make sure domain is available
+- add it to the database
+- create DNS records
+- create parked webpage
+
+![](/media/post/2024/devlog-009-a.png "screenshot of test.lynk, parked on beachfront/")
+
+On the backend, I'm interfacing with PowerDNS' REST API within my GraphQL API. It's…a process. If only I figured out how to do DNSSEC for [my custom nameserver](/post/devlog-005 "devlog number 5"), the integration could be tighter.
+
+Another feature we got done this month is updating a domain's DNS records via the UI.
+
+![](/media/post/2024/devlog-009-b.png "screenshot of domain records for meta.webscape, on beachfront/")
+
+Fun fact: domains created through the (PowerDNS) API will automatically have an updated SOA when making changes. There doesn't seem to be a way to update the SOA automatically from manually created domains. This isn't a problem for testing since data will be blown away at some point _anyway_, just wanted to share that tidbit.
+
+
+
+## What's Next?
+
+Most of this month was spent preparing for HandyCon and doing a LOT of writing; presentation, transcript, investor/advisor newsletter (top secret, DM if you have connections), and now this post you're reading now. I'm looking forward to making headway into coding the remaining big ticket items so the beachfront/ beta can commence. Oh, and then even more writing for legal, policy, terms, &c. Gotta CYA!
+
+During a convo I realized a use case for someone who wants a service like Pastry, but only wants to use it for themselves (create domains for their TLDs and manage the DNS). Happy to say I've acquired the Handshake name for it. If you're the owner of `pastry/`, let me know! I'm interested in acquiring that too, let's negotiate.
+
+Til' next time!
