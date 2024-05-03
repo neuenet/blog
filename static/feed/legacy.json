@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/devlog-010",
+            "url": "https://blog.neuenet.com/post/devlog-010",
+            "title": "Devlog №.10",
+            "summary": "Beta incoming",
+            "date_modified": "2024-05-03T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/devlog-009",
             "url": "https://blog.neuenet.com/post/devlog-009",
             "title": "Devlog №.9",

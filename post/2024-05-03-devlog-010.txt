@@ -1,0 +1,52 @@
+---
+title: Devlog №.10
+date:  2024-05-03
+tags:  newsroom
+tldr:  Beta incoming
+---
+
+What's good, Handshake fam? Another month, another step closer to launch! In Handshake community news, [`wallet/` domains](https://wallet.id) that have been in limbo for the better part of two years are **finally** [available for claiming](https://twitter.com/HNS_ID/status/1785042241326862349). StoppableDomains has been quiet on that front…or so we thought. They've turned their sights to ENS and are once again abusing the legal system. This time, [patenting software ENS open-sourced](https://twitter.com/ensdomains/status/1786045291365638621). Grifters gonna grift, right?
+
+Anyhoo, looking forward to seeing the secondary market for `wallet/` domains. The TLD is secured in Handshake while the SLDs (what we all call "domains") are bridged to Optimism, an L2 chain on Ethereum. Why Optimism? Low fees and ease of development! Open registration will be available soon, Namebase wants to give original owners a chance to claim their registrations first.
+
+With that said, let's jump into this (few days late, I've been busy) update!
+
+---
+
+
+
+## Ah CRUD
+
+![](/media/post/2024/devlog-010-a.jpg "screenshot of www.lynk dns records")
+
+We finally have CRUD (create, read, update, delete) operations for DNS records working for domains! Because the API for PowerDNS doesn't make sense in some ways, I've had to modify our API to interface with it better. For example, you'd assume that to update a single DNS record for a domain you'd just…add that? Not with PowerDNS! You send **one** record, you blow away existing records and you'll only see the new one you added.
+
+As you can tell from the screenshot above, I spent a lot of time on this issue. I retrieve **all** of the records and figure out which one needs to be updated before saving my changes. The code tying all this together is as clean as I could possibly make it but it still feels unnecessarily complex. There's probably bugs lurking but the beta should expose them.
+
+
+
+## Every Caddy needs a Golfer
+
+![](/media/post/2024/devlog-010-b.jpg "screenshot of www.lynk, parked on beachfront/")
+
+I mentioned in [the last devlog](/post/devlog-009) about creating parked webpages for sites registered on beachfront/. Ideally, this would use Caddy's internal API coupled with an ACME server to automate things. During testing I discovered I didn't like Caddy's API (so much nesting weirdness) and I somehow borked its connection to the ACME server that _did_ work at some point.
+
+I decided to write a small API (microservice?) called ✨golfer✨ that sits on the same webserver Caddy lives.
+
+beachfront/'s API talks to golfer when a domain is purchased. Part of the domain purchasing process involves setting DNS records and because golfer generates a TLS certificate for the domain, it can return the TLSA value necessary to make the parked webpage resolve without certificate errors in the browser.
+
+
+
+## Tell me more
+
+![](/media/post/2024/devlog-010-c.jpg "screenshot of nic.moodring")
+
+Nearly every TLD has a NIC page, which stands for "Network Information Page." Its purpose is to give insight into who's running the TLD, convince potential customers to buy a domain, and provide resources. Neuenet is inspired by the early internet so we want to have NIC pages for all the TLDs we open for public registration.
+
+At some point, every TLD will host blog posts, showcase services and sites built on it, and more.
+
+
+
+## What's Next?
+
+The next few weeks are going to be busy; we're bringing back dormant Handshake sites (`registry.neuenet` has been broken for too long), moving/upgrading infrastucture, bringing more TLDs online, writing copy (not looking forward to this tbh, the list is daunting), and tightening things up before the beta launch. It's happening this month, no ifs/ands/buts. Quite terrifying for a perfectionist like myself but I gotta get over that.
