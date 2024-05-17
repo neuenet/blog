@@ -35,12 +35,12 @@ export const showPost: HandlerFunc = async(context) => {
     return showNotFound(context);
 
   const { date, file, title, tldr } = thisPost;
-  const { content } = frontmatter(await Deno.readTextFile(file));
+  const { body } = frontmatter(await Deno.readTextFile(file));
   const regexCodeSnippet = /(?=<pre><code\s.*>)(.*?)(?=<\/code><\/pre>)/gs;
   const regexIntroString = /(<pre><code\s.*?>)/;
   const regexLanguage = /(?<=<pre><code class="language-)(.*?)(?=">)/g;
 
-  let processedHTML = html(tokens(content, markdownConfig));
+  let processedHTML = html(tokens(body, markdownConfig));
   const codeSnippets = processedHTML.match(regexCodeSnippet);
 
   if (codeSnippets && codeSnippets.length > 0) {
