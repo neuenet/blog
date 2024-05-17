@@ -5,6 +5,7 @@
 
 export { ensureDir, expandGlob } from "std/fs/mod.ts";
 export { format as formatDate } from "std/datetime/mod.ts";
+export { extract as frontmatter } from "std/front_matter/yaml.ts";
 export { join } from "std/path/mod.ts";
 export { serve } from "std/http/server.ts";
 
@@ -12,7 +13,6 @@ export { serve } from "std/http/server.ts";
 
 export { Application, Context, type HandlerFunc, type MiddlewareFunc } from "https://deno.land/x/abc@v1.3.3/mod.ts";
 export { Feed } from "npm:feed";
-export { parse as frontmatter } from "https://deno.land/x/frontmatter@v0.1.4/mod.ts";
 export { default as HighlightJS } from "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/highlight.min.js";
 export { html, tokens } from "https://deno.land/x/rusty_markdown@v0.4.1/mod.ts";
 export { useDartSass } from "https://raw.githubusercontent.com/MarkTiedemann/deno-dart-sass/0.3.0/mod.ts";

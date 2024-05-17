@@ -84,24 +84,28 @@ await dartSass.compileFromFileToFile("src/sass/pages/post.scss", "static/post.cs
 /// setup post map
 
 for await (const file of expandGlob("post/*.txt")) {
-  const { data } = frontmatter(await Deno.readTextFile(file.path)) as { data: PostMetadata };
+  const { attrs, body } = frontmatter(await Deno.readTextFile(file.path));
 
-  const date = new Date(data.date);
+  // TODO
+  // : use `body` to have a full-featured feed reader experience
+  //   : modularize Markdown>HTML rendering from src/route/post.ts
+
+  const date = new Date(attrs.date);
   date.setDate(date.getDate() + 1); /// THIS is the correct date
 
-  data.date = formatDate(date, "yyyy·MM·dd");
-  data.file = file.path;
-  data.slug =
+  attrs.date = formatDate(date, "yyyy·MM·dd");
+  attrs.file = file.path;
+  attrs.slug =
     file.name
       .replace(/\.[^/.]+$/, "")            /// remove file extension
       .replace(/^\d{4}.\d{2}.\d{2}./, ""); /// remove date from file name
 
-  posts.push(order(data));
+  posts.push(order(attrs));
 
   /// setup feeds
 
-  const legacyUrl = `https://blog.neuenet.com/post/${data.slug}`;
-  const neueUrl = `https://blog.neuenet/post/${data.slug}`;
+  const legacyUrl = `https://blog.neuenet.com/post/${attrs.slug}`;
+  const neueUrl = `https://blog.neuenet/post/${attrs.slug}`;
 
   legacyFeed.addItem({
     author: [
@@ -111,10 +115,10 @@ for await (const file of expandGlob("post/*.txt")) {
       }
     ],
     date: new Date(date.setDate(date.getDate() - 1)),
-    description: data.tldr,
+    description: attrs.tldr,
     id: legacyUrl,
     link: legacyUrl,
-    title: data.title
+    title: attrs.title
   });
 
   neueFeed.addItem({
@@ -125,24 +129,24 @@ for await (const file of expandGlob("post/*.txt")) {
       }
     ],
     date: new Date(date.setDate(date.getDate() - 1)),
-    description: data.tldr,
+    description: attrs.tldr,
     id: neueUrl,
     link: neueUrl,
-    title: data.title
+    title: attrs.title
   });
 
   /// setup tag map
 
-  for (let tag of data.tags.split(",")) {
+  for (let tag of attrs.tags.split(",")) {
     tag = tag.trim();
 
     if (!tags[tag])
       tags[tag] = [];
 
     tags[tag].push({
-      date: data.date,
-      slug: data.slug,
-      title: data.title
+      date: attrs.date,
+      slug: attrs.slug,
+      title: attrs.title
     });
   }
 }
