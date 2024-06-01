@@ -1,0 +1,101 @@
+---
+title: Devlog №.11
+date:  2024-06-01
+tags:  newsroom
+tldr:  Please hold
+---
+
+When it rains, it pours, amirite?
+
+Just when I think it's time to flip the switch on beachfront/, another blocker rears its head. Last month has had a few, most of which were self-inflicted. The latest snafu I've run into is the cloud version of database of choice not working with my framework of choice. Thankfully, not my fault, nonetheless frustrating.
+
+Let's get into it.
+
+---
+
+
+
+## bag bundle bugs
+
+When developing, you write _just enough_ code to get something working and then move onto the next thing. Later, you scrutinize the code and curse yourself while refactoring. For beachfront/, I refer to the "cart" as "bag" because, why not? Anyhoo, the bag would refuse to accept new items under certain circumstances…and I chose my brain over notes for recollection, so you can imagine how that went. That's the first problem.
+
+The second problemm was I hadn't done **any** work on beachfront/ hammock, the splashy product name I gave our pairing feature. When curating my Handshake portfolio, I opted to acquire singular/plural common pairs for several words:
+
+- acapella / acappella
+- colors / kolor / kolors
+- dingbat / dingbats
+- dinner / lunch
+- diviner / diviners / divinity
+- editor / editors
+- inasmuch / insomuch
+- jargon / technobabble
+- lefty / righty
+- theblackfriday / thecybermonday
+- webrowser / webbrowser
+
+…just to name a handful!
+
+Wouldn't it be neat to acquire the pair without breaking the bank?
+
+![](/media/post/2024/devlog-011-a.jpg "screenshot of search results for that.insomuch on beachfront/")
+
+The domain pair you see below the searched for domain is half price. Neat, huh? The problem is, a neat feature like this requires a bit of mental gymnastics to get working the way I wanted. Obviously, we don't want someone searching for a domain pair just to buy the discounted domain; it's supposed to be a package deal!
+
+So, the bag had to understand:
+
+- add searched for domain to bag, only
+- add paired domain to bag and automatically add searched for domain
+- if searched for domain is removed from bag, remove the paired domain as well
+- bag shouldn't choke if a customer has several different domain pairs and is toggling
+
+I _think_ I've got that sorted but whatever, beachfront/'s a beta product. Surely I'll find more refactor opportunities.
+
+![](/media/post/2024/devlog-011-b.jpg "screenshot of checkout page on beachfront/")
+
+Because of the bag refactor, I'd had to redesign the checkout page. The bag toggle buttons on the search page were also present here (components are awesome) but was annoying to troubleshoot. Making the toggle one way (off) makes more sense anyway.
+
+
+
+## beachfront/ community forum
+
+I've spent the past two weeks pondering what to do for customer support. I also wanted a place for beta testers to get help and provide feedback. Slack is hella expensive, Discord is the de facto online meeting place for blockchain/Web3 but it doesn't _feel_ right. There are a **lot** of startups out there looking to snag a piece of the communication app pie.
+
+I decided to go with a beautiful forum software called [Flarum](https://flarum.org).
+
+![](/media/post/2024/devlog-011-c.jpg "screenshot of chat.beachfront.domains")
+
+Login to [chat.beachfront.domains](https://chat.beachfront.domains) and poke around, ask questions, hang out, whatever. I'd like to wind down the Twitter presence of beachfront/ and focus on sharing updates via the forum (not a fan of how that social network…exists).
+
+[chat.beachfront](https://chat.beachfront/) **does** exist but logging in is just not possible. I fiddled with CORS settings but I think a proper plugin for Flarum may be required.
+
+
+
+## `registry.neuenet` rises
+
+When looking at the footer of beachfront/ I realized I never resurrected [`registry.neuenet`](https://registry.neuenet/). The codebase for that site hadn't been touched in two **years** (nearly a half decade in internet time). I didn't pin SvelteKit to a specific version, only "next," which means it was pulling the latest dependency when the app was written in a manner unbefitting years of updates and breaking changes.
+
+I took the opportunity to refactor and slightly redesign. My portfolio has grown since its last update so an overhaul was needed to the portfolio and brand pages. The mature/adult names are no longer listed on the site. They'll be spun off into a different registry at some point.
+
+Lastly, the partners page now has a contact form for anyone serious about collaborating (you've gotta be serious if you install a resolver to visit [`registry.neuenet`](https://registry.neuenet/) and initiate a chat).
+
+![](/media/post/2024/devlog-011-d.jpg "screenshot of partners page on registry.neuenet")
+
+
+
+## `blog.neuenet` is back
+
+Just like with `registry.neuenet`, I'd forgotten to bring this back. [Time flies](/post/product-launch-dolo) when you're having fun! At some point we'll have an automated LetsEncrypt-like service on Handshake. Another perk of this blog being back on its Handshake domain is that the feeds work again (tap that subscribe link at the top)!
+
+![](/media/post/2024/devlog-011-e.jpg "screenshot of blog.neuenet")
+
+
+
+## next steps
+
+[Deno not supporting TLS SNI properly](https://github.com/denoland/deno/issues/23233) is such a weirdly specific bug that's blocking me from using [EdgeDB Cloud](https://www.edgedb.com/cloud). PAIN.
+
+The second step of [EdgeDB's bare metal setup tutorial](https://docs.edgedb.com/guides/deployment/bare_metal) isn't working for me. PAIN.
+
+But y'know what? We'll figure it out, as usual. And, there'll be a tutorial (or three, seriously, I've been cooking) after all this.
+
+So next steps? Get the database up > get the API and app up > onboard beta testers. I'm itching to get beachfront/ going, see you soon!
