@@ -7,7 +7,7 @@ tldr:  Please hold
 
 When it rains, it pours, amirite?
 
-Just when I think it's time to flip the switch on beachfront/, another blocker rears its head. Last month has had a few, most of which were self-inflicted. The latest snafu I've run into is the cloud version of database of choice not working with my framework of choice. Thankfully, not my fault, nonetheless frustrating.
+Just when I think it's time to flip the switch on beachfront/, another blocker rears its head. Last month has had a few, most of which were self‑inflicted. The latest snafu I've run into is the cloud version of database of choice not working with my framework of choice. Thankfully, not my fault, nonetheless frustrating.
 
 Let's get into it.
 
@@ -84,7 +84,7 @@ Lastly, the partners page now has a contact form for anyone serious about collab
 
 ## `blog.neuenet` is back
 
-Just like with `registry.neuenet`, I'd forgotten to bring this back. [Time flies](/post/product-launch-dolo) when you're having fun! At some point we'll have an automated LetsEncrypt-like service on Handshake. Another perk of this blog being back on its Handshake domain is that the feeds work again (tap that subscribe link at the top)!
+Just like with `registry.neuenet`, I'd forgotten to bring this back. [Time flies](/post/product-launch-dolo) when you're having fun! At some point we'll have an automated LetsEncrypt‑like service on Handshake. Another perk of this blog being back on its Handshake domain is that the feeds work again (tap that subscribe link at the top)!
 
 ![](/media/post/2024/devlog-011-e.jpg "screenshot of blog.neuenet")
 

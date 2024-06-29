@@ -5,7 +5,7 @@ tags:  beachfront
 tldr:  In case you missed it
 ---
 
-My half-hour presentation at this year's Handshake conference was focused on beachfront/; progress thus far and roadmap. SkyInclude recorded the entire conference and made individual presentations available in their own videos. What follows now is the video and the transcription, edited for clarity and conciseness.
+My half‑hour presentation at this year's Handshake conference was focused on beachfront/; progress thus far and roadmap. SkyInclude recorded the entire conference and made individual presentations available in their own videos. What follows now is the video and the transcription, edited for clarity and conciseness.
 
 ---
 
@@ -43,7 +43,7 @@ So what does that really _mean_ exactly?
 
 ![](/media/post/2024/handycon-d.png "fourth slide of my beachfront/ presentation")
 
-Websites and infrastructure kind of go hand-in-hand, and then the last part's scalability; that's more _resolution_.
+Websites and infrastructure kind of go hand‑in‑hand, and then the last part's scalability; that's more _resolution_.
 
 There's a bit of "friction" in getting to a Handshake site and I say friction loosely because it doesn't really matter in the grand scheme of things.
 
@@ -142,11 +142,11 @@ Let's see what's next…ah, road map!
 
 ![](/media/post/2024/handycon-i.png "ninth slide of my beachfront/ presentation")
 
-After beachfront/ is launched we will work on HIP-0002, which is just a very easy way to map your wallet aliases to a Handshake domain; your Bitcoin, Handshake, Tezos, Cardano, Ethereum, &c.
+After beachfront/ is launched we will work on HIP‑0002, which is just a very easy way to map your wallet aliases to a Handshake domain; your Bitcoin, Handshake, Tezos, Cardano, Ethereum, &c.
 
 Instead of having `netopwibby.tezos`, I can have `netopwibby.wallet` when that (legal case) gets figured out.
 
-Add HIP-0002 to that and then I can put all of these crypto wallet addresses behind `netopwibby.wallet` or any other Handshake domain and it'll just work perfectly. Hopefully by that point we will have more services using HIP-0002.
+Add HIP‑0002 to that and then I can put all of these crypto wallet addresses behind `netopwibby.wallet` or any other Handshake domain and it'll just work perfectly. Hopefully by that point we will have more services using HIP‑0002.
 
 Then after that, there's going to be work on a Handshake to Web2 email bridge.
 
@@ -188,11 +188,11 @@ I already talked about Pastry.
 
 The other two? Not going to get to them yet, but it's very exciting stuff.
 
-I've always had ideas on how to re-envision the internet, reimagine things the way I feel they should be done.
+I've always had ideas on how to re‑envision the internet, reimagine things the way I feel they should be done.
 
 It's amazing what's possible when you see core infrastructure that democratizes something like the issuance of TLDs. It's mindblowing. I never thought something like this would be possible. Handshake is pretty sick.
 
-In closing, I guess what I want to express to the Handshake community: do something with your top-level domains **please**, or even your second-level domains that you've bought from someone who staked their TLDs because we've seen a **lot of** domains being sold…
+In closing, I guess what I want to express to the Handshake community: do something with your top‑level domains **please**, or even your second‑level domains that you've bought from someone who staked their TLDs because we've seen a **lot of** domains being sold…
 
 Then what?
 

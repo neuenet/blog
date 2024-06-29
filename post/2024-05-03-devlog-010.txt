@@ -5,7 +5,7 @@ tags:  newsroom
 tldr:  Beta incoming
 ---
 
-What's good, Handshake fam? Another month, another step closer to launch! In Handshake community news, [`wallet/` domains](https://wallet.id) that have been in limbo for the better part of two years are **finally** [available for claiming](https://twitter.com/HNS_ID/status/1785042241326862349). StoppableDomains has been quiet on that front…or so we thought. They've turned their sights to ENS and are once again abusing the legal system. This time, [patenting software ENS open-sourced](https://twitter.com/ensdomains/status/1786045291365638621). Grifters gonna grift, right?
+What's good, Handshake fam? Another month, another step closer to launch! In Handshake community news, [`wallet/` domains](https://wallet.id) that have been in limbo for the better part of two years are **finally** [available for claiming](https://twitter.com/HNS_ID/status/1785042241326862349). StoppableDomains has been quiet on that front…or so we thought. They've turned their sights to ENS and are once again abusing the legal system. This time, [patenting software ENS open‑sourced](https://twitter.com/ensdomains/status/1786045291365638621). Grifters gonna grift, right?
 
 Anyhoo, looking forward to seeing the secondary market for `wallet/` domains. The TLD is secured in Handshake while the SLDs (what we all call "domains") are bridged to Optimism, an L2 chain on Ethereum. Why Optimism? Low fees and ease of development! Open registration will be available soon, Namebase wants to give original owners a chance to claim their registrations first.
 

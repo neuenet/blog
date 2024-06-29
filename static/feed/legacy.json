@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/devlog-012",
+            "url": "https://blog.neuenet.com/post/devlog-012",
+            "title": "Devlog №.12",
+            "summary": "Liftoff",
+            "date_modified": "2024-06-29T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/devlog-011",
             "url": "https://blog.neuenet.com/post/devlog-011",
             "title": "Devlog №.11",

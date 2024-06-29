@@ -5,7 +5,7 @@ tags:  newsroom
 tldr:  So close I can taste it
 ---
 
-The Happening came and went. Millions of dollars were spent on auctions, amazingly. Someone spent $50k+ on `india/`! [@cymon](https://twitter.com/rhymincymon) shared more analytics in a [thread on Twitter](https://twitter.com/rhymincymon/status/1761078385567027242). I'm always pleasantly surprised when I mention Handshake in Ethereum spaces like Farcaster and people know what I'm talking about (it's usually some variant of "Oh yeah, how's that project going?" LOL). People spending _tens of thousands of dollars_ on choice auctions on a **four-year-old protocol** is a good sign of staying power. Lots of lurkers with big bags and impressive names just biding their time, it seems.
+The Happening came and went. Millions of dollars were spent on auctions, amazingly. Someone spent $50k+ on `india/`! [@cymon](https://twitter.com/rhymincymon) shared more analytics in a [thread on Twitter](https://twitter.com/rhymincymon/status/1761078385567027242). I'm always pleasantly surprised when I mention Handshake in Ethereum spaces like Farcaster and people know what I'm talking about (it's usually some variant of "Oh yeah, how's that project going?" LOL). People spending _tens of thousands of dollars_ on choice auctions on a **four‑year‑old protocol** is a good sign of staying power. Lots of lurkers with big bags and impressive names just biding their time, it seems.
 
 If this is you, stay tuned for my talk at HandyCon; it'll mostly be about beachfront/, of course, but you'll be able to spin up your own…hopefully late this year.
 

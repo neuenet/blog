@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.neuenet/</id>
     <title>neue internet</title>
-    <updated>2024-06-01T07:18:32.373Z</updated>
+    <updated>2024-06-29T08:32:32.003Z</updated>
     <generator>The 'Net</generator>
     <author>
         <name>Paul Anthony Webb</name>
@@ -13,6 +13,17 @@
     <subtitle>A blog about the DNS, Handshake, and the internet at large.</subtitle>
     <icon>https://blog.neuenet/favicon.svg</icon>
     <rights>All Rights Reserved, Neuenet</rights>
+    <entry>
+        <title type="html"><![CDATA[Devlog №.12]]></title>
+        <id>https://blog.neuenet/post/devlog-012</id>
+        <link href="https://blog.neuenet/post/devlog-012"/>
+        <updated>2024-06-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Liftoff]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://paulwebb/</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Devlog №.11]]></title>
         <id>https://blog.neuenet/post/devlog-011</id>

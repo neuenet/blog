@@ -45,9 +45,9 @@ I'll be presenting at HandyCon this year. What will I talk about? Depends on how
 ## Roadmap
 
 01. beachfront/ launch
-02. Strengthening service offerings (web hosting, HIP-0002, &c)
+02. Strengthening service offerings (web hosting, HIP‑0002, &c)
 03. Rolling releases of TLDs (I'm thinking 50 at a time)
-04. Hosted (and self-hosted!!) registry platform (wouldn't you like to be your own beachfront/?)
+04. Hosted (and self‑hosted!!) registry platform (wouldn't you like to be your own beachfront/?)
 05. Partnerships with folks who own some of **_the_ best** Handshake TLDs
 
 beachfront/ is a generational company in the making. It was born from a dream I had at age 15, made possible by the birth of Handshake four years ago. Reimagining one of the core tenets of the internet is no small feat, but I'm up for the challenge.

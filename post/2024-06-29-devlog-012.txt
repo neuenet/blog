@@ -1,0 +1,100 @@
+---
+title: Devlog №.12
+date:  2024-06-29
+tags:  newsroom
+tldr:  Liftoff
+---
+
+For some reason, it feels like this year is _flying_ and this month was **busy**. Launching beachfront/, debugging in production, and plenty time spent cursing my past self for weird coding decisions. Y'know, typical building‑in‑public things. No idle hands here!
+
+Let's dig in.
+
+---
+
+
+
+## beachfront/ (soft) launch
+
+There were several blockers in getting beachfront/ online and fully operational.
+
+- [Deno is lacking features](https://github.com/denoland/deno/issues/23233) that make it impossible to use [EdgeDB's cloud offering](https://cloud.edgedb.com)
+- EdgeDB's [bare metal instructions](https://docs.edgedb.com/guides/deployment/bare_metal) still left enough information out to be a frustrating experience
+- The [latest Ubuntu LTS version at the time of this post (24.04) lacks `libicu70`](https://github.com/edgedb/edgedb/issues/7364) (which is required for EdgeDB)
+- EdgeDB doesn't allow running as `root` user on a server (limitation from Postgres, its underlying dependency)
+- I still haven't figured out how to activate EdgeDB's built‑in UI
+- CORS. UGH.
+
+Most of my issues were database‑related but despite these, beachfront/ launched with a small group of testers and almost immediately got its first sale **and** websites:
+
+- [self.destruct](https://self.destruct/)
+- [gate.xor](https://gate.xor/)
+
+![](/media/post/2024/devlog-012-b.png "self.destruct in Arc browser")
+![](/media/post/2024/devlog-012-a.png "gate.xor in Arc browser")
+
+Want your own? [Join the waitlist](https://beachfront.domains/welcome)!
+
+If you'd rather wait until beachfront/ is feature‑complete, follow us on [Farcaster](https://warpcast.com/~/channel/beachfront) or [Twitter](https://twitter.com/beachfront_) for updates.
+
+
+
+## overhaul
+
+Going from development to production introduced opportunities for improvement and made glaringly obvious the things that needed to be completely rethought; session handling being one of them. Initially I saved information in cookies, including just enough data about your account when logging in so I wouldn't have to keep pinging the API server…but why? That wasn't actually saving me time or making things easier.
+
+Now, every request goes through `hooks.server.ts` and that's where I verify authentication and such. Previously, I was doing this check in the components that needed them. There's still opportunity for improvement though; OTOH the auth component in the navigation bar doesn't update reliably (minor UI issue but it grinds my gears).
+
+Another issue I ran into was with creating a proper CSP (content security policy). From [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP):
+
+> CSP is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross‑Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft, to site defacement, to malware distribution.
+
+One of the most annoying things about CSP are the myriad implementation methods; your app or your webserver software, with endless branching paths for each. Tons of tutorials about both, never the magical incantation for your specific issue. 😩 Thankfully I was able to figure it out but it sure as hell wasn't easy (I decided to do CSP server‑side instead, same with CORS).
+
+[![](/media/post/2024/devlog-012-c.jpg "beachfront/'s results screen on securityheaders.com")](https://securityheaders.com/?q=beachfront.domains&followRedirects=on)
+
+Something I struggled to find a fix for was my neat marquee feature of the beachfront/ logo across the homepage. In Webkit browsers (like Safari and Orion), this overflow introduces an unsightly horizontal scrollbar. After spending a few cycles on this issue, I decided to just hide the overflow.
+
+I'm not pleased with this compromise but it works for now.
+
+![](/media/post/2024/devlog-012-d.png "beachfront.domains, with overflow fix")
+
+Speaking of homepage, there's a section where I list a bunch of extensions and they linked to pages…that didn't exist.
+
+![](/media/post/2024/devlog-012-e.jpg "beachfront.domains, with overflow fix")
+
+Building in public and all, I was gonna get to that later but my `console.log`s were showing so many 404 errors that I decided to make later be sooner. There's no way I was going to generate copy for nearly 300 extensions without help and still be sane.
+
+I decided to put [Claude AI](https://claude.ai) through its paces and to my pleasant surprise, it does pretty damn well for a copywriter (click/tap the image to visit the marketing page for `.neue` on beachfront/)!
+
+[![](/media/post/2024/devlog-012-f.jpg "marketing for .neue on beachfront.domains")](https://beachfront.domains/catalogue/neue)
+
+Of course, I'll have to source images for all these pages at some point. I also have ~100 more pages to go. 🫨
+
+
+
+## new extensions
+
+Since beachfront/ launched, we've acquired exciting new extensions:
+
+- demo (didn't think I'd win this auction!)
+- frex
+- gaea
+- haute
+
+Like with `self.destruct`, I'm most excited about what people will build on these extensions.
+
+
+
+## what's next
+
+This past week has made it abundantly clear that I should also put effort towards a Fingertip replacement and figure out a decent mobile resolver. Well, clear to _me_ because I had a customer reach out about seeing their new domain on their phone.
+
+Fingertip is currently the most convenient desktop resolver but it's not the easiest to use (annually, you have to delete a file on your system and force Fingertip to generate a new one so you can continue resolving Handshake domains). Mobile offerings require fiddling with DNS settings (although [EasyHNS](https://status.easyhns.com) is trying to make that as simple as possible). "We're so early" is no excuse for not having a growing ecosystem of software.
+
+Regarding beachfront/, I'm making the site responsive as I go, with every update. I went against my nature of polishing and perfecting until everything's "ready" and while I cringe when navigating beachfront/ on my phone, I'm glad the most frustrating parts of launching have been dealt with already.
+
+After I finish creating landers for the remaining extensions to be featured on beachfront/, my focus will be the basic website builder. I'm currenty thinking of Markdown input with preset styling you can modify. Simply selling domains is boring, uninspiring, and borderline robbery of your customers IMHO; **domains should have utility and purpose**.
+
+Finally, I need to create blog posts detailing how I've overcome the challenges of this month! I invoked ChatGPT to help me write a bash script to automate the installation of EdgeDB. I figured out the proper way to create and edit `systemd` service files. This is information future me (and possibly you, dear reader) will need.
+
+Alright, I think that's it. What a month!

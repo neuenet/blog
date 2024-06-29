@@ -21,7 +21,7 @@ Did you miss my presentation at HandyCon? Have no fear, the [transcript is here]
 
 At the end of [the last devlog](/post/devlog-008 "devlog number 8") I mentioned delving into "unknown unknowns," which is the DNS. No matter how much you **think** you know, there's _yet another_ thorny side. I actually completed something I needed to make my HandyCon presentation look good, hours prior; creating a parked website for domains when purchase is successful.
 
-At a high-level, we:
+At a high‑level, we:
 
 - make sure domain is available
 - add it to the database
