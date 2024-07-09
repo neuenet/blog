@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.neuenet.com/</id>
     <title>neue internet</title>
-    <updated>2024-06-29T08:32:32.002Z</updated>
+    <updated>2024-07-09T07:04:29.313Z</updated>
     <generator>The 'Net</generator>
     <author>
         <name>Paul Anthony Webb</name>
@@ -13,6 +13,17 @@
     <subtitle>A blog about the DNS, Handshake, and the internet at large.</subtitle>
     <icon>https://blog.neuenet.com/favicon.svg</icon>
     <rights>All Rights Reserved, Neuenet</rights>
+    <entry>
+        <title type="html"><![CDATA[How to self-host EdgeDB]]></title>
+        <id>https://blog.neuenet.com/post/self-host-edgedb</id>
+        <link href="https://blog.neuenet.com/post/self-host-edgedb"/>
+        <updated>2024-07-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[And setup your app!]]></summary>
+        <author>
+            <name>Paul Anthony Webb</name>
+            <uri>https://webb.page/</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Devlog №.12]]></title>
         <id>https://blog.neuenet.com/post/devlog-012</id>

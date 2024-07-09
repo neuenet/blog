@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://blog.neuenet.com/post/self-host-edgedb",
+            "url": "https://blog.neuenet.com/post/self-host-edgedb",
+            "title": "How to self-host EdgeDB",
+            "summary": "And setup your app!",
+            "date_modified": "2024-07-09T00:00:00.000Z",
+            "author": {
+                "name": "Paul Anthony Webb",
+                "url": "https://webb.page/"
+            }
+        },
+        {
             "id": "https://blog.neuenet.com/post/devlog-012",
             "url": "https://blog.neuenet.com/post/devlog-012",
             "title": "Devlog №.12",

@@ -1,0 +1,418 @@
+---
+title: How to self-host EdgeDB
+date:  2024-07-09
+tags:  tutorial
+tldr:  And setup your app!
+---
+
+Databases are scary. Footguns abound and people who speak database jargon literally sound like a program console logging verbose opaque language that only serves to confuse. It's annoying.
+
+What I like about [EdgeDB](https://www.edgedb.com/) is that the company behind it try to make things as simple as possible. Less guesswork is always appreciated and their docs are pretty good. However, this is my umpteenth attempt at getting EdgeDB running on my own server. But why bother doing that, don't they have a [hosted cloud service](https://www.edgedb.com/cloud)? Why yes! And it's good! Unfortunately, beachfront/ is written in Deno and there's an [unimplemented feature](https://github.com/denoland/deno/issues/23233) that prevents my usage of EdgeDB's cloud offering.
+
+What follows is an attempt to streamline my notes during this exploratory ordeal…it's been a month since I soft‑launched [beachfront/](https://beachfront.domains) so some steps may be missing.
+
+---
+
+
+
+## server setup
+
+I host [my server bootstrap script](https://gist.github.com/NetOpWibby/4b8c4729b18171a1c3d322837835cf68) on GitHub Gist (I should really move this to one of my own sites). I always use the latest Ubuntu LTS for minimal maintenance and I run every command as `root`. Many tutorials tell you NOT to do this but as long as you only allow SSH login to your server and you are comfortable with spending a lot of time scouring the internet for help when you inevitably screw something up, it's okay. 🙂
+
+Here are the script contents:
+
+```sh
+#!/bin/sh
+
+# exit script if something fails
+set -e
+
+# disable "pending kernel upgrade" popup | https://askubuntu.com/a/1424249
+sed -i "s/#\$nrconf{kernelhints} = -1;/\$nrconf{kernelhints} = -1;/g" /etc/needrestart/needrestart.conf
+
+# ignore "daemons using outdated libraries" popup | https://stackoverflow.com/a/73397110#comment131834051_73397970
+sed -i "/#\$nrconf{restart} = 'i';/s/.*/\$nrconf{restart} = 'a';/" /etc/needrestart/needrestart.conf
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Setting timezone to US Pacific…                        +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+ln -fs /usr/share/zoneinfo/US/Pacific /etc/localtime
+dpkg-reconfigure -f noninteractive tzdata
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Updating and upgrading packages…                       +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+apt update && apt upgrade -y
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Installing packages we like to use…                    +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+apt install eza unzip -y
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Installing caddy…                                      +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+apt install debian-keyring debian-archive-keyring apt-transport-https curl -y
+curl -1sLf "https://dl.cloudsmith.io/public/caddy/stable/gpg.key" | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg   
+curl -1sLf "https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt" | tee /etc/apt/sources.list.d/caddy-stable.list
+apt update -y
+apt install caddy -y
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Installing zsh/ohmyzsh…                                +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+apt install zsh -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# make zsh default shell
+command -v zsh | tee -a /etc/shells
+chsh -s $(which zsh) $USER
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Package cleanup                                        +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+apt autoremove -y
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Server setup complete! You should reboot now           +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+```
+
+To run the script:
+
+```sh
+sh -c "$(curl -fsSL https://gist.githubusercontent.com/NetOpWibby/4b8c4729b18171a1c3d322837835cf68/raw/858f4aa997e73fa831785c792b36adb1f25c5033/install.sh)"   
+```
+
+Every time I make changes to my gist, the `install.sh` URL changes. Keep this in mind if you aim to do something similar (another reason why hosting a script like this on your own server is better).
+
+Alright! So the server's setup, cool. Next is SFTP'ing into the server to upload my project. I like placing my projects in `/var/www/<project>` (so, `/var/www/api` in this example).
+
+
+
+## EdgeDB setup
+
+Within my `/var/www/api` directory, I have another script, `setup.sh`. It looks like it's doing a lot but it's only two things:
+
+- makes adjustments before installing EdgeDB because it relies on a package that the latest Ubuntu LTS release doesn't have for some reason (previous Ubuntu releases did)
+- installs [Deno](https://deno.com/)
+
+```sh
+#!/bin/bash
+# chmod +x setup.sh to activate script
+# RUN THIS SCRIPT INSIDE PROJECT DIRECTORY
+
+
+
+# exit script whenever something fails
+set -e
+
+# ====================================================================================
+
+sudo mkdir -p /usr/local/share/keyrings && \
+  sudo curl --proto "=https" --tlsv1.2 -sSf \
+  -o /usr/local/share/keyrings/edgedb-keyring.gpg \
+  https://packages.edgedb.com/keys/edgedb-keyring.gpg
+
+echo deb [signed-by=/usr/local/share/keyrings/edgedb-keyring.gpg] \
+  https://packages.edgedb.com/apt \
+  $(grep "VERSION_CODENAME=" /etc/os-release | cut -d= -f2) main \
+  | sudo tee /etc/apt/sources.list.d/edgedb.list
+
+if [ $(lsb_release -cs) = "noble" ]; then
+  # replace `noble` with `jammy`
+  sed -i "s/noble/jammy/g" /etc/apt/sources.list.d/edgedb.list
+  # download `libicu70`
+  wget "http://mirrors.kernel.org/ubuntu/pool/main/i/icu/libicu70_70.1-2_amd64.deb"
+  # install `libicu70`
+  apt install ./libicu70_70.1-2_amd64.deb -y
+  # remove `libicu70`
+  rm libicu70_70.1-2_amd64.deb
+fi
+
+apt update && apt install edgedb-5 -y
+
+systemctl enable --now edgedb-server-5
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ EdgeDB installed and service enabled                   +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+# ====================================================================================
+
+case $(uname -sm) in
+  "Darwin x86_64") target="x86_64-apple-darwin" ;;
+  "Darwin arm64") target="aarch64-apple-darwin" ;;
+  "Linux aarch64") target="aarch64-unknown-linux-gnu" ;;
+  *) target="x86_64-unknown-linux-gnu" ;;
+esac
+
+deno_uri="https://github.com/denoland/deno/releases/latest/download/deno-${target}.zip"
+deno_directory="/home/edgedb/bin"
+deno_exe="$deno_directory/deno"
+
+if [ ! -d "$deno_directory" ]; then
+  mkdir -p "$deno_directory"
+fi
+
+curl --fail --location --progress-bar --output "$deno_exe.zip" "$deno_uri"
+
+if command -v unzip >/dev/null; then
+  unzip -d "$deno_directory" -o "$deno_exe.zip"
+else
+  apt install unzip -y
+  unzip -d "$deno_directory" -o "$deno_exe.zip"
+fi
+
+chmod +x "$deno_exe"
+rm "$deno_exe.zip"
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ Deno was installed successfully to $deno_exe           +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+# ====================================================================================
+
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ NEXT STEPS                                             +"
+echo "++ add password to EdgeDB                                +"
+echo "++ link instance                                         +"
+echo "++ activate service file for API                         +"
+echo "++ etc                                                   +"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo ""
+
+
+
+# via https://github.com/edgedb/edgedb/issues/7364#issuecomment-2120913558
+# via https://deno.land/x/install@v0.1.9/install.sh
+# via https://docs.edgedb.com/guides/deployment/bare_metal#set-a-password
+```
+
+I left notes to self with links so future me (hi!) can figure out what the heck to do next.
+
+You'll want to set environment variables for EdgeDB. You can open its service file with:
+
+```sh
+systemctl edit --full edgedb-server-5
+```
+
+Here's the contents of mine:
+
+```toml
+Description=Next generation graph-relational database
+Documentation=https://edgedb.com/
+After=syslog.target
+After=network.target
+
+[Service]
+Type=notify
+
+Group=edgedb
+User=edgedb
+
+Environment=EDGEDATA=/var/lib/edgedb/5/data/
+
+#Environment="EDGEDB_CLIENT_SECURITY=insecure_dev_mode"
+Environment="EDGEDB_DEBUG_HTTP_INJECT_CORS=1"
+Environment="EDGEDB_INSTANCE=beachfront"
+Environment="EDGEDB_SERVER_ADMIN_UI=enabled"
+Environment="EDGEDB_SERVER_DEFAULT_AUTH_METHOD=Trust"
+Environment="EDGEDB_SERVER_INSTANCE_NAME=beachfront"
+Environment="EDGEDB_SERVER_SECURITY=insecure_dev_mode"
+Environment="EDGEDB_SERVER_TLS_CERT_MODE=generate_self_signed"
+
+ExecReload=/bin/kill -HUP ${MAINPID}
+ExecStart=/usr/lib/x86_64-linux-gnu/edgedb-server-5/bin/edgedb-server --data-dir=${EDGEDATA} --runstate-dir=%t/edgedb
+KillMode=mixed
+KillSignal=SIGINT
+RuntimeDirectory=edgedb
+TimeoutSec=0
+
+[Install]
+WantedBy=multi-user.target
+```
+
+A few things to note about my setup:
+
+1. The default instance name for EdgeDB is `edgedb`. I've changed mine to `beachfront`.
+2. I have the admin UI enabled but for the life of me, I cannot seem to access it. No one in the EdgeDB Discord server knows why either.
+3. I've disabled my override for `EDGEDB_CLIENT_SECURITY` for some reason…something wasn't working and/or I got a weird message.
+
+When making changes to service files, you have to run `systemctl daemon-reload` before you enable or (re)start the service.
+
+You need to set a password for your database (I use a password manager). [EdgeDB's docs say](https://docs.edgedb.com/guides/deployment/bare_metal#set-a-password) you need to run `systemctl cat edgedb-server-5` to find the the Unix socket directory, but I don't recall needing it.
+
+```sh
+echo -n "> " && read -s PASSWORD
+```
+
+```sh
+RUNSTATE_DIR=$(systemctl show edgedb-server-5 -P ExecStart | \
+  grep -o -m 1 -- "--runstate-dir=[^ ]\+" | \
+  awk -F "=" '{print $2}')
+```
+
+```sh
+sudo edgedb --port 5656 --tls-security insecure --admin \
+  --unix-path $RUNSTATE_DIR \
+  query "ALTER ROLE edgedb SET password := '$PASSWORD'"
+```
+
+This is where my memory gets murky because I'm not sure if I needed to be a non-root user in order to set the password. Anyhoo, this is where we need to exit `root` land to do progress further, so, perfect timing.
+
+
+
+## app setup
+
+While in the `/var/www/api` directory, I switch over to the `edgedb` user. This is something that tripped me up previously…I thought I had manually create a non‑root user to run EdgeDB. That's unnecessary. You just run `su <whatever>` and it just…works?
+
+_Look, I only know enough to do what I need to do, alright? Feel free to ELI5 this to me later if you're a Linux pro._
+
+Anyhoo, you remember how we installed Deno earlier? Yeah, that was for the `root` user. **EdgeDB cannot be run as `root` _and neither can any application interfacing with EdgeDB_.** Imagine my incredulous disbelief. WTF!!
+
+_This non‑root business is inherited from Postgres, the database engine EdgeDB runs under the hood._
+
+Whatever, we can handle this. We'll just install Deno to a different directory and reference it in my application's service file!
+
+```sh
+# create directory and go inside it
+mkdir -p /home/edgedb && cd $_
+
+# download deno
+wget "https://github.com/denoland/deno/releases/download/v1.44.0/deno-x86_64-unknown-linux-gnu.zip"
+
+# reveal deno executable
+unzip deno-x86_64-unknown-linux-gnu.zip && rm deno-x86_64-unknown-linux-gnu.zip
+```
+
+Deno is now available at `/home/edgedb/deno` for the `edgedb` user to use (so, run `su edgedb` and then `/home/edgedb/bin/deno task start`). However, we're gonna create a service to do this automatically in the background. If you're the `edgedb` user, simply type `exit` and hit the return/enter key and you're back in `root` space. You'll need it for:
+
+```sh
+# create `api.beachfront` service…you could name this whatever you want
+systemctl edit --full api.beachfront
+```
+
+Then, copy/paste/save this:
+
+```toml
+[Unit]
+Description=beachfront/ API
+Documentation=https://beachfront.domains
+
+[Service]
+ExecStart=/home/edgedb/bin/deno task start
+Group=edgedb
+Restart=always
+User=edgedb
+WorkingDirectory=/var/www/api
+
+[Install]
+WantedBy=multi-user.target
+```
+
+In my `/var/www/api/deno.json` file, the start task looks like this:
+
+```json
+{
+  "tasks": {
+    "start": "deno run --allow-env --allow-net --allow-read main.ts"
+  }
+}
+```
+
+When creating, editing, or deleting service files, you should run `systemctl daemon-reload`. We've just created a new service so we have to run `systemctl enable --now api.beachfront` as well.
+
+For future reference, here are other common commands you'll find yourself using quite often (self‑explanatory):
+
+```sh
+systemctl restart api.beachfront
+systemctl start api.beachfront
+systemctl status api.beachfront
+systemctl stop api.beachfront
+```
+
+If you enabled the app service, check its status…it should be errored. Stop the service because we have one last thing to do.
+
+
+
+## database setup (wait, again?!)
+
+Kinda sorta. Switch to the `edgedb` user again and `cd` into `/var/www/api` if you've moved. You gotta setup your project to use EdgeDB!
+
+```sh
+# `root` sets this sometimes(??) and it prevents us from doing things
+unset XDG_RUNTIME_DIR
+
+# our instance name is `beachfront`
+edgedb instance create beachfront
+```
+
+<!--/
+  do we run `edgedb project init` here?
+  - edgedb -I beachfront --branch main
+  - create `primary`, drop `main`
+  - exit
+/-->
+
+```sh
+# create database called `primary` because…
+edgedb -I beachfront <<EOF
+CREATE DATABASE primary;
+EOF
+
+# …we don't want to use `main` (personal preference)
+edgedb -I beachfront --branch primary <<EOF
+DROP DATABASE main;
+EOF
+```
+
+Next, we need to run migrations. Super simple:
+
+```sh
+edgedb migrate
+```
+
+After several seconds, you should be done. This would be a **great** spot to add a section on seeding your new database but this post is long enough.
+
+<!--/
+  follow-up tutorial on seeding
+  - /home/edgedb/bin/deno run --allow-env --allow-net --allow-read import.ts
+/-->
+
+However, we can finally run the app now (remember, we stopped it)!
+
+```sh
+service api.beachfront restart
+# ^ the same thing as:
+systemctl restart api.beachfront
+```
+
+I have a _sneaking_ suspicion I may have left out a step or two. The code that powers [beachfront/](https://beachfront.domains) will become open-source at some point so a **proper** guide will come then. Annoyingly, I still haven't managed to get the built-in database explorer operational. I'll update this post if/when I figure it out, it's an excellent tool to gain insight into your data, with a friendly UI. Truly, a spiritual successor to [RethinkDB](https://rethinkdb.com/).
+
+Hopefully this tutorial demystified some things!
