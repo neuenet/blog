@@ -1,0 +1,87 @@
+---
+title: Devlog №.13
+date:  2024-08-01
+tags:  newsroom
+tldr:  Ecosystem is growing
+---
+
+Halfway through the month I decided to revisit building a menubar app for Handshake resolution on desktop. I'm using the Tauri framework for cross‑platform development; it uses Rust on the backend and TypeScript on the front‑end (I am **not** a Rust developer). It's almost done but the last 20% is always the hardest.
+
+In broader Handshake news, a lively conversation in [the Discord server](https://discord.com/channels/822591034202521641/822591034202521644/1265781721920438322) about re‑allocating locked funds on the blockchain gave way to a [poll on Github](https://github.com/handshake-org/HIPs/discussions/64). At the time of this post, there's 46 votes with 54% in favor of re‑allocating funds to a multi‑sig wallet and 45% against. [Santiago](https://twitter.com/@stronics) did a fantastic job of summarizing the debate and subsequent Twitter Space discussion. [Check it out here](https://decentralizers.com/2024/07/27/handshake-hard-fork-discussion).
+
+Unfortunately, there are a few people who resort to troll-like behavior and disparaging remarks, and questioning the ethics and morality of those who have opposing ideas. Diminishing the contributions of others simply because there's disagreement is childish, but what can you do? This is the internet, after all.
+
+Now, onto the latest beachfront/ developments!
+
+---
+
+
+
+## sandcastle
+
+Selling domains is neat but y'know what's even better? People _using_ the domains they just purchased. Not everyone is a web designer or developer, but given some tools that can figure _something_ out, right? If a kid can build a sandcastle, so too can you build a website.
+
+**beachfront/ sandcastle** is the name of our super simple website builder. Just like [golfer](/post/devlog-010), sandcastle is a mini API that sits alongside Caddy to create a `Caddyfile` per website and refresh Caddy when site changes are made.
+
+As I scaffolded the API I realized I'd have to handle image uploads…
+
+
+
+## riptide
+
+…but why use some existing image upload service? And, would they even work for Handshake domains? I quickly figured out how to create a (basic) CDN.
+
+Then I purchased a typeface I've had my eye on for a while and whipped up this rad banner graphic. Can you tell I'm a millennial? 😝 (And that I forgot to make a banner for sandcastle?)
+
+![](/media/post/2024/devlog-013-a.jpg "rad logo for beachfront/ ripdtide cdn")
+
+It supports image retrieval as‑is, or with modifications by specifying width and height via parameters:
+
+| URL                                             | Parameters    | Effect                             |
+|-------------------------------------------------|:-------------:|:----------------------------------:|
+| `/asset/_/01J3263EYC9VD7F2SX2AJ03CM6`           | `_`           | as‑is                              |
+| `/asset/w_800/01J3263EYC9VD7F2SX2AJ03CM6`       | `w_800`       | 800px width                        |
+| `/asset/h_500/01J3263EYC9VD7F2SX2AJ03CM6`       | `h_500`       | 500px height                       |
+| `/asset/w_800,h_500/01J3263EYC9VD7F2SX2AJ03CM6` | `w_800 h_500` | 800px width 500px height |
+
+I may launch this before the beta for beachfront/ ends…same for any service I build to support beachfront/. We can talk about Handshake til' we're purple in the face, why not BE about it?
+
+It'll live at `riptide.beachfront`, no Web2 presence (aside from a splash page).
+
+
+
+## shortcake
+
+I keep beating this drum; we need to make it easier for people to jump into Handshake and see what we're about. macOS is my daily driver and while the development experience is phenomenal most of the time, I'll occasionally run into a snag and such is the case for a lil' application called Unbound; it's for DNS. Handshake is DNS. Unbound is a dependency of [letsdane](https://github.com/buffrr/letsdane), which powers the most popular (and lightweight!) desktop resolver for Handshake; [Fingertip](https://github.com/imperviousinc/fingertip). Fingertip would benefit from QoL upgrades but the developers of it have been busy for the past few years.
+
+I don't know Go (the language Fingertip is coded in) and my previous attempts at compiling letsdane and/or [hnsd](https://github.com/handshake-org/hnsd) ended in me cursing Apple and Unbound. This time however, I decided to stick it out and whaddaya know, I figured out an incantation that works.
+
+```sh
+# within hnsd repo
+./autogen.sh && ./configure --with-unbound=/opt/homebrew && make
+```
+
+Build `letsdane` without unbound since we already have it already via `hnsd`:
+
+```sh
+# within letsdane repo
+go build
+```
+
+![](/media/post/2024/devlog-013-b.png "shortcake menubar app in action")
+
+Half a month of development and I _kinda_ know how to fix extremely basic Rust issues. All that's left to figure out is how to get a working HTTPS proxy. I barely understand that last sentence, I just learn enough to build what I need, alright?
+
+_I just don't want to [deal with this every year](https://github.com/imperviousinc/fingertip/issues/26)_.
+
+I had the idea for a Fingertip fork back when I was ideating the registry platform Pastry, so that's where "shortcake" comes from.
+
+
+
+## what's next?
+
+I'm taking a break from shortcake to get back to beachfront/ development. I think the release of beachfront/ sandcastle is gonna be a decent driver of new and original sites on Handshake, which will make people want to install a resolver to check them out. I want to take beachfront/ out of closed beta as soon as possible.
+
+There's a [bounty in the Handshake Discord](https://discord.com/channels/822591034202521641/1267903259797094421) for DANE integration. The wild thing is, DANE integration supports every netizen, not just Handshake enthusiasts (it enhances security and minimizes spoofing). However, DANE is a potential threat to certificate authorities because DANE supports self‑signed certificates without bringing up a scary warning screen (current browser behavior).
+
+All we gotta do is get one browser on board and go from there…easy‑peasy. 😉
