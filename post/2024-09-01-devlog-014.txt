@@ -1,0 +1,74 @@
+---
+title: Devlog №.14
+date:  2024-09-01
+tags:  newsroom
+tldr:  Time for a change
+---
+
+TL;DR: I'm suspending my work on Handshake **indefinitely**. Grifters and opportunists seek to subvert the blockchain that was designed for the many, to financially benefit the few. I cannot and will not support bad faith proposals or persons supporting them.
+
+---
+
+## what happened
+
+I've spent the last few years building on a blockchain that is fair and secure and has a decent shot at being the dominant alt‑root zone of the entire internet…it bothers me that I'm going to stop working on it.
+
+The discussion around the [V2 hard‑fork proposal](https://web.archive.org/web/20240828205311/https://github.com/handshake-org/HIPs/discussions/68) (please read, or use [Kagi Summarizer](https://kagi.com/summarizer) for an overview) has been contentious but recently, a [community call](https://twitter.com/decentralizers1/status/1826353183888683099) ended with one of the co‑founders of Handshake ([Andrew Lee](https://twitter.com/aleedotg)) pledging to **not** steamroll his proposal into production and he'd give up ownership of the official Handshake [Twitter account](https://twitter.com/hns) and [website](https://handshake.org).
+
+I have credible reasons to believe this steamroll will occur _regardless_, if not in one go, then over time. Millions of locked tokens will be re‑allocated with a majority going to him and his friends, bootstrap a new business (to the tune of $200m) to entice influencers to talk about Handshake (this is not a joke), with the rest given to the community.
+
+You can view my questions/comments about the V2 proposal [here](https://github.com/handshake-org/HIPs/discussions/68#discussioncomment-10339162) and [here](https://github.com/handshake-org/HIPs/discussions/68#discussioncomment-10404623). Quoting myself:
+
+> At a high‑level, this proposal sounds like:
+> - give millions of HNS/dollars to me and my friends
+> - create UnstoppableDomains, but on Handshake
+> - ???
+> - PROFIT
+
+I cannot in good conscience support this change in direction (kudos to Nole for addressing concerns as well as he could).
+
+On the call, Andrew bragged about starting another company and _easily_ getting funding for it…while Handshake was being supported by a handful of developers (Eskimo, Zipkin, Rithvik, and Nathan come to mind). Now he wants to take onchain money to fund an influencer pipeline? He literally did nothing for four years but pop up every now and then to say a few words before disappearing again. You don't deserve to have an opinion about something you haven't participated in, let alone worked on for nearly a half decade.
+
+Now that there's money to extract he wants to be active? Because Handshake needs marketing? Four years to do all this. C'mon man.
+
+
+
+## what's next
+
+I'm getting back to what I was working on when I discovered Handshake in 2019; a [social network](https://socii.network).
+
+Twitter has no good alternative. In fact, its competitors are just clones of it. Do we not know how to build anything original?
+
+A social network should equip users with tools to manage harassment. It should be paid to cut down on bad actors. It should do more to protect your mental, not exploit. I've been collecting feature ideas for the past half decade. It's time for a change.
+
+With socii, my social network, I'm still working towards a future I envisioned when I decided to go all‑in on Handshake…I'm just taking a different angle; application layer vs protocol layer.
+
+But what about all the work I've done on/for Handshake? Isn't that a sunk cost?
+
+No, it's not.
+
+I'm proud of the work I've done and I expect to continue it, just not on whatever Handshake is turning into. My focus after I decompress will be towards **forking Handshake to a new chain with proper incentives** that are aligned with what's best for most. I invite like‑minded folks to reach out via [Farcaster](https://warpcast.com/netopwibby.eth) or [Mastodon](https://social.coop/@netopwibby).
+
+Most of [Neuenet's repos](https://github.com/orgs/neuenet/repositories?type=all) are publicly archived, this blog will remain, there's videos of me giving free game at HandyCon for [two](https://www.youtube.com/watch?v=ct-CZV3rtNM) [years](https://www.youtube.com/watch?v=HCyVQV7oVMs)…that should be enough material and ideas for anyone to hit the ground running to emulate what I've done or, ideally, _to do better_. Everything I have hosted right now will continue to be maintained (including [beachfront/](https://beachfront.domains)). I believe [Gimbal Labs](https://gimbalabs.com) will do a great job with [Digitalis](https://www.digitalis.domains) in showing the world what's possible with decentralized naming technology like Handshake.
+
+Friends and family have listened to me extol the virtues of Handshake for four years, nonstop. My kids even know about it! As much as it pained me to even consider stepping away, I think it's necessary. I do my best work when I'm motivated and excited.
+
+This proposal (money grab), coupled with the community's desire to do nothing (apathy) has fizzled the flame I once had for Handshake. The motivation just isn't there anymore.
+
+Much love and thanks to the community members I've befriended over the years: Eskimo, Papo, Rithvik, Nathan, Zipkin, Pei, Durendil, Spencer, tiMaxal, and many more. Same goes for ICANN OGs like Tom Barrett and Jothan Frakes.
+
+I'll end this with a quote from [an essay](/post/vision) I published two years ago (with emphasis):
+
+> Neuenet:
+>
+> - exists to assist in the return to form
+> - is the change I wish to see in the world
+> - is **the culmination of my life's work**
+>
+> Let's save the Internet, for real this time.
+
+I look forward to getting back to it at some point. Til' then.
+
+👊
+
+P.S. I saw [another proposal](https://github.com/handshake-org/HIPs/discussions/69) floated by Nole to just burn the locked tokens. That does **nothing** for Handshake but _maybe_ raise the token price in the short term. Handshake's issues aren't resolved by a few cent increase for a few weeks…not sure why the community keeps clamoring for it. Adding A/AAAA record support onchain is neat though.

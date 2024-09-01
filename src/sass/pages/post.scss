@@ -202,14 +202,19 @@
     }
 
     @media (max-width: 900px) {
-      margin-left: var(--line-height);
-      padding-left: calc(5px + 1rem);
-      width: calc(100% - var(--line-height));
+      left: var(--line-height);
+      width: calc(100% - calc(var(--line-height) * 2));
 
       p {
         padding-left: 0;
         width: 100%;
       }
+    }
+
+    ol,
+    ul {
+      padding-left: var(--line-height);
+      width: auto;
     }
 
     &::before {
